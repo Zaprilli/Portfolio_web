@@ -272,6 +272,13 @@ export const achievements: Achievement[] = [
     href: 'https://www.hackerrank.com/profile/velectro0426',
   },
   {
+    event: 'CyLab Academy',
+    detail: { mn: 'Кибер аюулгүй байдлын онлайн сургалт & CTF сорилтууд', en: 'Cybersecurity training and CTF challenges' },
+    year: '2025',
+    icon: 'terminal',
+    href: 'https://learn.cylabacademy.org/users/xinn06',
+  },
+  {
     event: 'Hack The Box Profile',
     detail: { mn: 'Machines, сорилтууд болон cyber lab-ууд', en: 'Machines, challenges and cyber labs' },
     year: '2025',
