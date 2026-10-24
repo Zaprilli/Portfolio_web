@@ -46,6 +46,13 @@ export default function Hero() {
   const typedTitle = typedFull.slice(0, titleText.length);
   const typedBio = typedFull.slice(titleText.length + 1);
   const titleDone = typedFull.length > titleText.length;
+
+  const cmdWhoami = 'cat whoami';
+  const cmdSkills = 'cat skills.txt';
+  const typedCmdWhoami = useTypewriter(cmdWhoami, 40, 900);
+  const typedCmdSkills = useTypewriter(cmdSkills, 40, 2100);
+  const whoamiDone = typedCmdWhoami.length >= cmdWhoami.length;
+  const skillsCmdDone = typedCmdSkills.length >= cmdSkills.length;
   const cvHref = content.cv[lang];
 
   const mx = useMotionValue(0);
@@ -206,27 +213,33 @@ export default function Hero() {
               <span className="text-[11px] text-slate-500">mrgd06@portfolio:~</span>
             </div>
             <div className="space-y-1.5 text-slate-300">
-              <p>
-                <span className="text-brand-400">$</span> cat whoami
+              <p className={typedCmdWhoami.length < cmdWhoami.length ? 'typed-caret' : ''}>
+                <span className="text-brand-400">$</span> {typedCmdWhoami}
               </p>
-              <p className="text-accent-300">{c.shortName[lang]}</p>
-              <p className="pt-1">
-                <span className="text-brand-400">$</span> cat skills.txt
-              </p>
-              <div className="space-y-1.5">
-                {skillCategories.map((cat) => (
-                  <div key={cat.category.en}>
-                    <p className="text-brand-400/70"># {cat.category[lang]}</p>
-                    <p className="break-words leading-relaxed text-slate-400">
-                      {cat.items.join(' · ')}
-                    </p>
-                  </div>
-                ))}
-              </div>
-              <p className="pt-1">
-                <span className="text-brand-400">$</span>{' '}
-                <span className="inline-block h-3.5 w-2 animate-pulse bg-brand-400 align-middle" />
-              </p>
+              {whoamiDone && <p className="text-accent-300">{c.shortName[lang]}</p>}
+              {whoamiDone && (
+                <p className={`pt-1 ${typedCmdSkills.length < cmdSkills.length ? 'typed-caret' : ''}`}>
+                  <span className="text-brand-400">$</span> {typedCmdSkills}
+                </p>
+              )}
+              {skillsCmdDone && (
+                <div className="space-y-1.5 pt-1">
+                  {skillCategories.map((cat) => (
+                    <div key={cat.category.en}>
+                      <p className="text-brand-400/70"># {cat.category[lang]}</p>
+                      <p className="break-words leading-relaxed text-slate-400">
+                        {cat.items.join(' · ')}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {skillsCmdDone && (
+                <p className="pt-1">
+                  <span className="text-brand-400">$</span>{' '}
+                  <span className="inline-block h-3.5 w-2 animate-pulse bg-brand-400 align-middle" />
+                </p>
+              )}
             </div>
           </motion.div>
         </div>
