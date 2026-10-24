@@ -1,5 +1,6 @@
 'use client';
 
+import { Palette } from 'lucide-react';
 import { SocialRow } from './Socials';
 import { useLang } from '@/lib/lang-context';
 import { useTheme } from '@/lib/theme-context';
@@ -28,16 +29,18 @@ export default function Footer() {
             <button
               onClick={toggleTheme}
               aria-label={`Theme: ${theme}`}
-              className="rounded-lg border border-brand-400/25 px-3 py-1.5 font-mono text-[11px] uppercase tracking-widest text-brand-300 transition-colors hover:border-brand-400/60 hover:shadow-glow"
+              title={theme === 'green' ? 'Switch to purple' : 'Switch to green'}
+              className="grid h-9 w-9 place-items-center rounded-lg border border-brand-400/25 bg-brand-400/10 text-brand-300 transition hover:border-brand-300/60 hover:shadow-glow"
             >
-              {theme === 'green' ? 'green' : 'purple'}
+              <Palette className="h-4 w-4" strokeWidth={1.8} />
             </button>
             <button
               onClick={toggleLang}
               aria-label="Toggle language MN / EN"
-              className="rounded-lg border border-brand-400/25 px-3 py-1.5 font-mono text-[11px] tracking-widest text-brand-300 transition-colors hover:border-brand-400/60 hover:shadow-glow"
+              className="rounded-lg border border-brand-400/25 bg-brand-400/10 px-3 py-1.5 font-mono text-xs font-semibold tracking-widest text-brand-300 transition hover:border-brand-300/60 hover:shadow-glow"
             >
               {lang === 'mn' ? 'EN' : 'MN'}
+              <span className="ml-1.5 text-brand-500/60">{lang === 'mn' ? '🇲🇳' : '🇬🇧'}</span>
             </button>
           </div>
         </div>
