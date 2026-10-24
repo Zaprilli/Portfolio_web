@@ -11,10 +11,10 @@ html[data-theme='blue'] {
   --brand-500: 18 122 174;
   --brand-600: 14 97 138;
   --brand-rgb: 23 147 209;
-  --accent-200: 186 230 253;
-  --accent-300: 125 211 252;
-  --accent-400: 56 189 248;
-  --accent-500: 14 165 233;
+  --accent-200: 153 246 228;
+  --accent-300: 94 234 212;
+  --accent-400: 45 212 191;
+  --accent-500: 20 184 166;
 }
 
 html[data-theme='purple'] {
