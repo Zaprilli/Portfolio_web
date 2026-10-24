@@ -27,7 +27,7 @@ export interface TimelineItem {
   org: string;
   period: string;
   description: { mn: string; en: string };
-  type: 'education' | 'work' | 'service';
+  type: 'education' | 'work' | 'service' | 'training';
 }
 
 export interface ContactField {
@@ -182,6 +182,7 @@ export const content: Content = {
       education: { mn: 'Боловсрол', en: 'Education' },
       work: { mn: 'Ажил', en: 'Work' },
       service: { mn: 'Алба', en: 'Service' },
+      training: { mn: 'Сургалт', en: 'Training' },
     },
   },
   interestsSection: {
@@ -263,27 +264,6 @@ export const achievements: Achievement[] = [
     detail: { mn: 'STEM — 3-р байр', en: 'STEM — 3rd Place' },
     year: '2025',
     icon: 'flask',
-  },
-  {
-    event: 'HackerRank Profile',
-    detail: { mn: 'SQL, problem solving зэрэг гэрчилгээнүүд', en: 'SQL, problem solving and other certifications' },
-    year: '2024',
-    icon: 'award',
-    href: 'https://www.hackerrank.com/profile/velectro0426',
-  },
-  {
-    event: 'CyLab Academy',
-    detail: { mn: 'Кибер аюулгүй байдлын онлайн сургалт ба CTF сорилтууд', en: 'Cybersecurity training and CTF challenges' },
-    year: '2025',
-    icon: 'terminal',
-    href: 'https://learn.cylabacademy.org/users/xinn06',
-  },
-  {
-    event: 'Hack The Box Profile',
-    detail: { mn: 'Machines, сорилтууд ба кибер лабораториуд', en: 'Machines, challenges and cyber labs' },
-    year: '2025',
-    icon: 'shield-check',
-    href: 'https://profile.hackthebox.com/profile/019d6023-1bdb-7117-88c6-fcaafe00de4a',
   },
   {
     event: 'English B2',
@@ -449,7 +429,38 @@ export const timeline: TimelineItem[] = [
       en: 'Gained fundamentals of Morse code and information privacy, plus signal unit operations experience.',
     },
     type: 'service',
-  },];
+  },
+  {
+    role: { mn: 'HackerRank — SQL & бодлогын шийдэл', en: 'HackerRank — SQL & Problem Solving' },
+    org: 'HackerRank',
+    period: '2024 — одоо',
+    description: {
+      mn: 'SQL, problem solving зэрэг гэрчилгээнүүд.',
+      en: 'SQL, problem solving and other certifications.',
+    },
+    type: 'training',
+  },
+  {
+    role: { mn: 'CyLab Academy — Кибер аюулгүй байдал', en: 'CyLab Academy — Cybersecurity' },
+    org: 'CyLab Academy',
+    period: '2025 — одоо',
+    description: {
+      mn: 'Кибер аюулгүй байдлын онлайн сургалт ба CTF сорилтууд.',
+      en: 'Cybersecurity training and CTF challenges.',
+    },
+    type: 'training',
+  },
+  {
+    role: { mn: 'Hack The Box — Self-paced labs', en: 'Hack The Box — Self-paced labs' },
+    org: 'Hack The Box',
+    period: '2025 — одоо',
+    description: {
+      mn: 'Machines, сорилтууд ба кибер лабораториуд.',
+      en: 'Machines, challenges and cyber labs.',
+    },
+    type: 'training',
+  },
+];
 
 export function t(value: { mn: string; en: string }, lang: Lang): string {
   return value[lang];

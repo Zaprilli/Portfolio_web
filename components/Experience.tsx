@@ -11,12 +11,14 @@ const typeStyles: Record<string, string> = {
   education: 'border-accent-400/40 bg-accent-400/10 text-accent-300',
   work: 'border-brand-400/40 bg-brand-400/10 text-brand-300',
   service: 'border-amber-400/40 bg-amber-400/10 text-amber-300',
+  training: 'border-violet-400/40 bg-violet-400/10 text-violet-300',
 };
 
 const typeIcons: Record<string, string> = {
   education: 'graduation-cap',
   work: 'briefcase',
   service: 'shield-check',
+  training: 'terminal',
 };
 
 export default function Experience() {
