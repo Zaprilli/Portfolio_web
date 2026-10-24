@@ -188,7 +188,7 @@ export const content: Content = {
       education: { mn: 'Боловсрол', en: 'Education' },
       work: { mn: 'Ажил', en: 'Work' },
       service: { mn: 'Алба', en: 'Service' },
-      training: { mn: 'Цахим сургалт', en: 'Online Training' },
+      training: { mn: 'Цахим сургалт', en: 'Online Learning' },
     },
   },
   interestsSection: {
