@@ -34,6 +34,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 body {
   @apply bg-abyss text-slate-200 antialiased;
   background-image:
@@ -81,7 +85,7 @@ body {
     );
   }
   .section-shell {
-    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
   }
 }
 

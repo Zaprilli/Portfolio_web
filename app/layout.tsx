@@ -7,14 +7,13 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Margad-Erdene Byambabasan | IT Student & Cybersecurity Specialist',
   description:
-    'Third-year IT student at the National University of Mongolia (NUM-MTES) specializing in system security, Arch Linux, C, Python and full-stack development.',
+    'Third-year Information Technology student passionate about cybersecurity — CTFs, system security and pentesting. Works with Arch Linux, Windows and other Linux distros.',
   keywords: [
     'Margad-Erdene Byambabasan',
     'Cybersecurity',
     'CTF',
     'Arch Linux',
     'Next.js',
-    'NUM-MTES',
   ],
   authors: [{ name: 'Margad-Erdene Byambabasan' }],
   robots: { index: true, follow: true },

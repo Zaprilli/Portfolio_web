@@ -63,7 +63,7 @@ export default function Hero() {
     <section
       id="home"
       onPointerMove={onPointerMove}
-      className="relative flex min-h-screen items-center overflow-hidden pt-16"
+      className="relative flex min-h-[100svh] items-center overflow-hidden pt-16"
     >
       {floatingOrbs.map((orb) => (
         <motion.div
@@ -76,7 +76,7 @@ export default function Hero() {
         />
       ))}
 
-      <div className="section-shell relative z-10 grid items-center gap-12 py-20 lg:grid-cols-2">
+      <div className="section-shell relative z-10 grid items-center gap-10 py-14 sm:gap-12 sm:py-20 lg:grid-cols-2">
         <div>
           <motion.p
             initial={{ opacity: 0, x: -24 }}
@@ -100,7 +100,7 @@ export default function Hero() {
             key={lang}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="typed-caret mt-5 min-h-[3.5rem] font-mono text-base text-brand-300/90 sm:text-lg"
+            className="typed-caret mt-5 min-h-[4.5rem] font-mono text-base text-brand-300/90 sm:min-h-[4rem] sm:text-lg lg:min-h-[3.5rem]"
           >
             {'> '}
             {typedTitle}
@@ -149,27 +149,27 @@ export default function Hero() {
             transition={{ delay: 0.9 }}
             className="mt-8 flex flex-wrap items-center gap-3"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-1.5 text-xs text-emerald-300">
+            <span className="inline-flex max-w-full items-center gap-2 rounded-xl border border-emerald-400/25 bg-emerald-400/10 px-4 py-1.5 text-left text-xs text-emerald-300 sm:rounded-full">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
               </span>
               {c.status[lang]}
             </span>
-            <span className="inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-400/10 px-4 py-1.5 text-xs text-brand-300">
+            <span className="inline-flex max-w-full items-center gap-2 rounded-xl border border-brand-400/30 bg-brand-400/10 px-4 py-1.5 text-left text-xs leading-relaxed text-brand-300 sm:rounded-full">
               <Target className="h-3.5 w-3.5" strokeWidth={2} />
               {c.ctfGoal[lang]}
             </span>
           </motion.div>
         </div>
 
-        <div className="relative hidden lg:block">
+        <div className="relative">
           <motion.div
             style={{ rotateX, rotateY, transformPerspective: 1200 }}
             initial={{ opacity: 0, scale: 0.85, y: 24 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
-            className="relative ml-auto w-[85%] overflow-hidden rounded-3xl border border-brand-400/25 bg-white/[0.04] p-1.5 shadow-glow-strong backdrop-blur-xl"
+            className="relative mx-auto w-full max-w-md overflow-hidden rounded-3xl border border-brand-400/25 bg-white/[0.04] p-1.5 shadow-glow-strong backdrop-blur-xl lg:mr-0 lg:ml-auto lg:w-[85%] lg:max-w-none"
           >
             <div className="relative overflow-hidden rounded-[1.15rem]">
               <Image
@@ -178,7 +178,7 @@ export default function Hero() {
                 width={640}
                 height={830}
                 sizes="(min-width: 1024px) 36vw, 640px"
-                className="h-[400px] w-full object-cover object-top"
+                className="h-[300px] w-full object-cover object-top sm:h-[360px] lg:h-[400px]"
               />
               <div
                 aria-hidden
@@ -192,7 +192,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.55 }}
-            className="glass-card relative z-10 -mt-10 ml-0 w-[85%] p-5 font-mono text-xs"
+            className="glass-card relative z-10 -mt-10 mx-auto w-full max-w-md p-5 font-mono text-xs lg:mr-0 lg:ml-0 lg:w-[85%] lg:max-w-none"
           >
             <div className="mb-3 flex items-center gap-2 border-b border-white/10 pb-2.5">
               <span className="h-2.5 w-2.5 rounded-full bg-brand-400/70" />
