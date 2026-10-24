@@ -46,7 +46,7 @@ export default function Experience() {
             {timeline.map((item, i) => {
               const isLeft = i % 2 === 0;
               return (
-                <Reveal key={`${item.org}-${item.period}`} delay={i * 0.1}>
+                <Reveal key={`${item.org.en}-${item.period}`} delay={i * 0.1}>
                   <div
                     className={`relative flex flex-col pl-12 sm:w-1/2 ${
                       isLeft ? 'sm:pl-0 sm:pr-10 sm:text-right' : 'sm:ml-auto sm:pl-10'
@@ -78,7 +78,7 @@ export default function Experience() {
                       </div>
 
                       <h3 className="font-semibold text-white">{item.role[lang]}</h3>
-                      <p className="mt-0.5 text-sm text-brand-400/90">{item.org}</p>
+                      <p className="mt-0.5 text-sm text-brand-400/90">{item.org[lang]}</p>
                       <p className="mt-3 text-sm leading-relaxed text-slate-400">
                         {item.description[lang]}
                       </p>

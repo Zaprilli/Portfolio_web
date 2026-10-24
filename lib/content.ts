@@ -24,7 +24,7 @@ export interface Project {
 
 export interface TimelineItem {
   role: { mn: string; en: string };
-  org: string;
+  org: { mn: string; en: string };
   period: string;
   description: { mn: string; en: string };
   type: 'education' | 'work' | 'service' | 'training';
@@ -419,7 +419,7 @@ export const projects: Project[] = [
 export const timeline: TimelineItem[] = [
   {
     role: { mn: 'IT дэмжлэгийн мэргэжилтэн (фриланс)', en: 'IT Support Specialist (Freelance)' },
-    org: 'Freelance',
+    org: { mn: 'Фриланс', en: 'Freelance' },
     period: '2023 — одоо / Present',
     description: {
       mn: 'Захиалгат PC угсралт, Windows/Linux системийн тохиргоо, аюулгүй байдлын хатуужилт, AnyDesk ашиглан алсын зайны дэмжлэг.',
@@ -429,7 +429,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     role: { mn: 'Бакалаврын зэрэг (мэдээллийн технологи)', en: "Bachelor's Degree in IT" },
-    org: 'National University of Mongolia (NUM-MTES)',
+    org: { mn: 'Үндэсний Их Сургууль, МТЭС', en: 'National University of Mongolia (NUM-MTES)' },
     period: '2024 — одоо / Present',
     description: {
       mn: 'Мэдээллийн технологийн чиглэлээр суралцаж байна. Системийн аюулгүй байдал, програмчлал, веб хөгжүүлэлтэнд төвлөрч байна.',
@@ -438,8 +438,8 @@ export const timeline: TimelineItem[] = [
     type: 'education',
   },
   {
-    role: { mn: 'Цэргийн алба (Холбооны 013)', en: 'Military Service (Signal Unit 013)' },
-    org: 'Mongolian Armed Forces',
+    role: { mn: 'Цэргийн алба', en: 'Military Service' },
+    org: { mn: 'Зэвсэгт хүчний 013 Холбооны хороо', en: '013th Communications Unit, Mongolian Armed Forces' },
     period: '2025',
     description: {
       mn: 'Морс код болон мэдээллийн нууцлалын үндэс, шугам сүлжээний үйл ажиллагааны туршлага хуримтлуулсан.',
@@ -449,7 +449,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     role: { mn: 'HackerRank — SQL & бодлогын шийдэл', en: 'HackerRank — SQL & Problem Solving' },
-    org: 'HackerRank',
+    org: { mn: 'HackerRank', en: 'HackerRank' },
     period: '2024 — одоо',
     description: {
       mn: 'SQL, problem solving зэрэг гэрчилгээнүүд.',
@@ -459,7 +459,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     role: { mn: 'CyLab Academy — Кибер аюулгүй байдал', en: 'CyLab Academy — Cybersecurity' },
-    org: 'CyLab Academy',
+    org: { mn: 'CyLab Academy', en: 'CyLab Academy' },
     period: '2025 — одоо',
     description: {
       mn: 'Кибер аюулгүй байдлын онлайн сургалт ба CTF сорилтууд.',
@@ -469,7 +469,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     role: { mn: 'Hack The Box — Self-paced labs', en: 'Hack The Box — Self-paced labs' },
-    org: 'Hack The Box',
+    org: { mn: 'Hack The Box', en: 'Hack The Box' },
     period: '2025 — одоо',
     description: {
       mn: 'Machines, сорилтууд ба кибер лабораториуд.',
