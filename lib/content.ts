@@ -116,8 +116,8 @@ export interface Content {
 export const content: Content = {
   meta: {
     title: {
-      mn: 'Маргад-Эрдэнэ Бямбабаасан | Мэдээллийн технологийн оюутан ->  Кибер аюулгүй байдлын мэргэжилтэн болох хүсэлтэй ',
-      en: 'Margad-Erdene Byambabasan | Information technology Student -> who wanna be a Cybersecurity Specialist',
+      mn: 'Маргад-Эрдэнэ Бямбабаасан | Мэдээллийн технологийн оюутан -> Кибер аюулгүй байдлын мэргэжилтэн болох хүсэлтэй',
+      en: 'Margad-Erdene Byambabasan | Information Technology Student -> who wanna be a Cybersecurity Specialist',
     },
     description: {
       mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Мэдээллийн аюулгүй байдал чиглэлээр сонирхолтой — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Arch Linux, Windows) ажилладаг.',
@@ -135,10 +135,10 @@ export const content: Content = {
   },
   hero: {
     greeting: { mn: '// Сайн байна уу, намайг', en: '// Hello World!, my name is' },
-    name: { mn: 'Маргад-Эрдэнэ Бямбабасан', en: 'Margad-Erdene Byambabasan' },
+    name: { mn: 'Маргад-Эрдэнэ Бямбабаасан', en: 'Margad-Erdene Byambabasan' },
     title: { mn: 'IT Сурагч — Кибер Аюулгүй Байдлын Мэргэжилтэн болохыг хүсэж буй', en: 'IT Student & who wanna be a Cybersecurity Specialist' },
     bio: {
-      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдалг ихээр сонирхдог — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Linux, Windows) ажилладаг.',
+      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдалд ихээр сонирхдог — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Linux, Windows) ажилладаг.',
       en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Arch Linux, Windows, macOS).',
     },
     ctaContact: { mn: 'Холбоо барих', en: 'Get in touch' },
@@ -260,7 +260,7 @@ export const achievements: Achievement[] = [
     detail: { mn: 'Монгол улсын кибер аюулгүй байдал — Топ 50 (enVoia! баг)', en: 'The biggest Capture The Flag (CTF) competition in Mongolia, Semi—Final Global #50 (Team enVoia!)' },
     year: '2026',
     icon: 'flag',
-    href: 'https://ctftime.org/team/447293'
+    href: 'https://ctftime.org/team/447293',
   },
   {
     event: 'OpenwaveWanderlab Science CTF',
@@ -309,7 +309,7 @@ export const ctfLinks: CtfLink[] = [
 export const skillCategories: SkillCategory[] = [
   {
     icon: 'monitor',
-    category: { mn: 'Үйлдлийн Систем & Орчин', en: 'OS & Environment' },
+    category: { mn: 'Үйлдлийн Системүүд & Орчин', en: 'Operating Systems & Environments' },
     items: ['Arch Linux', 'Hyprland', 'Wayland', 'Kitty', 'Zsh', 'Windows', 'macOS'],
   },
   {
