@@ -192,9 +192,8 @@ export const content: Content = {
     },
     items: [
       { mn: 'Техник угсаралт & дотфайл', en: 'Hardware Assembly & Dotfiles' },
-      { mn: 'Ууланд алхалт', en: 'Mountain Hiking' },
       { mn: 'Оюун ухааны puzzle тоглоом (TETR.IO, Sudoku)', en: 'Puzzle & IQ Games (TETR.IO, Sudoku)', href: 'https://ch.tetr.io/u/mrgd06' },
-      { mn: 'Волейбол & биеийн тамир', en: 'Volleyball & Fitness' },
+      { mn: 'Спорт — ууланд алхалт, сагс, волейбол, фитнес', en: 'Sport — Mountain Hiking, Basketball, Volleyball & Fitness' },
     ],
   },
   contactSection: {
