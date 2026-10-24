@@ -177,7 +177,7 @@ export default function Hero() {
                 alt="Margad-Erdene Byambabasan"
                 width={640}
                 height={830}
-                priority
+                sizes="(min-width: 1024px) 36vw, 640px"
                 className="h-[400px] w-full object-cover object-top"
               />
               <div

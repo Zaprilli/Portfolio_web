@@ -32,17 +32,6 @@ export const socials: Social[] = [
     ),
   },
   {
-    label: 'Instagram',
-    href: 'https://www.instagram.com/mrgd06/',
-    icon: (
-      <svg className={glyph} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
-        <rect x="3" y="3" width="18" height="18" rx="5" />
-        <circle cx="12" cy="12" r="4" />
-        <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none" />
-      </svg>
-    ),
-  },
-  {
     label: 'TETR.IO',
     href: 'https://ch.tetr.io/u/mrgd06',
     icon: (
@@ -85,64 +74,85 @@ export function SocialIcon({ social }: { social: Social }) {
 
 export function SocialButton({
   social,
-  copiedLabel,
   onCopy,
+  plain = false,
 }: {
   social: Social;
-  copiedLabel: string;
   onCopy: (value: string) => void;
+  plain?: boolean;
 }) {
   const shared =
-    'grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-slate-400 transition hover:border-brand-400/40 hover:text-brand-300 hover:shadow-glow';
+    'grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-slate-400 transition-colors hover:border-brand-400/40 hover:text-brand-300 hover:shadow-glow';
 
   if (social.copy) {
-    return (
+    const props = {
+      type: 'button' as const,
+      onClick: () => onCopy(social.copy!),
+      'aria-label': `${social.label} — ${social.copy}`,
+      title: `${social.label}: ${social.copy}`,
+      className: shared,
+    };
+    return plain ? (
+      <button {...props}>{social.icon}</button>
+    ) : (
       <motion.button
-        type="button"
-        onClick={() => onCopy(social.copy!)}
-        aria-label={`${social.label} — ${social.copy}`}
-        title={`${social.label}: ${social.copy}`}
+        {...props}
         whileHover={{ y: -4, scale: 1.08 }}
         whileTap={{ scale: 0.92 }}
-        className={shared}
       >
         {social.icon}
       </motion.button>
     );
   }
 
+  const linkProps = {
+    href: social.href,
+    target: '_blank' as const,
+    rel: 'noopener noreferrer',
+    'aria-label': social.label,
+    title: social.label,
+    className: shared,
+  };
+
+  if (plain) {
+    return <a {...linkProps}>{social.icon}</a>;
+  }
+
   return (
     <motion.a
-      href={social.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={social.label}
-      title={social.label}
+      {...linkProps}
       whileHover={{ y: -4, scale: 1.08 }}
       whileTap={{ scale: 0.92 }}
-      className={shared}
     >
       {social.icon}
     </motion.a>
   );
 }
 
-export function SocialRow({ copiedLabel }: { copiedLabel: string }) {
+export function SocialRow({
+  copiedLabel,
+  plain = false,
+}: {
+  copiedLabel: string;
+  plain?: boolean;
+}) {
   const { copied, copy } = useCopyUsername();
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex flex-wrap items-center gap-3">
       {socials.map((s) => (
-        <SocialButton key={s.label} social={s} copiedLabel={copiedLabel} onCopy={copy} />
+        <SocialButton key={s.label} social={s} onCopy={copy} plain={plain} />
       ))}
-      <span
-        aria-live="polite"
-        className={`ml-1 font-mono text-[11px] text-emerald-300 transition-opacity duration-300 ${
-          copied ? 'opacity-100' : 'opacity-0'
-        }`}
-      >
-        {copiedLabel}
-      </span>
+      {!plain && (
+        <span
+          aria-live="polite"
+          className={`ml-1 font-mono text-[11px] text-emerald-300 transition-opacity duration-300 ${
+            copied ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          {copiedLabel}
+        </span>
+      )}
     </div>
   );
 }

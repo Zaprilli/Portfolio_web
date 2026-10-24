@@ -135,7 +135,7 @@ export const content: Content = {
   hero: {
     greeting: { mn: '// Сайн байна уу, би', en: '// Hello world, I am' },
     name: { mn: 'Маргад-Эрдэнэ Бямбабаасан', en: 'Margad-Erdene Byambabasan' },
-    title: { mn: 'IT Сурагч & Кибер Аюулгүй Байдлын Мэргэжилтэн', en: 'IT Student & Cybersecurity Specialist' },
+    title: { mn: 'IT Сурагч — Кибер Аюулгүй Байдлын Мэргэжилтэн болохыг хүсэж буй', en: 'IT Student who wanna be a Cybersecurity Specialist' },
     bio: {
       mn: 'МУИС-ийн МТЭС-ийн Мэдээллийн технологийн 3-р суралцагч. Системийн аюулгүй байдал, Arch Linux орчин, C ба Python програмчлал, веб хөгжүүлэлтийн чиглэлээр суралцаж байна.',
       en: 'Third-year IT student at the National University of Mongolia (NUM-MTES) specializing in system security, Arch Linux environments, C programming, Python, and full-stack development.',
@@ -145,8 +145,8 @@ export const content: Content = {
     ctaCv: { mn: 'CV татаж авах', en: 'Download CV' },
     status: { mn: 'Нээлттэй: Фриланс дэмжлэг', en: 'Open to: Freelance support' },
     ctfGoal: {
-      mn: 'Хүсэл: Монголын CTF тэмцээнүүдэд (NUMCTF, Haruulzangi, MUST CTF) оролцох',
-      en: 'Goal: Compete in Mongolian CTFs (NUMCTF, Haruulzangi, MUST CTF)',
+      mn: 'Хүсэл: Олон улсын CTF тэмцээнүүдэд оролцох (picoCTF, Hack The Box, Cyber Apocalypse)',
+      en: 'Goal: Compete in international CTFs (picoCTF, Hack The Box, Cyber Apocalypse)',
     },
   },
   achievementsSection: {
@@ -339,20 +339,6 @@ export const skillCategories: SkillCategory[] = [
       'Hack The Box',
       'PicoCTF',
       'OverTheWire',
-    ],
-  },
-  {
-    icon: 'book-open',
-    category: { mn: 'Сургалтын Хичээлүүд', en: 'Coursework' },
-    items: [
-      'Data Structures',
-      'Operating Systems',
-      'Computer Networks',
-      'Machine Learning',
-      'Internet Technology',
-      'Unix',
-      'OOP',
-      'Computer Architecture',
     ],
   },
 ];
