@@ -116,7 +116,7 @@ export interface Content {
 export const content: Content = {
   meta: {
     title: {
-      mn: 'Маргад-Эрдэнэ Бямбабаасан | Мэдээллийн технологийн оюутан -> Кибер аюулгүй байдлын мэргэжилтэн болох хүсэлтэй',
+      mn: 'Маргад-Эрдэнэ Бямбабасан | Мэдээллийн технологийн оюутан -> Кибер аюулгүй байдлын мэргэжилтэн болох хүсэлтэй',
       en: 'Margad-Erdene Byambabasan | Information Technology Student -> who wanna be a Cybersecurity Specialist',
     },
     description: {
@@ -135,8 +135,8 @@ export const content: Content = {
   },
   hero: {
     greeting: { mn: '// Сайн байна уу, намайг', en: '// Hello World!, my name is' },
-    name: { mn: 'Маргад-Эрдэнэ Бямбабаасан', en: 'Margad-Erdene Byambabasan' },
-    title: { mn: 'IT Сурагч — Кибер Аюулгүй Байдлын Мэргэжилтэн болохыг хүсэж буй', en: 'IT Student & who wanna be a Cybersecurity Specialist' },
+    name: { mn: 'Маргад-Эрдэнэ Бямбабасан', en: 'Margad-Erdene Byambabasan' },
+    title: { mn: 'IT сурагч — кибер аюулгүй байдлын мэргэжилтэн болохыг хүсэж буй', en: 'IT Student & who wanna be a Cybersecurity Specialist' },
     bio: {
       mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдлын чиглэлээр онцлон сонирхдог — CTF тэмцээнүүд, системийн аюулгүй байдал, пентестинг. Мөн олон төрлийн үйлдлийн системтэй (Linux, Windows) ажилладаг.',
       en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Arch Linux, Windows, macOS).',
@@ -174,7 +174,7 @@ export const content: Content = {
     viewCode: { mn: 'Дэлгэрэнгүй', en: 'Details' },
   },
   experienceSection: {
-    heading: { mn: 'Туршлага & Боловсрол', en: 'Experience & Education' },
+    heading: { mn: 'Туршлага ба боловсрол', en: 'Experience & Education' },
     subheading: {
       mn: 'Боловсрол, алба хаасан болон мэргэжлийн туршлага.',
       en: 'Education, service and professional experience.',
@@ -187,7 +187,7 @@ export const content: Content = {
     },
   },
   interestsSection: {
-    heading: { mn: 'Хувийн Сонирхол', en: 'Personal Interests' },
+    heading: { mn: 'Хувийн сонирхол', en: 'Personal Interests' },
     subheading: {
       mn: 'Клавишээс гадуурх цаг хугацаа.',
       en: 'Time spent away from the keyboard.',
@@ -200,7 +200,7 @@ export const content: Content = {
     ],
   },
   contactSection: {
-    heading: { mn: 'Холбоо Барих', en: 'Contact' },
+    heading: { mn: 'Холбоо барих', en: 'Contact' },
     subheading: {
       mn: 'Төсөл, дэмжлэг эсвэл зөвхөн мэндчилгээ — бичээрэй.',
       en: 'Project, support request or just a hello — drop a line.',
@@ -309,17 +309,17 @@ export const ctfLinks: CtfLink[] = [
 export const skillCategories: SkillCategory[] = [
   {
     icon: 'monitor',
-    category: { mn: 'Үйлдлийн Системүүд & Орчин', en: 'Operating Systems & Environments' },
+    category: { mn: 'Үйлдлийн системүүд ба орчин', en: 'Operating Systems & Environments' },
     items: ['Arch Linux', 'Hyprland', 'Wayland', 'Kitty', 'Zsh', 'Windows', 'macOS'],
   },
   {
     icon: 'code',
-    category: { mn: 'Хэл & Веб', en: 'Languages & Web' },
+    category: { mn: 'Хэл ба веб', en: 'Languages & Web' },
     items: ['C', 'Python', 'JavaScript', 'TypeScript', 'Next.js', 'React', 'TailwindCSS', 'Supabase', 'SQL'],
   },
   {
     icon: 'shield-check',
-    category: { mn: 'Кибер Аюулгүй Байдал', en: 'Cybersecurity' },
+    category: { mn: 'Кибер аюулгүй байдал', en: 'Cybersecurity' },
     items: [
       'CTF Problem Solving',
       'Network Analysis (Wireshark)',
@@ -404,7 +404,7 @@ export const projects: Project[] = [
 
 export const timeline: TimelineItem[] = [
   {
-    role: { mn: 'IT Дэмжлэгийн Мэргэжилтэн (Фриланс)', en: 'IT Support Specialist (Freelance)' },
+    role: { mn: 'IT дэмжлэгийн мэргэжилтэн (фриланс)', en: 'IT Support Specialist (Freelance)' },
     org: 'Freelance',
     period: '2023 — одоо / Present',
     description: {
@@ -414,7 +414,7 @@ export const timeline: TimelineItem[] = [
     type: 'work',
   },
   {
-    role: { mn: 'Бакалаврын зэрэг (Мэдээллийн Технологи)', en: "Bachelor's Degree in IT" },
+    role: { mn: 'Бакалаврын зэрэг (мэдээллийн технологи)', en: "Bachelor's Degree in IT" },
     org: 'National University of Mongolia (NUM-MTES)',
     period: '2024 — одоо / Present',
     description: {
