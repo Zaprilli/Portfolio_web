@@ -83,7 +83,7 @@ export default function Navbar() {
             </svg>
           </span>
           <span className="hidden sm:inline">
-            mrgd06
+            mrgd06<span className="text-brand-400">@</span>portfolio
           </span>
         </button>
 
