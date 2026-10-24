@@ -32,6 +32,19 @@ export default function Interests() {
                 <p className="text-sm font-medium text-slate-300 transition group-hover:text-white">
                   {item[lang]}
                 </p>
+                {item.subs && (
+                  <ul className="space-y-1 text-left">
+                    {item.subs.map((sub) => (
+                      <li
+                        key={sub.en}
+                        className="flex items-start gap-1.5 text-xs leading-relaxed text-slate-500 transition group-hover:text-slate-400"
+                      >
+                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-400/70" />
+                        {sub[lang]}
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 {item.href && (
                   <span className="inline-flex items-center gap-1 font-mono text-[11px] text-brand-400 transition group-hover:text-brand-300">
                     {new URL(item.href).hostname.replace(/^www\./, '')}

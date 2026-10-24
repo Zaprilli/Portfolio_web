@@ -87,7 +87,7 @@ export interface Content {
   interestsSection: {
     heading: { mn: string; en: string };
     subheading: { mn: string; en: string };
-    items: { mn: string; en: string; href?: string }[];
+    items: { mn: string; en: string; href?: string; subs?: { mn: string; en: string }[] }[];
   };
   contactSection: {
     heading: { mn: string; en: string };
@@ -198,7 +198,15 @@ export const content: Content = {
       en: 'Time spent away from the keyboard.',
     },
     items: [
-      { mn: 'Техник угсаралт ба дотфайл', en: 'Hardware Assembly & Dotfiles' },
+      {
+        mn: 'Техник угсаралт',
+        en: 'Hardware Assembly',
+        subs: [
+          { mn: 'Notebook задлалт, засвар', en: 'Laptop teardown & repair' },
+          { mn: 'Микроскоптой шинжилгээ, наалдуулалт', en: 'Microscope inspection & soldering' },
+          { mn: 'PC бүрэлдэхүүн хэсгийн шинжилгээ', en: 'PC component diagnostics' },
+        ],
+      },
       { mn: 'Оюун ухааны puzzle тоглоом (TETR.IO, Sudoku)', en: 'Puzzle & IQ Games (TETR.IO, Sudoku)', href: 'https://ch.tetr.io/u/mrgd06' },
       { mn: 'Тоглоом хөгжүүлэлт (itch.io)', en: 'Game Dev (itch.io)', href: 'https://mrgd06.itch.io/' },
       { mn: 'Спорт — ууланд алхалт, сагс, волейбол, фитнес', en: 'Sport — Mountain Hiking, Basketball, Volleyball & Fitness' },
