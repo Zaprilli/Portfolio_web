@@ -86,7 +86,7 @@ export default function Achievements() {
               {'// '}
               {lang === 'mn' ? 'CTF дүн шинжилгээ' : 'CTF track record'}
             </p>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {ctfLinks.map((link) => (
                 <motion.a
                   key={link.href}

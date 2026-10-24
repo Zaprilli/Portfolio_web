@@ -304,6 +304,11 @@ export const ctfLinks: CtfLink[] = [
     note: { mn: '161 багаас Топ 50 — CTFtime scoreboard', en: 'Top 50 of 161 teams — CTFtime scoreboard' },
   },
   {
+    label: 'Hack The Box — @xinn',
+    href: 'https://app.hackthebox.com/users/xinn',
+    note: { mn: 'Starting Point, машинууд ба flag-ууд', en: 'Starting Point, machines and flags' },
+  },
+  {
     label: 'CTF.mn — xinn06',
     href: 'https://ctf.mn/user/xinn06',
     note: { mn: 'Хувийн профайл: оролцсон тэмцээнүүд, оноо', en: 'Personal profile: events and scores' },
