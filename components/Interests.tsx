@@ -6,7 +6,7 @@ import { Icon } from './icons';
 import { useLang } from '@/lib/lang-context';
 import { content } from '@/lib/content';
 
-const interestIcons = ['cpu', 'footprints', 'puzzle', 'activity'];
+const interestIcons = ['cpu', 'footprints', 'mountain', 'puzzle', 'dumbbell'];
 
 export default function Interests() {
   const { lang } = useLang();
@@ -17,7 +17,7 @@ export default function Interests() {
       <div className="section-shell">
         <SectionHeading titleKey="interestsSection" subtitleKey="interestsSection" />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
             <Reveal key={item.en} delay={i * 0.08}>
               <motion.div

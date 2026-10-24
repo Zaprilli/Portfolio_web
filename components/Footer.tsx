@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="section-shell flex flex-col items-center justify-between gap-6 py-8 sm:flex-row">
         <div className="text-center sm:text-left">
           <p className="font-mono text-sm text-white">
-            margad<span className="text-brand-400">@</span>portfolio
+            xinn06<span className="text-brand-400">@</span>portfolio
           </p>
           <p className="mt-1 text-xs text-slate-500">
             © {new Date().getFullYear()} Margad-Erdene Byambabasan. {content.footer.rights[lang]}

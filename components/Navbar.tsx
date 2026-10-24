@@ -11,7 +11,6 @@ const links = [
   { id: 'home', key: 'home' as const },
   { id: 'achievements', key: 'achievements' as const },
   { id: 'skills', key: 'skills' as const },
-  { id: 'projects', key: 'projects' as const },
   { id: 'experience', key: 'experience' as const },
   { id: 'contact', key: 'contact' as const },
 ];

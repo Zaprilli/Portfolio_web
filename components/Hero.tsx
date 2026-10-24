@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Download, FolderGit2, Mail, Target } from 'lucide-react';
+import { Download, Mail, Target } from 'lucide-react';
 import { useLang } from '@/lib/lang-context';
 import { content } from '@/lib/content';
 
@@ -130,15 +130,6 @@ export default function Hero() {
               <Mail className="h-4 w-4" strokeWidth={2} />
               {c.ctaContact[lang]}
             </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.96 }}
-              onClick={() => go('projects')}
-              className="inline-flex items-center gap-2 rounded-xl border border-brand-400/30 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-brand-200 backdrop-blur transition hover:border-brand-300/60 hover:shadow-glow"
-            >
-              <FolderGit2 className="h-4 w-4" strokeWidth={2} />
-              {c.ctaProjects[lang]}
-            </motion.button>
             <motion.a
               href={cvHref}
               target="_blank"
@@ -205,7 +196,7 @@ export default function Hero() {
           >
             <div className="mb-3 flex items-center gap-2 border-b border-white/10 pb-2.5">
               <span className="h-2.5 w-2.5 rounded-full bg-brand-400/70" />
-              <span className="text-[11px] text-slate-500">margad@portfolio:~</span>
+              <span className="text-[11px] text-slate-500">xinn06@portfolio:~</span>
             </div>
             <div className="space-y-1.5 text-slate-300">
               <p>

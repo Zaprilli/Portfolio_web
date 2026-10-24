@@ -6,6 +6,7 @@ import {
   Briefcase,
   Code2,
   Cpu,
+  Dumbbell,
   Flag,
   FlaskConical,
   Footprints,
@@ -14,6 +15,7 @@ import {
   Languages,
   Medal,
   Monitor,
+  Mountain,
   Puzzle,
   ShieldCheck,
   SquareTerminal,
@@ -43,6 +45,8 @@ export const iconMap: Record<string, LucideIcon> = {
   cpu: Cpu,
   footprints: Footprints,
   activity: Activity,
+  mountain: Mountain,
+  dumbbell: Dumbbell,
 };
 
 export function Icon({

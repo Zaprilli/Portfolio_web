@@ -192,9 +192,10 @@ export const content: Content = {
     },
     items: [
       { mn: 'Техник угсаралт & дотфайл', en: 'Hardware Assembly & Dotfiles' },
-      { mn: 'Night Marathon 21 км гүйлт', en: 'Night Marathon 21 km Running' },
+      { mn: 'Night Marathon 21 км гүйлт (Strava 5K Challenge)', en: 'Night Marathon 21 km Running (Strava 5K Challenge)' },
+      { mn: 'Ууланд алхалт', en: 'Mountain Hiking' },
       { mn: 'Оюун ухааны puzzle тоглоом (TETR.IO, Sudoku)', en: 'Puzzle & IQ Games (TETR.IO, Sudoku)' },
-      { mn: 'Урт зайн гүйлт (Strava 5K Challenge)', en: 'Long-distance Running (Strava 5K Challenge)' },
+      { mn: 'Волейбол & биеийн тамир', en: 'Volleyball & Fitness' },
     ],
   },
   contactSection: {

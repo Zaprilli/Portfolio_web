@@ -2,7 +2,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Achievements from '@/components/Achievements';
 import Skills from '@/components/Skills';
-import Projects from '@/components/Projects';
 import Experience from '@/components/Experience';
 import Interests from '@/components/Interests';
 import Contact from '@/components/Contact';
@@ -15,7 +14,6 @@ export default function Home() {
       <Hero />
       <Achievements />
       <Skills />
-      <Projects />
       <Experience />
       <Interests />
       <Contact />
