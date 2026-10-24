@@ -271,10 +271,11 @@ export const achievements: Achievement[] = [
     icon: 'medal',
   },
   {
-    event: 'HackerRank — Basic SQL',
-    detail: { mn: 'SQL үндсэн сертификат', en: 'Basic SQL Certification' },
+    event: 'HackerRank Profile',
+    detail: { mn: 'SQL, problem solving болон бусад баталгаажуулалтууд', en: 'SQL, problem solving and other certifications' },
     year: '2024',
     icon: 'award',
+    href: 'https://www.hackerrank.com/profile/velectro0426',
   },
   {
     event: 'English B2',
