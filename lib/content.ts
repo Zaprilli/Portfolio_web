@@ -125,8 +125,8 @@ export const content: Content = {
       en: 'Margad-Erdene Byambabasan | Information Technology Student -> who wanna be a Cybersecurity Specialist',
     },
     description: {
-      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдлын чиглэлээр гүнзгий сонирхдог бөгөөд CTF тэмцээнүүд, системийн аюулгүй байдал, пентестинд чиглэн ажилладаг. Linux, Windows зэрэг олон үйлдлийн систем дээр ажиллах дуртай.',
-      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Linux, Windows).',
+      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдлын чиглэлээр гүнзгий сонирхдог бөгөөд CTF тэмцээнүүд, пентестинд чиглэн ажилладаг. Системийн аюулгүй байдалд сонирхолтой, Linux, Windows зэрэг олон үйлдлийн систем дээр ажиллах чадвартай.',
+      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs and pentesting. Interested in system security and skilled at working with various operating systems (Linux, Windows).',
     },
   },
   nav: {
@@ -143,8 +143,8 @@ export const content: Content = {
     name: { mn: 'Маргад-Эрдэнэ Бямбабасан', en: 'Margad-Erdene Byambabasan' },
     title: { mn: 'Кибер аюулгүй байдлын мэргэжилтэн болох хүсэлтэй мэдээллийн технологийн оюутан', en: 'IT Student & who wanna be a Cybersecurity Specialist' },
     bio: {
-      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдлын чиглэлээр гүнзгий сонирхдог бөгөөд CTF тэмцээнүүд, системийн аюулгүй байдал, пентестинд чиглэн ажилладаг. Linux, Windows зэрэг олон үйлдлийн систем дээр ажиллах дуртай.',
-      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Linux, Windows, macOS).',
+      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдлын чиглэлээр гүнзгий сонирхдог бөгөөд CTF тэмцээнүүд, пентестинд чиглэн ажилладаг. Системийн аюулгүй байдалд сонирхолтой, Linux, Windows зэрэг олон үйлдлийн систем дээр ажиллах чадвартай.',
+      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs and pentesting. Interested in system security and skilled at working with various operating systems (Linux, Windows, macOS).',
     },
     ctaContact: { mn: 'Холбоо барих', en: 'Get in touch' },
     ctaProjects: { mn: 'Төслүүд үзэх', en: 'View projects' },
