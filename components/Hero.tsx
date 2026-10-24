@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Download, Mail, Target } from 'lucide-react';
 import { useLang } from '@/lib/lang-context';
-import { content } from '@/lib/content';
+import { content, skillCategories } from '@/lib/content';
 
 function useTypewriter(text: string, speed = 45, startDelay = 400) {
   const [out, setOut] = useState('');
@@ -196,18 +196,21 @@ export default function Hero() {
           >
             <div className="mb-3 flex items-center gap-2 border-b border-white/10 pb-2.5">
               <span className="h-2.5 w-2.5 rounded-full bg-brand-400/70" />
-              <span className="text-[11px] text-slate-500">xinn06@portfolio:~</span>
+              <span className="text-[11px] text-slate-500">mrgd06@portfolio:~</span>
             </div>
             <div className="space-y-1.5 text-slate-300">
               <p>
                 <span className="text-brand-400">$</span> whoami
               </p>
-              <p className="text-accent-300">{lang === 'mn' ? 'маргад-эрдэнэ' : 'margad-erdene'}</p>
+              <p className="text-accent-300">{lang === 'mn' ? 'Маргад-Эрдэнэ' : 'Margad-Erdene'}</p>
               <p>
-                <span className="text-brand-400">$</span> cat stack.txt
+                <span className="text-brand-400">$</span> cat skills.txt
               </p>
-              <p className="text-slate-400">Linux distros · C · Python · TypeScript</p>
-              <p className="text-slate-400">Next.js · React · SQL</p>
+              {skillCategories.map((cat) => (
+                <p key={cat.category.en} className="break-words leading-relaxed text-slate-400">
+                  {cat.items.join(' · ')}
+                </p>
+              ))}
               <p>
                 <span className="text-brand-400">$</span>{' '}
                 <span className="inline-block h-3.5 w-2 animate-pulse bg-brand-400 align-middle" />
