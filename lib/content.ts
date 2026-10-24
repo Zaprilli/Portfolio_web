@@ -106,6 +106,10 @@ export interface Content {
     ctfInvite: { mn: string; en: string };
     disclaimer: { mn: string; en: string };
     sideNote: { mn: string; en: string };
+    services: {
+      heading: { mn: string; en: string };
+      items: { mn: string; en: string }[];
+    };
   };
   footer: {
     rights: { mn: string; en: string };
@@ -239,6 +243,15 @@ export const content: Content = {
     sideNote: {
       mn: 'Хариу авахын тулд имэйлээ үлдээнэ үү. Бүх холбоосууд аюулгүй байдлаар нээгдэнэ.',
       en: 'Leave your email for a reply. All links open securely.',
+    },
+    services: {
+      heading: { mn: 'Фриланс үйлчилгээ', en: 'Freelance services' },
+      items: [
+        { mn: 'Захиалгат PC угсралт, Windows/Linux тохиргоо', en: 'Custom PC build & Windows/Linux setup' },
+        { mn: 'Системийн аюулгүй байдлын хатуужилт', en: 'System security hardening' },
+        { mn: 'Веб хөгжүүлэлт (Next.js, React)', en: 'Web development (Next.js, React)' },
+        { mn: 'Алсын зайны техникийн дэмжлэг', en: 'Remote tech support (AnyDesk)' },
+      ],
     },
   },
   footer: {

@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Download, Send, Target, UserRound } from 'lucide-react';
+import { Briefcase, Download, Send, Target, UserRound } from 'lucide-react';
 import SectionHeading, { Reveal } from './SectionHeading';
 import { SocialRow } from './Socials';
 import { useLang } from '@/lib/lang-context';
@@ -79,6 +79,24 @@ export default function Contact() {
                   <Target className="mt-0.5 h-3.5 w-3.5 shrink-0" />
                   {cs.ctfInvite[lang]}
                 </p>
+              </div>
+
+              <div>
+                <p className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-slate-500">
+                  <Briefcase className="h-3.5 w-3.5" />
+                  {cs.services.heading[lang]}
+                </p>
+                <ul className="space-y-2">
+                  {cs.services.items.map((item) => (
+                    <li
+                      key={item.en}
+                      className="flex items-start gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-xs leading-relaxed text-slate-300"
+                    >
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400" />
+                      {item[lang]}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div>
