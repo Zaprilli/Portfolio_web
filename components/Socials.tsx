@@ -23,6 +23,30 @@ export const socials: Social[] = [
     ),
   },
   {
+    label: 'HackerRank',
+    href: 'https://www.hackerrank.com/profile/velectro0426',
+    icon: (
+      <svg className={glyph} viewBox="0 0 24 24" fill="none" stroke="#00EA64" strokeWidth="1.8" aria-hidden>
+        <rect x="2" y="2" width="20" height="20" rx="4" />
+        <path
+          d="M8 8 4.5 12 8 16M16 8l3.5 4L16 16M13.2 7l-2.4 10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    label: 'Hack The Box',
+    href: 'https://app.hackthebox.com/users/xinn',
+    icon: (
+      <svg className={glyph} viewBox="0 0 24 24" fill="none" stroke="#9FEF00" strokeWidth="1.8" aria-hidden>
+        <path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5v-6L12 2.5Z" strokeLinejoin="round" />
+        <path d="M9.5 8.5v5M14.5 8.5v5M9.5 11h5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
     label: 'Facebook',
     href: 'https://www.facebook.com/mrgd.rdn06',
     icon: (

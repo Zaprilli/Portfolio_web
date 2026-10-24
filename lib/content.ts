@@ -86,7 +86,7 @@ export interface Content {
   interestsSection: {
     heading: { mn: string; en: string };
     subheading: { mn: string; en: string };
-    items: { mn: string; en: string }[];
+    items: { mn: string; en: string; href?: string }[];
   };
   contactSection: {
     heading: { mn: string; en: string };
@@ -192,9 +192,8 @@ export const content: Content = {
     },
     items: [
       { mn: 'Техник угсаралт & дотфайл', en: 'Hardware Assembly & Dotfiles' },
-      { mn: 'Night Marathon 21 км гүйлт (Strava 5K Challenge)', en: 'Night Marathon 21 km Running (Strava 5K Challenge)' },
       { mn: 'Ууланд алхалт', en: 'Mountain Hiking' },
-      { mn: 'Оюун ухааны puzzle тоглоом (TETR.IO, Sudoku)', en: 'Puzzle & IQ Games (TETR.IO, Sudoku)' },
+      { mn: 'Оюун ухааны puzzle тоглоом (TETR.IO, Sudoku)', en: 'Puzzle & IQ Games (TETR.IO, Sudoku)', href: 'https://ch.tetr.io/u/mrgd06' },
       { mn: 'Волейбол & биеийн тамир', en: 'Volleyball & Fitness' },
     ],
   },
@@ -266,17 +265,18 @@ export const achievements: Achievement[] = [
     icon: 'flask',
   },
   {
-    event: 'Night Marathon 2026 — 21 км',
-    detail: { mn: 'Улаанбаатар Night Marathon — Finisher, чипын цаг 2:09:44', en: 'Ulaanbaatar Night Marathon — Finisher, chip time 2:09:44' },
-    year: '2026',
-    icon: 'medal',
-  },
-  {
     event: 'HackerRank Profile',
     detail: { mn: 'SQL, problem solving болон бусад баталгаажуулалтууд', en: 'SQL, problem solving and other certifications' },
     year: '2024',
     icon: 'award',
     href: 'https://www.hackerrank.com/profile/velectro0426',
+  },
+  {
+    event: 'Hack The Box Profile',
+    detail: { mn: 'Machines, сорилтууд болон cyber lab-ууд', en: 'Machines, challenges and cyber labs' },
+    year: '2025',
+    icon: 'shield-check',
+    href: 'https://app.hackthebox.com/users/xinn',
   },
   {
     event: 'English B2',
