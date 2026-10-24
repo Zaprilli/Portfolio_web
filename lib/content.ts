@@ -280,6 +280,7 @@ export const achievements: Achievement[] = [
     detail: { mn: 'STEM — 3-р байр', en: 'STEM — 3rd Place' },
     year: '2025',
     icon: 'flask',
+    href: 'https://www.facebook.com/share/p/1GWYG9N7NX/',
   },
   {
     event: 'English B2',
