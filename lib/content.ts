@@ -457,7 +457,7 @@ export const timeline: TimelineItem[] = [
     type: 'service',
   },
   {
-    role: { mn: 'HackerRank — SQL & бодлогын шийдэл', en: 'HackerRank — SQL & Problem Solving' },
+    role: { mn: 'HackerRank — Кибер аюулгүй байдал', en: 'HackerRank — Cybersecurity' },
     org: { mn: 'HackerRank', en: 'HackerRank' },
     period: '2024 — одоо',
     description: {
