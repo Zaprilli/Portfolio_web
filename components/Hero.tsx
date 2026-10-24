@@ -207,18 +207,23 @@ export default function Hero() {
             </div>
             <div className="space-y-1.5 text-slate-300">
               <p>
-                <span className="text-brand-400">$</span> whoami
+                <span className="text-brand-400">$</span> cat whoami
               </p>
               <p className="text-accent-300">{c.shortName[lang]}</p>
-              <p>
+              <p className="pt-1">
                 <span className="text-brand-400">$</span> cat skills.txt
               </p>
-              {skillCategories.map((cat) => (
-                <p key={cat.category.en} className="break-words leading-relaxed text-slate-400">
-                  {cat.items.join(' · ')}
-                </p>
-              ))}
-              <p>
+              <div className="space-y-1.5">
+                {skillCategories.map((cat) => (
+                  <div key={cat.category.en}>
+                    <p className="text-brand-400/70"># {cat.category[lang]}</p>
+                    <p className="break-words leading-relaxed text-slate-400">
+                      {cat.items.join(' · ')}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="pt-1">
                 <span className="text-brand-400">$</span>{' '}
                 <span className="inline-block h-3.5 w-2 animate-pulse bg-brand-400 align-middle" />
               </p>
