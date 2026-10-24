@@ -205,6 +205,7 @@ export const content: Content = {
           { mn: 'Notebook задлалт, засвар', en: 'Laptop teardown & repair' },
           { mn: 'Микроскоптой шинжилгээ, наалдуулалт', en: 'Microscope inspection & soldering' },
           { mn: 'PC бүрэлдэхүүн хэсгийн шинжилгээ', en: 'PC component diagnostics' },
+          { mn: 'Машин модификаци', en: 'Car modification' },
         ],
       },
       { mn: 'Оюун ухааны puzzle тоглоом (TETR.IO, Sudoku)', en: 'Puzzle & IQ Games (TETR.IO, Sudoku)', href: 'https://ch.tetr.io/u/mrgd06' },
