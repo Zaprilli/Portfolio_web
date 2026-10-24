@@ -124,8 +124,8 @@ export const content: Content = {
       en: 'Margad-Erdene Byambabasan | Information Technology Student -> who wanna be a Cybersecurity Specialist',
     },
     description: {
-      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Мэдээллийн аюулгүй байдал чиглэлээр сонирхолтой — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Arch Linux, Windows) ажилладаг.',
-      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Arch Linux, Windows).',
+      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Мэдээллийн аюулгүй байдал чиглэлээр сонирхолтой — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Linux, Windows) ажилладаг.',
+      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Linux distros, Windows).',
     },
   },
   nav: {

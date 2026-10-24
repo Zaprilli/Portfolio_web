@@ -7,7 +7,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Margad-Erdene Byambabasan | IT Student & Cybersecurity Specialist',
   description:
-    'Third-year Information Technology student passionate about cybersecurity — CTFs, system security and pentesting. Works with Arch Linux, Windows and other Linux distros.',
+    'Third-year Information Technology student passionate about cybersecurity — CTFs, system security and pentesting. Works with Linux distros, Windows and macOS.',
   keywords: [
     'Margad-Erdene Byambabasan',
     'Cybersecurity',
