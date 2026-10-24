@@ -38,7 +38,7 @@ export const socials: Social[] = [
   },
   {
     label: 'Hack The Box',
-    href: 'https://app.hackthebox.com/users/xinn',
+    href: 'https://profile.hackthebox.com/profile/019d6023-1bdb-7117-88c6-fcaafe00de4a',
     icon: (
       <svg className={glyph} viewBox="0 0 24 24" fill="none" stroke="#9FEF00" strokeWidth="1.8" aria-hidden>
         <path d="M12 2.5 4.5 5.5v6c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5v-6L12 2.5Z" strokeLinejoin="round" />

@@ -283,7 +283,7 @@ export const achievements: Achievement[] = [
     detail: { mn: 'Machines, сорилтууд болон cyber lab-ууд', en: 'Machines, challenges and cyber labs' },
     year: '2025',
     icon: 'shield-check',
-    href: 'https://app.hackthebox.com/users/xinn',
+    href: 'https://profile.hackthebox.com/profile/019d6023-1bdb-7117-88c6-fcaafe00de4a',
   },
   {
     event: 'English B2',
@@ -313,7 +313,7 @@ export const ctfLinks: CtfLink[] = [
   },
   {
     label: 'Hack The Box — @xinn',
-    href: 'https://app.hackthebox.com/users/xinn',
+    href: 'https://profile.hackthebox.com/profile/019d6023-1bdb-7117-88c6-fcaafe00de4a',
     note: { mn: 'Starting Point, машинууд ба flag-ууд', en: 'Starting Point, machines and flags' },
   },
   {
