@@ -138,7 +138,7 @@ export const content: Content = {
     name: { mn: 'Маргад-Эрдэнэ Бямбабаасан', en: 'Margad-Erdene Byambabasan' },
     title: { mn: 'IT Сурагч — Кибер Аюулгүй Байдлын Мэргэжилтэн болохыг хүсэж буй', en: 'IT Student & who wanna be a Cybersecurity Specialist' },
     bio: {
-      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдалд ихээр сонирхдог — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Linux, Windows) ажилладаг.',
+      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдлын чиглэлээр онцлон сонирхдог — CTF тэмцээнүүд, системийн аюулгүй байдал, пентестинг. Мөн олон төрлийн үйлдлийн системтэй (Linux, Windows) ажилладаг.',
       en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Arch Linux, Windows, macOS).',
     },
     ctaContact: { mn: 'Холбоо барих', en: 'Get in touch' },
@@ -424,7 +424,7 @@ export const timeline: TimelineItem[] = [
     type: 'education',
   },
   {
-    role: { mn: 'Цэргийн алба (013-р Сигналын Батальон)', en: 'Military Service (013th Signal Battalion)' },
+    role: { mn: 'Цэргийн алба (Холбооны 013)', en: 'Military Service (Signal Unit 013)' },
     org: 'Mongolian Armed Forces',
     period: '2025',
     description: {
