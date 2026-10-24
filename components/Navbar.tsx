@@ -1,0 +1,164 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useLang } from '@/lib/lang-context';
+import { content } from '@/lib/content';
+
+const links = [
+  { id: 'home', key: 'home' as const },
+  { id: 'achievements', key: 'achievements' as const },
+  { id: 'skills', key: 'skills' as const },
+  { id: 'projects', key: 'projects' as const },
+  { id: 'experience', key: 'experience' as const },
+  { id: 'contact', key: 'contact' as const },
+];
+
+export default function Navbar() {
+  const { lang, toggleLang } = useLang();
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState('home');
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px' }
+    );
+    links.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  const go = (id: string) => {
+    setOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  return (
+    <motion.header
+      initial={{ y: -72, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'border-b border-cyan-400/10 bg-abyss/80 shadow-glow backdrop-blur-xl'
+          : 'border-b border-transparent bg-transparent'
+      }`}
+    >
+      <nav className="section-shell flex h-16 items-center justify-between">
+        <button
+          onClick={() => go('home')}
+          className="group flex items-center gap-2 font-mono text-sm font-semibold text-white"
+          aria-label={content.nav.home[lang]}
+        >
+          <span className="grid h-8 w-8 place-items-center rounded-lg border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 transition group-hover:shadow-glow-strong">
+            M
+          </span>
+          <span className="hidden sm:inline">
+            margad<span className="text-cyan-400">@</span>dev
+          </span>
+        </button>
+
+        <ul className="hidden items-center gap-1 lg:flex">
+          {links.map(({ id, key }) => (
+            <li key={id}>
+              <button
+                onClick={() => go(id)}
+                className={`relative rounded-lg px-3 py-2 text-sm transition-colors ${
+                  active === id ? 'text-cyan-300' : 'text-slate-400 hover:text-white'
+                }`}
+              >
+                {content.nav[key][lang]}
+                {active === id && (
+                  <motion.span
+                    layoutId="nav-underline"
+                    className="absolute inset-x-3 -bottom-0.5 h-px bg-cyan-400"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </button>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex items-center gap-2">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.94 }}
+            onClick={toggleLang}
+            aria-label="Toggle language MN / EN"
+            className="rounded-lg border border-cyan-400/25 bg-cyan-400/10 px-3 py-1.5 font-mono text-xs font-semibold tracking-widest text-cyan-300 transition hover:border-cyan-300/60 hover:shadow-glow"
+          >
+            {lang === 'mn' ? 'EN' : 'MN'}
+            <span className="ml-1.5 text-cyan-500/60">{lang === 'mn' ? '🇲🇳' : '🇬🇧'}</span>
+          </motion.button>
+
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+            className="grid h-9 w-9 place-items-center rounded-lg border border-cyan-400/20 text-cyan-300 lg:hidden"
+          >
+            <span className="relative block h-3.5 w-4">
+              <span
+                className={`absolute left-0 h-0.5 w-full bg-current transition ${open ? 'top-1.5 rotate-45' : 'top-0'}`}
+              />
+              <span
+                className={`absolute left-0 top-1.5 h-0.5 w-full bg-current transition ${open ? 'opacity-0' : 'opacity-100'}`}
+              />
+              <span
+                className={`absolute left-0 h-0.5 w-full bg-current transition ${open ? 'top-1.5 -rotate-45' : 'top-3'}`}
+              />
+            </span>
+          </button>
+        </div>
+      </nav>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-cyan-400/10 bg-abyss/95 backdrop-blur-xl lg:hidden"
+          >
+            <ul className="section-shell flex flex-col gap-1 py-4">
+              {links.map(({ id, key }, i) => (
+                <motion.li
+                  key={id}
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <button
+                    onClick={() => go(id)}
+                    className={`w-full rounded-lg px-3 py-2.5 text-left text-sm transition ${
+                      active === id ? 'bg-cyan-400/10 text-cyan-300' : 'text-slate-300 hover:bg-white/5'
+                    }`}
+                  >
+                    {content.nav[key][lang]}
+                  </button>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
+  );
+}
