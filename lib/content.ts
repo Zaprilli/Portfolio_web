@@ -195,7 +195,7 @@ export const content: Content = {
     items: [
       { mn: 'Техник угсаралт ба дотфайл', en: 'Hardware Assembly & Dotfiles' },
       { mn: 'Оюун ухааны puzzle тоглоом (TETR.IO, Sudoku)', en: 'Puzzle & IQ Games (TETR.IO, Sudoku)', href: 'https://ch.tetr.io/u/mrgd06' },
-      { mn: 'Гейм хөгжүүлэлт (itch.io)', en: 'Game Dev (itch.io)', href: 'https://mrgd06.itch.io/' },
+      { mn: 'Тоглоом хөгжүүлэлт (itch.io)', en: 'Game Dev (itch.io)', href: 'https://mrgd06.itch.io/' },
       { mn: 'Спорт — ууланд алхалт, сагс, волейбол, фитнес', en: 'Sport — Mountain Hiking, Basketball, Volleyball & Fitness' },
     ],
   },
