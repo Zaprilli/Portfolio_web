@@ -100,7 +100,7 @@ export default function Hero() {
             key={lang}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="typed-caret mt-5 min-h-[4.5rem] font-mono text-base text-brand-300/90 sm:min-h-[4rem] sm:text-lg lg:min-h-[3.5rem]"
+            className="typed-caret mt-5 min-h-[5rem] font-mono text-base text-brand-300/90 sm:min-h-[4rem] sm:text-lg lg:min-h-[3.5rem]"
           >
             {'> '}
             {typedTitle}
