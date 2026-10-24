@@ -438,7 +438,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     role: { mn: 'Бакалаврын зэрэг (мэдээллийн технологи)', en: "Bachelor's Degree in IT" },
-    org: { mn: 'Үндэсний Их Сургууль, МТЭС', en: 'National University of Mongolia (NUM-MTES)' },
+    org: { mn: 'Монгол Улсын Их Сургууль, МТЭС', en: 'National University of Mongolia (NUM-MTES)' },
     period: '2024 — одоо / Present',
     description: {
       mn: 'Мэдээллийн технологийн чиглэлээр суралцаж байна. Системийн аюулгүй байдал, програмчлал, веб хөгжүүлэлтэнд төвлөрч байна.',
