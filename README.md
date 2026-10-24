@@ -1,145 +1,101 @@
-# Portfolio_web
+# Margad-Erdene Byambabasan — Portfolio
 
-Bilingual (Mongolian / English) personal portfolio frontend for Margad-Erdene Byambabasan — IT student and cybersecurity specialist.
+Монгол / Англи хэлтэй, Next.js 14 App Router дээр бүтээгдсэн хувийн portfolio сайт. IT-ийн оюутан, кибер аюулгүй байдлын чиглэлээр суралцаж буй Margad-Erdene Byambabasan-ы танилцуулга, туршлага, ур чадвар болон төслүүдийг харуулна.
 
-Stack: Next.js 14 (App Router), TypeScript, Tailwind CSS, Framer Motion, lucide-react.
+**Live:** https://zaprilli.github.io/Portfolio_web/
 
----
+## Сайтын боломжууд
 
-## Local setup
+- Монгол, Англи хэлний сонголт; сонголтыг browser-ийн `localStorage`-д хадгална.
+- Ногоон болон нил ягаан өнгийн theme; theme-ийг дахин нээхэд санана.
+- Responsive navigation, гар утасны цэс, нэг хуудсан доторх хэсгүүд рүү шилжих холбоосууд.
+- Танилцуулга, profile зураг, CV татах холбоос.
+- Амжилт, CTF тэмцээн, ур чадварын ангилал болон хөдөлгөөнт skill marquee.
+- Боловсрол, ажил, үйлчилгээний туршлагын timeline; сонирхол болон төслүүд.
+- Холбоо барих хэсэгт и-мэйл болон нийгмийн сүлжээний холбоосууд, CV.
+- Framer Motion animation, scroll-to-top товч, хөдөлгөөнийг багасгах системийн тохиргоог дагах.
+- GitHub Pages-д зориулсан статик экспорт болон push хийхэд автоматаар deploy хийх GitHub Actions workflow.
 
-Requirements: Node.js 18.17+ (20 LTS recommended) and npm 9+. Verify with `node -v` and `npm -v`.
+## Ашигласан технологи
+
+Next.js 14, React 18, TypeScript, Tailwind CSS, Framer Motion, lucide-react.
+
+## Компьютер дээр ажиллуулах
+
+Шаардлага: Node.js 18.17 ба түүнээс дээш (Node.js 20 LTS санал болгож байна), npm 9 ба түүнээс дээш.
 
 ```bash
 git clone https://github.com/Zaprilli/Portfolio_web.git
 cd Portfolio_web
-npm install
-```
-
-### Development
-
-```bash
+npm ci
 npm run dev
 ```
 
-Open http://localhost:3000.
+Дараа нь [http://localhost:3000](http://localhost:3000) хаягийг browser дээр нээнэ. Хөгжүүлэлтийн сервер код өөрчлөгдөх бүрд хуудсыг автоматаар шинэчилнэ.
 
-### Production
+Production хувилбарыг локал компьютер дээр шалгахдаа:
 
 ```bash
 npm run build
 npm run start
 ```
 
-`npm run start` must be preceded by `npm run build`.
+`npm run start` ажиллуулахын өмнө `npm run build` заавал ажиллуулна.
 
-### Available scripts
+## GitHub Pages дээр нийтлэх
 
-| Script | Purpose |
-| --- | --- |
-| `npm run dev` | Development server with hot reload |
-| `npm run build` | Production build |
-| `npm run start` | Serve the production build |
-| `npm run lint` | Run ESLint |
+`.github/workflows/deploy-pages.yml` нь `main` салбар руу push хийх бүрд төслийг build хийгээд GitHub Pages руу нийтэлнэ. Гар ажиллагаагаар эхлүүлэхэд GitHub repository-ийн **Actions** табаас **Deploy portfolio to GitHub Pages** workflow-г сонгон **Run workflow** дарна.
 
----
+Repository дээр эхний удаа Pages-ийг асаах:
 
-## Project structure
+1. GitHub repository-ийн **Settings → Pages** хэсгийг нээнэ.
+2. **Build and deployment → Source** тохиргоонд **GitHub Actions** сонгоно.
+3. `main` салбар руу өөрчлөлт push хийх эсвэл workflow-г гараар эхлүүлнэ.
+4. Actions job амжилттай дууссаны дараа сайт https://zaprilli.github.io/Portfolio_web/ дээр шинэчлэгдэнэ.
 
-```
+Workflow build үед `GITHUB_PAGES=true` тохируулж, Next.js статик `out/` хувилбар болон `/Portfolio_web` суурь замыг гаргана. Ингэснээр зураг, CV, сертификат, JavaScript болон Next.js asset-ууд project URL-ийн зөв замаас ачаална. Локал development болон `next start` үндсэн домэйн зам дээр хэвийн ажиллана.
+
+## Төслийн бүтэц
+
+```text
 app/
-  layout.tsx        Root layout, metadata, providers
-  page.tsx          Page composition
-  globals.css       Tailwind base, theme variables, glass/neon utilities
+  layout.tsx        Үндсэн layout, metadata, provider-ууд, theme bootstrap
+  page.tsx          Нүүр хуудасны хэсгүүдийн дараалал
+  globals.css       Tailwind үндсэн тохиргоо, theme хувьсагч, дизайн
 components/
-  Navbar.tsx        Sticky navigation, language and theme toggles, mobile menu
-  Hero.tsx          Typewriter headline, profile card, terminal card
-  Achievements.tsx  Scroll-linked award timeline and CTF links
-  Skills.tsx        Skill categories and marquee strip
-  Projects.tsx      Project cards
-  Experience.tsx    Education, work and service timeline
-  Interests.tsx     Personal interests
-  Contact.tsx       Contact form with client-side validation
-  Footer.tsx        Social links, language and theme toggles
-  SectionHeading.tsx Shared animated heading and reveal helpers
-  Socials.tsx       Social link definitions and copy-to-clipboard Discord handle
-  icons.tsx         Name-to-icon registry (lucide-react)
+  Navbar.tsx        Navigation, хэл/theme сонголт, гар утасны цэс
+  Hero.tsx          Танилцуулга, зураг, CV болон terminal карт
+  Achievements.tsx  Амжилт, CTF холбоос, timeline
+  Skills.tsx        Ур чадварын бүлгүүд ба хөдөлгөөнт жагсаалт
+  Projects.tsx      Төслийн картууд
+  Experience.tsx    Боловсрол, ажил, үйлчилгээний timeline
+  Interests.tsx     Сонирхлууд
+  Contact.tsx       Холбоо барих хэсэг, CV холбоос
+  Footer.tsx        Доод хэсэг, нийгмийн холбоосууд
+  Socials.tsx       Нийгмийн сүлжээний холбоосын өгөгдөл
+  ScrollToTop.tsx   Хуудасны эхэнд буцах үйлдэл
 lib/
-  content.ts        All bilingual strings and structured data
-  lang-context.tsx  Language context (useLang)
-  theme-context.tsx Theme context (useTheme): green and purple accents
+  content.ts        Хоёр хэлний бүх текст болон сайтын агуулгын өгөгдөл
+  public-path.ts    GitHub Pages-ийн project суурь замтай public файлын холбоос
+  lang-context.tsx  Хэлний төлөв ба useLang hook
+  theme-context.tsx Theme-ийн төлөв ба useTheme hook
+  motion.ts         Хөдөлгөөний animation тохиргоо
 public/
-  images/           Profile photo
-  cv/               CV PDFs (Mongolian and English)
-  certificates/     Certificate PDFs
-  theme-init.js     Pre-hydration theme/lang restore (no inline script)
-next.config.js      Security HTTP headers
+  images/           Profile зураг
+  cv/               Монгол болон Англи CV
+  certificates/     Сертификатын PDF
+  theme-init.js     Хуудас ачаалахаас өмнө хэл/theme сэргээх скрипт
+.github/workflows/
+  deploy-pages.yml  GitHub Pages build болон deploy
+next.config.js      Next.js болон GitHub Pages тохиргоо
 ```
 
----
+## Агуулга шинэчлэх
 
-## Editing content
+Хэрэглэгчид харагдах ихэнх текст, амжилт, ур чадвар, timeline, сонирхол болон төслийн өгөгдөл `lib/content.ts` файлд байрлана. Хоёр хэлээр харуулах утгыг `mn`, `en` талбарт шинэчилнэ. Нийгмийн сүлжээний URL-уудыг `components/Socials.tsx`-оос өөрчилнө. CV, зураг болон сертификатын файлыг `public/` дотор байрлуулж, `lib/content.ts` дахь холбоосыг шинэчилнэ.
 
-Every user-facing string lives in `lib/content.ts` as `{ mn: string; en: string }` pairs. Structured data (achievements, skills, projects, timeline, CTF links) is exported from the same file.
+Шинэчлэлтээ `main` салбар руу push хийхэд GitHub Actions Pages хувилбарыг автоматаар build хийнэ.
 
-```ts
-export const content = {
-  hero: {
-    title: {
-      mn: 'IT Сурагч & Кибер Аюулгүй Байдлын Мэргэжилтэн',
-      en: 'IT Student & Cybersecurity Specialist',
-    },
-  },
-};
-```
+## Холбоо барих хэсгийн тухай
 
-The language toggle in the navigation bar persists the choice in `localStorage`. The dictionary can later be handed to an i18n library or an API without restructuring the components.
-
----
-
-## Theming
-
-Two accent themes are defined as CSS custom properties in `app/globals.css`:
-
-- `green` — neon green accent (default)
-- `purple` — violet/pink accent
-
-The active theme is stored in `localStorage` under `portfolio-theme` and applied through `data-theme` on the document element. `public/theme-init.js` restores it before hydration to avoid a flash of the wrong theme. The toggle button lives in the navbar and the footer.
-
----
-
-## Security
-
-`next.config.js` applies the following headers to every route:
-
-- `Content-Security-Policy` (default-src 'self'; frame-ancestors 'none'; object-src 'none'; ...)
-- `X-Frame-Options: DENY`
-- `X-Content-Type-Options: nosniff`
-- `Referrer-Policy: strict-origin-when-cross-origin`
-- `Strict-Transport-Security`
-- `Permissions-Policy: camera=(), microphone=(), geolocation=()`
-
-Additional rules followed throughout the codebase:
-
-- Every external link (`target="_blank"`) carries `rel="noopener noreferrer"`.
-- No user-supplied `dangerouslySetInnerHTML`.
-- The theme bootstrap is a static external script (`public/theme-init.js`), not an inline payload.
-- The contact form performs client-side validation only and is ready for a future API endpoint.
-- No personal contact data beyond what is deliberately published (social links, Discord handle).
-
----
-
-## Content and asset sources
-
-- Bilingual copy, achievements, skills, projects and timeline entries are maintained in `lib/content.ts`.
-- CV and certificate PDFs are served from `public/` and referenced with explicit links.
-- Third-party code or repositories are never presented as personal work; project entries correspond to repositories owned by the author.
-
----
-
-## Roadmap
-
-- [ ] Connect the contact form to an API or email service
-- [ ] Replace placeholder project links with canonical repository URLs
-- [ ] Optional: migrate the dictionary to an i18n library
-- [ ] Optional: light theme
+Одоогийн Contact хэсэг нь CV болон нийгмийн холбоосуудыг харуулдаг. Холбоо барих форм API эсвэл и-мэйл үйлчилгээтэй холбогдоогүй байгаа тул мэдээлэл сервер рүү илгээдэггүй.

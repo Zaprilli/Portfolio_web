@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { publicPath } from '@/lib/public-path';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Download, Mail, Target } from 'lucide-react';
 import { useLang } from '@/lib/lang-context';
@@ -193,7 +194,7 @@ export default function Hero() {
           >
             <div className="relative overflow-hidden rounded-[1.15rem]">
               <Image
-                src="/images/profile.jpg"
+                src={publicPath('/images/profile.jpg')}
                 alt="Margad-Erdene Byambabasan"
                 width={640}
                 height={830}

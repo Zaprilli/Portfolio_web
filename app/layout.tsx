@@ -5,6 +5,7 @@ import { LangProvider } from '@/lib/lang-context';
 import { ThemeProvider } from '@/lib/theme-context';
 import ScrollToTop from '@/components/ScrollToTop';
 import './globals.css';
+import { publicPath } from '@/lib/public-path';
 
 export const metadata: Metadata = {
   title: 'Margad-Erdene Byambabasan | IT Student & Cybersecurity Specialist',
@@ -25,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="mn" className="dark" data-theme="green" suppressHydrationWarning>
       <body className="min-h-screen font-sans">
-        <Script src="/theme-init.js" strategy="beforeInteractive" />
+        <Script src={publicPath('/theme-init.js')} strategy="beforeInteractive" />
         <MotionConfig reducedMotion="user">
           <ThemeProvider>
             <LangProvider>

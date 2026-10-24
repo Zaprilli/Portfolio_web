@@ -1,3 +1,5 @@
+import { publicPath } from './public-path';
+
 export type Lang = 'mn' | 'en';
 
 export interface Achievement {
@@ -306,7 +308,7 @@ export const content: Content = {
   },
   langToggle: { label: 'MN / EN' },
   sectionEyebrow: { mn: 'ангилал', en: 'section' },
-  cv: { mn: '/cv/CV_Mongolia.pdf', en: '/cv/CV_English.pdf' },
+  cv: { mn: publicPath('/cv/CV_Mongolia.pdf'), en: publicPath('/cv/CV_English.pdf') },
 };
 
 export const achievements: Achievement[] = [
@@ -336,7 +338,7 @@ export const achievements: Achievement[] = [
     detail: { mn: 'Гадаад хэлний B2 түвшний гэрчилгээ', en: 'English B2 level certification' },
     year: '2022',
     icon: 'languages',
-    href: '/certificates/english-b2.pdf',
+    href: publicPath('/certificates/english-b2.pdf'),
   },
 ];
 
