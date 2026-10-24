@@ -148,7 +148,7 @@ export const content: Content = {
     ctaContact: { mn: 'Холбоо барих', en: 'Get in touch' },
     ctaProjects: { mn: 'Төслүүд үзэх', en: 'View projects' },
     ctaCv: { mn: 'CV татаж авах', en: 'Download CV' },
-    status: { mn: 'Нээлттэй: Фриланс дэмжлэг', en: 'Open to: Freelance support' },
+    status: { mn: 'Фриланс үйлчилгээ үзүүлэх боломжтой', en: 'Freelance services available' },
     ctfGoal: {
       mn: 'Зорилго: Олон улсын CTF тэмцээнүүдэд оролцох',
       en: 'Goal: Compete in international CTFs',
