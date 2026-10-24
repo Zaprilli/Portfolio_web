@@ -81,6 +81,7 @@ export interface Content {
       education: { mn: string; en: string };
       work: { mn: string; en: string };
       service: { mn: string; en: string };
+      training: { mn: string; en: string };
     };
   };
   interestsSection: {
