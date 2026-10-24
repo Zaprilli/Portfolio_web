@@ -77,8 +77,11 @@ export default function Experience() {
                         <span className="font-mono text-[11px] text-slate-500">{item.period}</span>
                       </div>
 
-                      <h3 className="font-semibold text-white">{item.role[lang]}</h3>
-                      <p className="mt-0.5 text-sm text-brand-400/90">{item.org[lang]}</p>
+                      <h3 className="font-semibold text-white">
+                        {item.role[lang].startsWith(item.org[lang])
+                          ? item.role[lang]
+                          : `${item.role[lang]} — ${item.org[lang]}`}
+                      </h3>
                       {item.description && (
                         <p className="mt-3 text-sm leading-relaxed text-slate-400">
                           {item.description[lang]}
