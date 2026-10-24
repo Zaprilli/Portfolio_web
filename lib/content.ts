@@ -5,9 +5,11 @@ export interface Achievement {
   detail: { mn: string; en: string };
   year: string;
   icon: string;
+  href?: string;
 }
 
 export interface SkillCategory {
+  icon: string;
   category: { mn: string; en: string };
   items: string[];
 }
@@ -17,6 +19,7 @@ export interface Project {
   description: { mn: string; en: string };
   tags: string[];
   icon: string;
+  href?: string;
 }
 
 export interface TimelineItem {
@@ -53,11 +56,14 @@ export interface Content {
     bio: { mn: string; en: string };
     ctaContact: { mn: string; en: string };
     ctaProjects: { mn: string; en: string };
+    ctaCv: { mn: string; en: string };
     status: { mn: string; en: string };
+    ctfGoal: { mn: string; en: string };
   };
   achievementsSection: {
     heading: { mn: string; en: string };
     subheading: { mn: string; en: string };
+    trackLabel: { mn: string; en: string };
   };
   skillsSection: {
     heading: { mn: string; en: string };
@@ -95,12 +101,13 @@ export interface Content {
     success: { mn: string; en: string };
     errorRequired: { mn: string; en: string };
     errorEmail: { mn: string; en: string };
+    copySuccess: { mn: string; en: string };
+    ctfInvite: { mn: string; en: string };
     disclaimer: { mn: string; en: string };
     sideNote: { mn: string; en: string };
   };
   footer: {
     rights: { mn: string; en: string };
-    builtWith: { mn: string; en: string };
   };
   langToggle: { label: string };
 }
@@ -135,7 +142,12 @@ export const content: Content = {
     },
     ctaContact: { mn: 'Холбоо барих', en: 'Get in touch' },
     ctaProjects: { mn: 'Төслүүд үзэх', en: 'View projects' },
+    ctaCv: { mn: 'CV татаж авах', en: 'Download CV' },
     status: { mn: 'Нээлттэй: Фриланс дэмжлэг', en: 'Open to: Freelance support' },
+    ctfGoal: {
+      mn: 'Хүсэл: Монголын CTF тэмцээнүүдэд (NUMCTF, Haruulzangi, MUST CTF) оролцох',
+      en: 'Goal: Compete in Mongolian CTFs (NUMCTF, Haruulzangi, MUST CTF)',
+    },
   },
   achievementsSection: {
     heading: { mn: 'Амжилт & Бага', en: 'Achievements & Awards' },
@@ -143,6 +155,7 @@ export const content: Content = {
       mn: 'Кибер аюулгүй байдлын тэмцээнүүд болон баталгаажуулалтууд.',
       en: 'Cybersecurity competitions and certifications.',
     },
+    trackLabel: { mn: 'CTF дүн шинжилгээ', en: 'CTF track record' },
   },
   skillsSection: {
     heading: { mn: 'Ур чадвар', en: 'Skills' },
@@ -174,14 +187,14 @@ export const content: Content = {
   interestsSection: {
     heading: { mn: 'Хувийн Сонирхол', en: 'Personal Interests' },
     subheading: {
-      mn: 'Загвар өмсөгч биш — жинхэнэ сонирхлууд.',
-      en: 'Not a template — real hobbies.',
+      mn: 'Клавишээс гадуурх цаг хугацаа.',
+      en: 'Time spent away from the keyboard.',
     },
     items: [
-      { mn: 'Техник угсаралт', en: 'Hardware Assembly' },
-      { mn: 'Off-Road шинэчлэлт (Nissan X-Trail)', en: 'Off-Road Mods (Nissan X-Trail)' },
-      { mn: 'TETR.IO (S+ Ранг)', en: 'TETR.IO (S+ Rank)' },
-      { mn: 'Урт зайн гүйлт (5K Strava Challenge)', en: 'Long-distance Running (5K Strava Challenge)' },
+      { mn: 'Техник угсаралт & дотфайл', en: 'Hardware Assembly & Dotfiles' },
+      { mn: 'Night Marathon 21 км гүйлт', en: 'Night Marathon 21 km Running' },
+      { mn: 'Оюун ухааны puzzle тоглоом (TETR.IO, Sudoku)', en: 'Puzzle & IQ Games (TETR.IO, Sudoku)' },
+      { mn: 'Урт зайн гүйлт (Strava 5K Challenge)', en: 'Long-distance Running (Strava 5K Challenge)' },
     ],
   },
   contactSection: {
@@ -212,6 +225,11 @@ export const content: Content = {
     },
     errorRequired: { mn: 'Бүх талбарыг бөглөнө үү.', en: 'Please fill in all fields.' },
     errorEmail: { mn: 'Зөв имэйл хаяг оруулна уу.', en: 'Please enter a valid email address.' },
+    copySuccess: { mn: 'Хуулагдлаа ✓', en: 'Copied ✓' },
+    ctfInvite: {
+      mn: 'Монголын CTF баг / тэмцээн — багтаа авахыг хүсвэл бичээрэй.',
+      en: 'Mongolian CTF team or event — reach out if you need a player.',
+    },
     disclaimer: {
       mn: 'Энэ нь хэвэнчлэл (frontend) хэлбэр бөгөөд API холболтод бэлэн байна.',
       en: 'This is a frontend-only form, ready for future API integration.',
@@ -223,7 +241,6 @@ export const content: Content = {
   },
   footer: {
     rights: { mn: 'Бүх эрх хуулиар хамгаалагдсан.', en: 'All rights reserved.' },
-    builtWith: { mn: 'Next.js, TypeScript, Tailwind, Framer Motion ашиглан бүтээв', en: 'Built with Next.js, TypeScript, Tailwind, Framer Motion' },
   },
   langToggle: { label: 'MN / EN' },
 };
@@ -231,40 +248,80 @@ export const content: Content = {
 export const achievements: Achievement[] = [
   {
     event: 'NUMCTF 2025',
-    detail: { mn: 'Кибер аюулгүй байдал — 2-р байр', en: 'Cybersecurity — 2nd Place' },
+    detail: { mn: 'Кибер аюулгүй байдал — 2-р байр (WinterXRain баг)', en: 'Cybersecurity — 2nd Place (Team WinterXRain)' },
     year: '2025',
-    icon: '🏆',
+    icon: 'trophy',
   },
   {
     event: 'Haruulzangi CTF 2026',
-    detail: { mn: 'Үндэсний кибер аюулгүй байдал — Топ 50', en: 'National Cybersecurity — Top 50' },
+    detail: { mn: 'Үндэсний кибер аюулгүй байдал — Топ 50 (enVoia! баг)', en: 'National Cybersecurity — Top 50 (Team enVoia!)' },
     year: '2026',
-    icon: '🚩',
+    icon: 'flag',
   },
   {
     event: 'OpenwaveWanderlab Science CTF',
     detail: { mn: 'STEM — 3-р байр', en: 'STEM — 3rd Place' },
     year: '2025',
-    icon: '🔬',
+    icon: 'flask',
   },
   {
-    event: 'HackerRank',
-    detail: { mn: 'Basic SQL Сертификат', en: 'Basic SQL Certification' },
+    event: 'Night Marathon 2026 — 21 км',
+    detail: { mn: 'Улаанбаатар Night Marathon — Finisher, чипын цаг 2:09:44', en: 'Ulaanbaatar Night Marathon — Finisher, chip time 2:09:44' },
+    year: '2026',
+    icon: 'medal',
+  },
+  {
+    event: 'HackerRank — Basic SQL',
+    detail: { mn: 'SQL үндсэн сертификат', en: 'Basic SQL Certification' },
     year: '2024',
-    icon: '📜',
+    icon: 'award',
+  },
+  {
+    event: 'English B2',
+    detail: { mn: 'Гадаад хэлний B2 түвшний гэрчилгээ', en: 'English B2 level certification' },
+    year: '2025',
+    icon: 'languages',
+    href: '/certificates/english-b2.pdf',
+  },
+];
+
+export interface CtfLink {
+  label: string;
+  href: string;
+  note: { mn: string; en: string };
+}
+
+export const ctfLinks: CtfLink[] = [
+  {
+    label: 'CTFtime — Team enVoila!',
+    href: 'https://ctftime.org/team/447293/',
+    note: { mn: 'Хувийн профайлаас гадна багийн дүн шинжилгээ', en: 'Team results and CTF ratings' },
+  },
+  {
+    label: 'Haruulzangi CTF 2026 Qualifier',
+    href: 'https://ctftime.org/event/3379/',
+    note: { mn: '161 багаас Топ 50 — CTFtime scoreboard', en: 'Top 50 of 161 teams — CTFtime scoreboard' },
+  },
+  {
+    label: 'CTF.mn — xinn06',
+    href: 'https://ctf.mn/user/xinn06',
+    note: { mn: 'Хувийн профайл: оролцсон тэмцээнүүд, оноо', en: 'Personal profile: events and scores' },
   },
 ];
 
 export const skillCategories: SkillCategory[] = [
   {
+    icon: 'monitor',
     category: { mn: 'Үйлдлийн Систем & Орчин', en: 'OS & Environment' },
     items: ['Arch Linux', 'Hyprland', 'Wayland', 'Kitty', 'Zsh', 'Windows', 'macOS'],
   },
   {
+    icon: 'code',
     category: { mn: 'Хэл & Веб', en: 'Languages & Web' },
     items: ['C', 'Python', 'JavaScript', 'TypeScript', 'Next.js', 'React', 'TailwindCSS', 'Supabase', 'SQL'],
   },
   {
+    icon: 'shield-check',
     category: { mn: 'Кибер Аюулгүй Байдал', en: 'Cybersecurity' },
     items: [
       'CTF Problem Solving',
@@ -272,6 +329,23 @@ export const skillCategories: SkillCategory[] = [
       'OSINT Tools',
       'System Hardening',
       'Hardware Diagnostics',
+      'Hack The Box',
+      'PicoCTF',
+      'OverTheWire',
+    ],
+  },
+  {
+    icon: 'book-open',
+    category: { mn: 'Сургалтын Хичээлүүд', en: 'Coursework' },
+    items: [
+      'Data Structures',
+      'Operating Systems',
+      'Computer Networks',
+      'Machine Learning',
+      'Internet Technology',
+      'Unix',
+      'OOP',
+      'Computer Architecture',
     ],
   },
 ];
@@ -280,20 +354,11 @@ export const projects: Project[] = [
   {
     name: 'UniSuite',
     description: {
-      mn: 'Оюутны өдөр тутмын амьдралыг автоматжуулсан веб хөгжүүлэлтийн платформ.',
-      en: 'Automated student lifestyle web application platform.',
+      mn: 'Оюутны өдөр тутмын амьдралыг автоматжуулсан веб хөгжүүлэлтийн платформ: болзоо, баяр, товлолт, RSVP системүүдийн багц.',
+      en: 'Automated student lifestyle web platform: dating invites, events, scheduling and RSVP apps.',
     },
-    tags: ['Next.js', 'TypeScript', 'Supabase', 'TailwindCSS'],
-    icon: '🎓',
-  },
-  {
-    name: 'Magic-ai',
-    description: {
-      mn: 'Академик даалгавруудад зориулсан Next.js дээр суурилсан аппликейшн.',
-      en: 'Next.js application for academic coursework.',
-    },
-    tags: ['Next.js', 'AI', 'TypeScript'],
-    icon: '🤖',
+    tags: ['Next.js', 'TypeScript', 'TailwindCSS', 'Supabase'],
+    icon: 'graduation-cap',
   },
   {
     name: 'Hand Gesture Recognition',
@@ -302,16 +367,45 @@ export const projects: Project[] = [
       en: 'Computer vision system using Google MediaPipe & Teachable Machine.',
     },
     tags: ['Python', 'MediaPipe', 'Computer Vision'],
-    icon: '👋',
+    icon: 'hand',
+  },
+  {
+    name: 'Naran',
+    description: {
+      mn: 'Гадаад үзэмжтэй, хэд хэдэн тематик (тэмдэг/өнгө) солигддог, GitHub Pages дээр CI/CD деплой хийгдсэн Next.js сайт.',
+      en: 'Next.js site with switchable themes and automated GitHub Pages CI/CD deployment.',
+    },
+    tags: ['Next.js', 'TypeScript', 'GitHub Actions', 'CI/CD'],
+    icon: 'bot',
+    href: 'https://github.com/Archive019230/Naran',
+  },
+  {
+    name: 'OpenWeather Dashboard',
+    description: {
+      mn: 'OpenWeather API ашигласан цаг агаарын мэдээлэл харуулдог веб аппликейшн (HTML/CSS/JS + fetch API).',
+      en: 'Weather web app consuming the OpenWeather API (HTML/CSS/JS + fetch).',
+    },
+    tags: ['JavaScript', 'REST API', 'HTML/CSS'],
+    icon: 'flask',
+    href: 'https://github.com/Zaprilli/openweather-api-use',
+  },
+  {
+    name: 'OSINT Source-Code Audit',
+    description: {
+      mn: 'miniiweb.com-ийн source code нийтэд байгаа эсэхийг тогтоосон OSINT шинжилгээний бичвэр: DNS/RDAP, GitHub/GitLab code search, Wayback, urlscan ашигласан.',
+      en: 'OSINT writeup auditing whether miniiweb.com source code is public: DNS/RDAP, GitHub/GitLab search, Wayback, urlscan.',
+    },
+    tags: ['OSINT', 'GitHub dorking', 'Wayback', 'Wireshark'],
+    icon: 'shield-check',
   },
   {
     name: 'System Utilities & Dotfiles',
     description: {
-      mn: 'Arch Linux-д зориулсан захиалгат shell скрипт болон тохиргоонууд.',
-      en: 'Custom Arch Linux shell scripts and configurations.',
+      mn: 'Arch Linux-д зориулсан захиалгат shell скрипт, Hyprland/Zsh конфигураци, PC угсралт/тохиргооны хэрэгслүүд (freelance).',
+      en: 'Custom Arch Linux shell scripts, Hyprland/Zsh configs and PC build/setup tooling (freelance).',
     },
     tags: ['Bash', 'Arch Linux', 'Zsh', 'Hyprland'],
-    icon: '⚙️',
+    icon: 'square-terminal',
   },
 ];
 

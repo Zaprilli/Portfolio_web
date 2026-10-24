@@ -3,19 +3,20 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import SectionHeading, { Reveal } from './SectionHeading';
+import { Icon } from './icons';
 import { useLang } from '@/lib/lang-context';
 import { content, timeline } from '@/lib/content';
 
 const typeStyles: Record<string, string> = {
-  education: 'border-sky-400/40 bg-sky-400/10 text-sky-300',
-  work: 'border-cyan-400/40 bg-cyan-400/10 text-cyan-300',
+  education: 'border-accent-400/40 bg-accent-400/10 text-accent-300',
+  work: 'border-brand-400/40 bg-brand-400/10 text-brand-300',
   service: 'border-amber-400/40 bg-amber-400/10 text-amber-300',
 };
 
 const typeIcons: Record<string, string> = {
-  education: '🎓',
-  work: '💼',
-  service: '🎖️',
+  education: 'graduation-cap',
+  work: 'briefcase',
+  service: 'shield-check',
 };
 
 export default function Experience() {
@@ -35,7 +36,7 @@ export default function Experience() {
           <div className="absolute left-4 top-0 h-full w-px bg-white/10 sm:left-1/2" aria-hidden />
           <motion.div
             style={{ scaleY: progress }}
-            className="absolute left-4 top-0 h-full w-px origin-top bg-gradient-to-b from-cyan-400 to-teal-400 shadow-[0_0_12px_rgba(34,211,238,0.7)] sm:left-1/2"
+            className="absolute left-4 top-0 h-full w-px origin-top bg-gradient-to-b from-brand-400 to-accent-400 shadow-glow sm:left-1/2"
             aria-hidden
           />
 
@@ -51,11 +52,11 @@ export default function Experience() {
                   >
                     <motion.span
                       whileHover={{ scale: 1.3 }}
-                      className={`absolute left-4 top-1 grid h-7 w-7 -translate-x-1/2 place-items-center rounded-full border bg-abyss text-xs sm:left-0 ${
+                      className={`absolute left-4 top-1 grid h-7 w-7 -translate-x-1/2 place-items-center rounded-full border bg-abyss sm:left-0 ${
                         isLeft ? 'sm:left-auto sm:-right-3.5 sm:translate-x-0' : 'sm:-left-3.5'
                       } ${typeStyles[item.type]}`}
                     >
-                      {typeIcons[item.type]}
+                      <Icon name={typeIcons[item.type]} className="h-3.5 w-3.5" />
                     </motion.span>
 
                     <motion.article
@@ -75,7 +76,7 @@ export default function Experience() {
                       </div>
 
                       <h3 className="font-semibold text-white">{item.role[lang]}</h3>
-                      <p className="mt-0.5 text-sm text-cyan-400/80">{item.org}</p>
+                      <p className="mt-0.5 text-sm text-brand-400/90">{item.org}</p>
                       <p className="mt-3 text-sm leading-relaxed text-slate-400">
                         {item.description[lang]}
                       </p>

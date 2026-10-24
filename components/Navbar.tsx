@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Palette } from 'lucide-react';
 import { useLang } from '@/lib/lang-context';
+import { useTheme } from '@/lib/theme-context';
 import { content } from '@/lib/content';
 
 const links = [
@@ -16,6 +18,7 @@ const links = [
 
 export default function Navbar() {
   const { lang, toggleLang } = useLang();
+  const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState('home');
@@ -55,7 +58,7 @@ export default function Navbar() {
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'border-b border-cyan-400/10 bg-abyss/80 shadow-glow backdrop-blur-xl'
+          ? 'border-b border-brand-400/10 bg-abyss/80 shadow-glow backdrop-blur-xl'
           : 'border-b border-transparent bg-transparent'
       }`}
     >
@@ -65,11 +68,11 @@ export default function Navbar() {
           className="group flex items-center gap-2 font-mono text-sm font-semibold text-white"
           aria-label={content.nav.home[lang]}
         >
-          <span className="grid h-8 w-8 place-items-center rounded-lg border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 transition group-hover:shadow-glow-strong">
+          <span className="grid h-8 w-8 place-items-center rounded-lg border border-brand-400/30 bg-brand-400/10 text-brand-300 transition group-hover:shadow-glow-strong">
             M
           </span>
           <span className="hidden sm:inline">
-            margad<span className="text-cyan-400">@</span>dev
+            margad<span className="text-brand-400">@</span>dev
           </span>
         </button>
 
@@ -79,14 +82,14 @@ export default function Navbar() {
               <button
                 onClick={() => go(id)}
                 className={`relative rounded-lg px-3 py-2 text-sm transition-colors ${
-                  active === id ? 'text-cyan-300' : 'text-slate-400 hover:text-white'
+                  active === id ? 'text-brand-300' : 'text-slate-400 hover:text-white'
                 }`}
               >
                 {content.nav[key][lang]}
                 {active === id && (
                   <motion.span
                     layoutId="nav-underline"
-                    className="absolute inset-x-3 -bottom-0.5 h-px bg-cyan-400"
+                    className="absolute inset-x-3 -bottom-0.5 h-px bg-brand-400"
                     transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -99,19 +102,30 @@ export default function Navbar() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.94 }}
+            onClick={toggleTheme}
+            aria-label={`Theme: ${theme}`}
+            title={theme === 'green' ? 'Switch to purple' : 'Switch to green'}
+            className="grid h-9 w-9 place-items-center rounded-lg border border-brand-400/25 bg-brand-400/10 text-brand-300 transition hover:border-brand-300/60 hover:shadow-glow"
+          >
+            <Palette className="h-4 w-4" strokeWidth={1.8} />
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.94 }}
             onClick={toggleLang}
             aria-label="Toggle language MN / EN"
-            className="rounded-lg border border-cyan-400/25 bg-cyan-400/10 px-3 py-1.5 font-mono text-xs font-semibold tracking-widest text-cyan-300 transition hover:border-cyan-300/60 hover:shadow-glow"
+            className="rounded-lg border border-brand-400/25 bg-brand-400/10 px-3 py-1.5 font-mono text-xs font-semibold tracking-widest text-brand-300 transition hover:border-brand-300/60 hover:shadow-glow"
           >
             {lang === 'mn' ? 'EN' : 'MN'}
-            <span className="ml-1.5 text-cyan-500/60">{lang === 'mn' ? '🇲🇳' : '🇬🇧'}</span>
+            <span className="ml-1.5 text-brand-500/60">{lang === 'mn' ? '🇲🇳' : '🇬🇧'}</span>
           </motion.button>
 
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
-            className="grid h-9 w-9 place-items-center rounded-lg border border-cyan-400/20 text-cyan-300 lg:hidden"
+            className="grid h-9 w-9 place-items-center rounded-lg border border-brand-400/20 text-brand-300 lg:hidden"
           >
             <span className="relative block h-3.5 w-4">
               <span
@@ -135,7 +149,7 @@ export default function Navbar() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-cyan-400/10 bg-abyss/95 backdrop-blur-xl lg:hidden"
+            className="overflow-hidden border-t border-brand-400/10 bg-abyss/95 backdrop-blur-xl lg:hidden"
           >
             <ul className="section-shell flex flex-col gap-1 py-4">
               {links.map(({ id, key }, i) => (
@@ -148,7 +162,7 @@ export default function Navbar() {
                   <button
                     onClick={() => go(id)}
                     className={`w-full rounded-lg px-3 py-2.5 text-left text-sm transition ${
-                      active === id ? 'bg-cyan-400/10 text-cyan-300' : 'text-slate-300 hover:bg-white/5'
+                      active === id ? 'bg-brand-400/10 text-brand-300' : 'text-slate-300 hover:bg-white/5'
                     }`}
                   >
                     {content.nav[key][lang]}

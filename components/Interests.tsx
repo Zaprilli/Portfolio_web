@@ -2,10 +2,11 @@
 
 import { motion } from 'framer-motion';
 import SectionHeading, { Reveal } from './SectionHeading';
+import { Icon } from './icons';
 import { useLang } from '@/lib/lang-context';
 import { content } from '@/lib/content';
 
-const icons = ['🔧', '🚙', '🧱', '🏃'];
+const interestIcons = ['cpu', 'footprints', 'puzzle', 'activity'];
 
 export default function Interests() {
   const { lang } = useLang();
@@ -24,8 +25,8 @@ export default function Interests() {
                 transition={{ type: 'spring', stiffness: 300, damping: 18 }}
                 className="glass-card glass-card-hover group flex h-full flex-col items-center gap-3 p-6 text-center"
               >
-                <span className="grid h-12 w-12 place-items-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-2xl transition group-hover:shadow-glow">
-                  {icons[i]}
+                <span className="grid h-12 w-12 place-items-center rounded-2xl border border-brand-400/20 bg-brand-400/10 text-brand-300 transition group-hover:shadow-glow">
+                  <Icon name={interestIcons[i] ?? 'activity'} className="h-5 w-5" />
                 </span>
                 <p className="text-sm font-medium text-slate-300 transition group-hover:text-white">
                   {item[lang]}

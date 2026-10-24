@@ -2,7 +2,9 @@
 
 import { useState, type FormEvent } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { Download, Send, Target, UserRound } from 'lucide-react';
 import SectionHeading, { Reveal } from './SectionHeading';
+import { SocialRow } from './Socials';
 import { useLang } from '@/lib/lang-context';
 import { content } from '@/lib/content';
 
@@ -13,6 +15,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 export default function Contact() {
   const { lang } = useLang();
   const cs = content.contactSection;
+  const cvHref = lang === 'mn' ? '/cv/CV_Mongolia.pdf' : '/cv/CV_English.pdf';
 
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState<Errors>({});
@@ -50,7 +53,7 @@ export default function Contact() {
     `w-full rounded-xl border bg-white/[0.03] px-4 py-3 text-sm text-white placeholder:text-slate-500 outline-none backdrop-blur transition focus:bg-white/[0.06] ${
       hasError
         ? 'border-red-400/60 focus:border-red-400'
-        : 'border-white/10 focus:border-cyan-400/60 focus:shadow-glow'
+        : 'border-white/10 focus:border-brand-400/60 focus:shadow-glow'
     }`;
 
   return (
@@ -60,33 +63,43 @@ export default function Contact() {
 
         <div className="grid gap-8 lg:grid-cols-5">
           <Reveal className="lg:col-span-2">
-            <div className="glass-card h-full p-6">
-              <div className="mb-6 flex items-center gap-3">
-                <span className="grid h-11 w-11 place-items-center rounded-xl border border-cyan-400/25 bg-cyan-400/10 text-xl">
-                  📡
+            <div className="glass-card flex h-full flex-col gap-6 p-6">
+              <div className="flex items-center gap-3">
+                <span className="grid h-11 w-11 place-items-center rounded-xl border border-brand-400/25 bg-brand-400/10 text-brand-300">
+                  <Send className="h-5 w-5" strokeWidth={1.7} />
                 </span>
                 <div>
-                  <p className="font-mono text-xs text-cyan-400/80">{'// secure_channel'}</p>
-                  <p className="text-sm text-slate-400">margad@num-mtes.mn</p>
+                  <p className="font-mono text-xs text-brand-400/80">{'// secure_channel'}</p>
+                  <p className="text-sm text-slate-400">{cs.sideNote[lang]}</p>
                 </div>
               </div>
 
-              <p className="text-sm leading-relaxed text-slate-400">{cs.sideNote[lang]}</p>
+              <div className="rounded-xl border border-brand-400/25 bg-brand-400/10 p-4">
+                <p className="flex items-start gap-2 text-xs leading-relaxed text-brand-200">
+                  <Target className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+                  {cs.ctfInvite[lang]}
+                </p>
+              </div>
 
-              <ul className="mt-6 space-y-3 font-mono text-xs text-slate-400">
-                {[
-                  'HTTPS + strict CSP headers',
-                  'noopener noreferrer on external links',
-                  'No dangerouslySetInnerHTML',
-                ].map((line) => (
-                  <li key={line} className="flex items-start gap-2">
-                    <span className="text-emerald-400">▸</span>
-                    {line}
-                  </li>
-                ))}
-              </ul>
+              <div>
+                <p className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-slate-500">
+                  <UserRound className="h-3.5 w-3.5" />
+                  {lang === 'mn' ? 'Холбооны сувагууд' : 'Channels'}
+                </p>
+                <SocialRow copiedLabel={cs.copySuccess[lang]} />
+              </div>
 
-              <p className="mt-6 rounded-lg border border-amber-400/25 bg-amber-400/10 p-3 text-xs text-amber-200/90">
+              <a
+                href={cvHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-brand-400/50 hover:text-white hover:shadow-glow"
+              >
+                <Download className="h-4 w-4" />
+                {content.hero.ctaCv[lang]}
+              </a>
+
+              <p className="rounded-lg border border-amber-400/25 bg-amber-400/10 p-3 text-xs text-amber-200/90">
                 {cs.disclaimer[lang]}
               </p>
             </div>
@@ -155,10 +168,10 @@ export default function Contact() {
                   disabled={status !== 'idle'}
                   whileHover={status === 'idle' ? { scale: 1.03 } : undefined}
                   whileTap={status === 'idle' ? { scale: 0.97 } : undefined}
-                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-sky-500 px-6 py-3 text-sm font-semibold text-abyss shadow-glow-strong transition disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-accent-500 px-6 py-3 text-sm font-semibold text-abyss shadow-glow-strong transition disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {status === 'sending' ? cs.sending[lang] : cs.submit[lang]}
-                  {status === 'idle' && <span aria-hidden>→</span>}
+                  {status === 'idle' && <Send className="h-4 w-4" />}
                 </motion.button>
 
                 <AnimatePresence>
@@ -169,7 +182,7 @@ export default function Contact() {
                       exit={{ opacity: 0 }}
                       className="flex items-center gap-2 text-sm text-emerald-300"
                     >
-                      <span aria-hidden>✓</span> {cs.success[lang]}
+                      {cs.success[lang]}
                     </motion.p>
                   )}
                 </AnimatePresence>

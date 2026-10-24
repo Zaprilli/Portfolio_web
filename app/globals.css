@@ -2,8 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+html[data-theme='green'] {
   color-scheme: dark;
+  --brand-200: 187 247 208;
+  --brand-300: 134 239 172;
+  --brand-400: 74 222 128;
+  --brand-500: 34 197 94;
+  --brand-600: 22 163 74;
+  --brand-rgb: 74 222 128;
+  --accent-200: 217 249 157;
+  --accent-300: 190 242 100;
+  --accent-400: 163 230 53;
+  --accent-500: 132 204 22;
+}
+
+html[data-theme='purple'] {
+  --brand-200: 233 213 255;
+  --brand-300: 216 180 254;
+  --brand-400: 167 139 250;
+  --brand-500: 139 92 246;
+  --brand-600: 124 58 237;
+  --brand-rgb: 139 92 246;
+  --accent-200: 251 207 232;
+  --accent-300: 249 168 212;
+  --accent-400: 244 114 182;
+  --accent-500: 236 72 153;
 }
 
 html {
@@ -13,14 +37,15 @@ html {
 body {
   @apply bg-abyss text-slate-200 antialiased;
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34, 211, 238, 0.15), transparent),
-    linear-gradient(rgba(34, 211, 238, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(var(--brand-rgb), 0.15), transparent),
+    linear-gradient(rgba(var(--brand-rgb), 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--brand-rgb), 0.04) 1px, transparent 1px);
   background-size: 100% 100%, 48px 48px, 48px 48px;
 }
 
 ::selection {
-  @apply bg-cyan-500/30 text-cyan-100;
+  background: rgba(var(--brand-rgb), 0.3);
+  color: #f8fafc;
 }
 
 ::-webkit-scrollbar {
@@ -30,22 +55,30 @@ body {
   background: #0a0f1a;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(34, 211, 238, 0.25);
+  background: rgba(var(--brand-rgb), 0.3);
   border-radius: 8px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(34, 211, 238, 0.45);
+  background: rgba(var(--brand-rgb), 0.5);
 }
 
 @layer components {
   .glass-card {
-    @apply rounded-2xl border border-cyan-400/10 bg-white/[0.03] backdrop-blur-xl shadow-glow transition-colors duration-300;
+    @apply rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl transition-colors duration-300;
+    box-shadow: 0 0 20px rgba(var(--brand-rgb), 0.1);
   }
   .glass-card-hover {
-    @apply hover:border-cyan-400/30 hover:bg-white/[0.06] hover:shadow-glow-strong;
+    @apply hover:border-white/20 hover:bg-white/[0.06];
+    box-shadow: 0 0 40px rgba(var(--brand-rgb), 0.18);
   }
   .neon-text {
-    @apply bg-gradient-to-r from-cyan-300 via-teal-200 to-sky-400 bg-clip-text text-transparent;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--brand-400)),
+      rgb(var(--accent-300)),
+      rgb(var(--brand-500))
+    );
   }
   .section-shell {
     @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
@@ -59,7 +92,7 @@ body {
   height: 1em;
   margin-left: 4px;
   vertical-align: -2px;
-  background: #22d3ee;
+  background: rgb(var(--brand-400));
   animation: blink 1s steps(1) infinite;
 }
 

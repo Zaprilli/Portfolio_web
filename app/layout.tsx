@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { LangProvider } from '@/lib/lang-context';
+import { ThemeProvider } from '@/lib/theme-context';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -20,9 +22,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="mn" className="dark">
+    <html lang="mn" className="dark" data-theme="green" suppressHydrationWarning>
       <body className="min-h-screen font-sans">
-        <LangProvider>{children}</LangProvider>
+        <Script src="/theme-init.js" strategy="beforeInteractive" />
+        <ThemeProvider>
+          <LangProvider>{children}</LangProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

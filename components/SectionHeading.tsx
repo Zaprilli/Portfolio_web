@@ -2,7 +2,7 @@
 
 import { motion, type Variants } from 'framer-motion';
 import { useLang } from '@/lib/lang-context';
-import { content, type Lang } from '@/lib/content';
+import { content } from '@/lib/content';
 
 interface SectionHeadingProps {
   titleKey: keyof typeof content;
@@ -61,7 +61,7 @@ export default function SectionHeading({ titleKey, subtitleKey }: SectionHeading
     >
       <motion.p
         variants={fadeUpVariants}
-        className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-cyan-400/70"
+        className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-brand-400/70"
       >
         {'// '}
         {lang === 'mn' ? ' ангилал' : ' section'}
@@ -79,10 +79,8 @@ export default function SectionHeading({ titleKey, subtitleKey }: SectionHeading
       ) : null}
       <motion.div
         variants={fadeUpVariants}
-        className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent"
+        className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-brand-400/70 to-transparent"
       />
     </motion.header>
   );
 }
-
-export const langText = (value: { mn: string; en: string }, lang: Lang) => value[lang];
