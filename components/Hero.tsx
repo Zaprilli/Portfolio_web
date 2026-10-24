@@ -42,15 +42,18 @@ export default function Hero() {
 
   const titleText = c.title[lang];
   const bioText = `> ${c.bio[lang]}`;
-  const typedFull = useTypewriter(`${titleText}\n${bioText}`, 22, 300);
+  const fullText = `${titleText}\n${bioText}`;
+  const typedFull = useTypewriter(fullText, 22, 300);
   const typedTitle = typedFull.slice(0, titleText.length);
   const typedBio = typedFull.slice(titleText.length + 1);
   const titleDone = typedFull.length > titleText.length;
 
   const cmdWhoami = 'cat whoami';
   const cmdSkills = 'cat skills.txt';
-  const typedCmdWhoami = useTypewriter(cmdWhoami, 40, 900);
-  const typedCmdSkills = useTypewriter(cmdSkills, 40, 2100);
+  const bioDoneAt = fullText.length * 22 + 300;
+  const cmdWhoamiStart = bioDoneAt + 500;
+  const typedCmdWhoami = useTypewriter(cmdWhoami, 40, cmdWhoamiStart);
+  const typedCmdSkills = useTypewriter(cmdSkills, 40, cmdWhoamiStart + 1100);
   const whoamiDone = typedCmdWhoami.length >= cmdWhoami.length;
   const skillsCmdDone = typedCmdSkills.length >= cmdSkills.length;
   const cvHref = content.cv[lang];
@@ -206,7 +209,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.55 }}
-            className="glass-card relative z-10 -mt-10 mx-auto w-full max-w-md p-5 font-mono text-xs lg:mr-0 lg:ml-0 lg:w-[85%] lg:max-w-none"
+            className="glass-card relative z-10 -mt-10 mx-auto w-full max-w-md p-5 font-mono text-[13px] lg:mr-0 lg:ml-0 lg:w-[85%] lg:max-w-none"
           >
             <div className="mb-3 flex items-center gap-2 border-b border-white/10 pb-2.5">
               <span className="h-2.5 w-2.5 rounded-full bg-brand-400/70" />
@@ -226,8 +229,8 @@ export default function Hero() {
                 <div className="space-y-1.5 pt-1">
                   {skillCategories.map((cat) => (
                     <div key={cat.category.en}>
-                      <p className="text-brand-400/70"># {cat.category[lang]}</p>
-                      <p className="break-words leading-relaxed text-slate-400">
+                      <p className="text-brand-300"># {cat.category[lang]}</p>
+                      <p className="break-words leading-relaxed text-slate-300">
                         {cat.items.join(' · ')}
                       </p>
                     </div>
