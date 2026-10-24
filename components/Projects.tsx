@@ -15,7 +15,7 @@ export default function Projects() {
       <div className="section-shell">
         <SectionHeading titleKey="projectsSection" subtitleKey="projectsSection" />
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p, i) => {
             const body = (
               <>

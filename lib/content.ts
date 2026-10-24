@@ -367,15 +367,6 @@ export const projects: Project[] = [
     icon: 'graduation-cap',
   },
   {
-    name: 'Hand Gesture Recognition',
-    description: {
-      mn: 'Google MediaPipe & Teachable Machine ашигласан компьютерийн харааны гарын хөдөлгөөн таних систем.',
-      en: 'Computer vision system using Google MediaPipe & Teachable Machine.',
-    },
-    tags: ['Python', 'MediaPipe', 'Computer Vision'],
-    icon: 'hand',
-  },
-  {
     name: 'Naran',
     description: {
       mn: 'Гадаад үзэмжтэй, хэд хэдэн тематик (тэмдэг/өнгө) солигддог, GitHub Pages дээр CI/CD деплой хийгдсэн Next.js сайт.',
@@ -396,6 +387,15 @@ export const projects: Project[] = [
     href: 'https://github.com/Zaprilli/openweather-api-use',
   },
   {
+    name: 'Hand Gesture Recognition',
+    description: {
+      mn: 'Google MediaPipe & Teachable Machine ашигласан компьютерийн харааны гарын хөдөлгөөн таних систем.',
+      en: 'Computer vision system using Google MediaPipe & Teachable Machine.',
+    },
+    tags: ['Python', 'MediaPipe', 'Computer Vision'],
+    icon: 'hand',
+  },
+  {
     name: 'OSINT Source-Code Audit',
     description: {
       mn: 'miniiweb.com-ийн source code нийтэд байгаа эсэхийг тогтоосон OSINT шинжилгээний бичвэр: DNS/RDAP, GitHub/GitLab code search, Wayback, urlscan ашигласан.',
@@ -412,6 +412,16 @@ export const projects: Project[] = [
     },
     tags: ['Bash', 'Arch Linux', 'Zsh', 'Hyprland'],
     icon: 'square-terminal',
+  },
+  {
+    name: 'Portfolio_web',
+    description: {
+      mn: 'Энэ вэбсайт: хоёр хэлтэй (MN/EN), хоёр өнгөтэй (green/purple), чангатай security header-уудтай хувийн портфолио.',
+      en: 'This website: bilingual (MN/EN), switchable green/purple themes and strict security headers.',
+    },
+    tags: ['Next.js', 'TypeScript', 'TailwindCSS', 'Framer Motion'],
+    icon: 'code',
+    href: 'https://github.com/Zaprilli/Portfolio_web',
   },
 ];
 
