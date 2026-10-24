@@ -253,6 +253,7 @@ export const achievements: Achievement[] = [
     detail: { mn: 'Кибер аюулгүй байдал — 2-р байр (WinterXRain баг)', en: 'Cybersecurity — 2nd Place (Team WinterXRain)' },
     year: '2025',
     icon: 'trophy',
+    href: 'https://site.num.edu.mn/news/138/',
   },
   {
     event: 'Haruulzangi CTF 2026',
