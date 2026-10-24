@@ -125,7 +125,7 @@ export const content: Content = {
     },
     description: {
       mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Мэдээллийн аюулгүй байдал чиглэлээр сонирхолтой — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Linux, Windows) ажилладаг.',
-      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Linux distros, Windows).',
+      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Linux, Windows).',
     },
   },
   nav: {
@@ -143,7 +143,7 @@ export const content: Content = {
     title: { mn: 'Кибер аюулгүй байдлын мэргэжилтэн болох хүсэлтэй мэдээллийн технологийн оюутан', en: 'IT Student & who wanna be a Cybersecurity Specialist' },
     bio: {
       mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдлын чиглэлээр онцлон сонирхдог — CTF тэмцээнүүд, системийн аюулгүй байдал, пентестинг. Мөн олон төрлийн үйлдлийн системтэй (Linux, Windows) ажилладаг.',
-      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Linux distros, Windows, macOS).',
+      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Linux, Windows, macOS).',
     },
     ctaContact: { mn: 'Холбоо барих', en: 'Get in touch' },
     ctaProjects: { mn: 'Төслүүд үзэх', en: 'View projects' },
