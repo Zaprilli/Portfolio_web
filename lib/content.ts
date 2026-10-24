@@ -106,6 +106,7 @@ export interface Content {
     ctfInvite: { mn: string; en: string };
     disclaimer: { mn: string; en: string };
     sideNote: { mn: string; en: string };
+    channelsLabel: { mn: string; en: string };
     services: {
       heading: { mn: string; en: string };
       items: { mn: string; en: string }[];
@@ -157,7 +158,7 @@ export const content: Content = {
   achievementsSection: {
     heading: { mn: 'Амжилт ба шагнал', en: 'Achievements & Awards' },
     subheading: {
-      mn: 'Кибер аюулгүй байдлын тэмцээнүүд болон баталгаажуулалтууд.',
+      mn: 'Кибер аюулгүй байдлын тэмцээнүүд болон гэрчилгээнүүд.',
       en: 'Cybersecurity competitions and certifications.',
     },
     trackLabel: { mn: 'CTF дүн шинжилгээ', en: 'CTF track record' },
@@ -244,6 +245,7 @@ export const content: Content = {
       mn: 'Хариу авахын тулд имэйлээ үлдээнэ үү. Бүх холбоосууд аюулгүй байдлаар нээгдэнэ.',
       en: 'Leave your email for a reply. All links open securely.',
     },
+    channelsLabel: { mn: 'Холбооны сувагууд', en: 'Channels' },
     services: {
       heading: { mn: 'Фриланс үйлчилгээ', en: 'Freelance services' },
       items: [

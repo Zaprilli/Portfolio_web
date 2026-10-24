@@ -6,7 +6,7 @@ import { ArrowUpRight } from 'lucide-react';
 import SectionHeading, { Reveal } from './SectionHeading';
 import { Icon } from './icons';
 import { useLang } from '@/lib/lang-context';
-import { achievements, ctfLinks } from '@/lib/content';
+import { achievements, content, ctfLinks } from '@/lib/content';
 
 export default function Achievements() {
   const { lang } = useLang();
@@ -91,7 +91,7 @@ export default function Achievements() {
           <div className="mt-14">
             <p className="mb-4 text-center font-mono text-xs uppercase tracking-[0.3em] text-brand-400/70">
               {'// '}
-              {lang === 'mn' ? 'CTF дүн шинжилгээ' : 'CTF track record'}
+              {content.achievementsSection.trackLabel[lang]}
             </p>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {ctfLinks.map((link) => (

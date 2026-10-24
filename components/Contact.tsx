@@ -102,7 +102,7 @@ export default function Contact() {
               <div>
                 <p className="mb-3 flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-slate-500">
                   <UserRound className="h-3.5 w-3.5" />
-                  {lang === 'mn' ? 'Холбооны сувагууд' : 'Channels'}
+                  {cs.channelsLabel[lang]}
                 </p>
                 <SocialRow copiedLabel={cs.copySuccess[lang]} />
               </div>
