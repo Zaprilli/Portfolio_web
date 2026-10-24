@@ -67,7 +67,14 @@ export default function Achievements() {
                             rel="noopener noreferrer"
                             className="mt-2 inline-flex items-center gap-1 rounded-md border border-brand-400/25 bg-brand-400/10 px-2 py-1 font-mono text-[11px] text-brand-300 transition hover:border-brand-300/60 hover:shadow-glow"
                           >
-                            {a.href.toLowerCase().endsWith('.pdf') ? 'PDF' : lang === 'mn' ? 'профайл' : 'profile'}
+                            {(() => {
+                              const h = a.href!.toLowerCase();
+                              if (h.endsWith('.pdf')) return 'PDF';
+                              if (/ctftime|ctf\.mn|hackthebox|hackerrank|cylab|tetr\.io/.test(h))
+                                return lang === 'mn' ? 'профайл' : 'profile';
+                              if (/news|site\.num/.test(h)) return lang === 'mn' ? 'мэдээ' : 'news';
+                              return lang === 'mn' ? 'линк' : 'link';
+                            })()}
                             <ArrowUpRight className="h-3 w-3" />
                           </a>
                         )}
