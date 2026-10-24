@@ -279,7 +279,7 @@ export const achievements: Achievement[] = [
   },
   {
     event: 'Haruulzangi CTF 2026',
-    detail: { mn: 'Монгол улсын кибер аюулгүй байдал — Топ 50 (enVoia! баг)', en: 'The biggest Capture The Flag (CTF) competition in Mongolia, Semi—Final Global #50 (Team enVoia!)' },
+    detail: { mn: 'Монголын хамгийн том CTF — Jeopardy (соруул) төрлийн Semi-Final, Global #50 (enVoia! баг)', en: "Mongolia's biggest CTF — Jeopardy-style Semi-Final, Global #50 (Team enVoia!)" },
     year: '2026',
     icon: 'flag',
     href: 'https://ctftime.org/team/447293',

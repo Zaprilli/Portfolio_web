@@ -43,44 +43,49 @@ export default function Achievements() {
                     <Icon name={a.icon} className="h-3 w-3" />
                   </motion.span>
 
-                  <motion.article
-                    whileHover={{ y: -5, scale: 1.01 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    className="glass-card glass-card-hover p-5"
-                  >
-                    <div className="flex items-start gap-3">
-                      <span className="mt-0.5 text-brand-400">
-                        <Icon name={a.icon} className="h-5 w-5" />
-                      </span>
-                      <div className="min-w-0 flex-1">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <h3 className="font-semibold text-white">{a.event}</h3>
-                          <span className="rounded-full border border-brand-400/25 bg-brand-400/10 px-2 py-0.5 font-mono text-[11px] text-brand-300">
-                            {a.year}
+                  {(() => {
+                    const Card = a.href ? motion.a : motion.article;
+                    return (
+                      <Card
+                        {...(a.href
+                          ? { href: a.href, target: '_blank', rel: 'noopener noreferrer' }
+                          : {})}
+                        whileHover={{ y: -5, scale: 1.01 }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                        className={`group glass-card glass-card-hover p-5 ${a.href ? 'cursor-pointer' : ''}`}
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="mt-0.5 text-brand-400">
+                            <Icon name={a.icon} className="h-5 w-5" />
                           </span>
+                          <div className="min-w-0 flex-1">
+                            <div className="flex flex-wrap items-center gap-2">
+                              <h3 className="font-semibold text-white transition group-hover:text-brand-200">
+                                {a.event}
+                              </h3>
+                              <span className="rounded-full border border-brand-400/25 bg-brand-400/10 px-2 py-0.5 font-mono text-[11px] text-brand-300">
+                                {a.year}
+                              </span>
+                            </div>
+                            <p className="mt-1 text-sm text-slate-400">{a.detail[lang]}</p>
+                            {a.href && (
+                              <span className="mt-2 inline-flex items-center gap-1 rounded-md border border-brand-400/25 bg-brand-400/10 px-2 py-1 font-mono text-[11px] text-brand-300 transition group-hover:border-brand-300/60 group-hover:shadow-glow">
+                                {(() => {
+                                  const h = a.href!.toLowerCase();
+                                  if (h.endsWith('.pdf')) return 'PDF';
+                                  if (/ctftime|ctf\.mn|hackthebox|hackerrank|cylab|tetr\.io/.test(h))
+                                    return lang === 'mn' ? 'профайл' : 'profile';
+                                  if (/news|site\.num/.test(h)) return lang === 'mn' ? 'мэдээ' : 'news';
+                                  return lang === 'mn' ? 'линк' : 'link';
+                                })()}
+                                <ArrowUpRight className="h-3 w-3" />
+                              </span>
+                            )}
+                          </div>
                         </div>
-                        <p className="mt-1 text-sm text-slate-400">{a.detail[lang]}</p>
-                        {a.href && (
-                          <a
-                            href={a.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-2 inline-flex items-center gap-1 rounded-md border border-brand-400/25 bg-brand-400/10 px-2 py-1 font-mono text-[11px] text-brand-300 transition hover:border-brand-300/60 hover:shadow-glow"
-                          >
-                            {(() => {
-                              const h = a.href!.toLowerCase();
-                              if (h.endsWith('.pdf')) return 'PDF';
-                              if (/ctftime|ctf\.mn|hackthebox|hackerrank|cylab|tetr\.io/.test(h))
-                                return lang === 'mn' ? 'профайл' : 'profile';
-                              if (/news|site\.num/.test(h)) return lang === 'mn' ? 'мэдээ' : 'news';
-                              return lang === 'mn' ? 'линк' : 'link';
-                            })()}
-                            <ArrowUpRight className="h-3 w-3" />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </motion.article>
+                      </Card>
+                    );
+                  })()}
                 </div>
               </Reveal>
             ))}
