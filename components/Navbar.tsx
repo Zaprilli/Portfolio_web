@@ -71,7 +71,7 @@ export default function Navbar() {
             M
           </span>
           <span className="hidden sm:inline">
-            margad<span className="text-brand-400">@</span>dev
+            mrgd06<span className="text-brand-400">@</span>dev
           </span>
         </button>
 
