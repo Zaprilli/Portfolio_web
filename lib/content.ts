@@ -26,7 +26,7 @@ export interface TimelineItem {
   role: { mn: string; en: string };
   org: { mn: string; en: string };
   period: string;
-  description: { mn: string; en: string };
+  description?: { mn: string; en: string };
   type: 'education' | 'work' | 'service' | 'training';
 }
 
@@ -437,13 +437,9 @@ export const timeline: TimelineItem[] = [
     type: 'work',
   },
   {
-    role: { mn: 'Бакалаврын зэрэг (мэдээллийн технологи)', en: "Bachelor's Degree in IT" },
-    org: { mn: 'Мэдээллийн технологи, электроникийн сургууль (МТЭС)', en: 'National University of Mongolia (NUM-MTES)' },
+    role: { mn: 'Бакалаврын зэрэг | Монгол Улсын Их Сургууль', en: "Bachelor's Degree | National University of Mongolia" },
+    org: { mn: 'Мэдээллийн технологи, электроникийн сургууль (МТЭС)', en: 'School of Information Technology and Electronics (MTES)' },
     period: '2024 — одоо / Present',
-    description: {
-      mn: 'Мэдээллийн технологийн чиглэлээр суралцаж байна. Системийн аюулгүй байдал, програмчлал, веб хөгжүүлэлтэнд төвлөрч байна.',
-      en: 'Studying information technology with a focus on system security, programming and full-stack development.',
-    },
     type: 'education',
   },
   {

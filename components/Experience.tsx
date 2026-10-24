@@ -79,9 +79,11 @@ export default function Experience() {
 
                       <h3 className="font-semibold text-white">{item.role[lang]}</h3>
                       <p className="mt-0.5 text-sm text-brand-400/90">{item.org[lang]}</p>
-                      <p className="mt-3 text-sm leading-relaxed text-slate-400">
-                        {item.description[lang]}
-                      </p>
+                      {item.description && (
+                        <p className="mt-3 text-sm leading-relaxed text-slate-400">
+                          {item.description[lang]}
+                        </p>
+                      )}
                     </motion.article>
                   </div>
                 </Reveal>
