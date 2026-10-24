@@ -40,8 +40,11 @@ export default function Hero() {
   const { lang } = useLang();
   const c = content.hero;
 
-  const typedTitle = useTypewriter(c.title[lang], 32, 300);
-  const typedBio = useTypewriter(c.bio[lang], 16, 3000);
+  const titleText = c.title[lang];
+  const typedFull = useTypewriter(`${titleText}\n${c.bio[lang]}`, 22, 300);
+  const typedTitle = typedFull.slice(0, titleText.length);
+  const typedBio = typedFull.slice(titleText.length + 1);
+  const titleDone = typedFull.length > titleText.length;
   const cvHref = lang === 'mn' ? '/cv/CV_Mongolia.pdf' : '/cv/CV_English.pdf';
 
   const mx = useMotionValue(0);
@@ -101,7 +104,9 @@ export default function Hero() {
             key={lang}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="typed-caret mt-5 min-h-[5rem] font-mono text-base text-brand-300/90 sm:min-h-[4rem] sm:text-lg lg:min-h-[3.5rem]"
+            className={`${
+              titleDone ? '' : 'typed-caret'
+            } mt-5 min-h-[5rem] font-mono text-base text-brand-300/90 sm:min-h-[4rem] sm:text-lg lg:min-h-[3.5rem]`}
           >
             {'> '}
             {typedTitle}
@@ -111,9 +116,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className={`mt-4 max-w-xl leading-relaxed text-green-400 ${
-              typedBio.length < c.bio[lang].length ? 'typed-caret' : ''
-            }`}
+            className={`mt-4 max-w-xl leading-relaxed text-green-400 ${titleDone ? 'typed-caret' : ''}`}
           >
             {typedBio}
           </motion.p>
