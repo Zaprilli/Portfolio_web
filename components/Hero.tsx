@@ -103,7 +103,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 32 }}
+            initial={{ opacity: 0, y: -32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
@@ -124,7 +124,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
             className={`mt-4 max-w-xl leading-relaxed text-green-400 ${titleDone ? 'typed-caret' : ''}`}
@@ -133,7 +133,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.65 }}
             className="mt-8 flex flex-wrap items-center gap-3"
@@ -183,7 +183,7 @@ export default function Hero() {
         <div className="relative">
           <motion.div
             style={{ rotateX, rotateY, transformPerspective: 1200 }}
-            initial={{ opacity: 0, scale: 0.85, y: 24 }}
+            initial={{ opacity: 0, scale: 0.85, y: -24 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.35 }}
             className="relative mx-auto w-full max-w-md overflow-hidden rounded-3xl border border-brand-400/25 bg-white/[0.04] p-1.5 shadow-glow-strong backdrop-blur-xl lg:mr-0 lg:ml-auto lg:w-[85%] lg:max-w-none"
@@ -205,7 +205,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.55 }}
             className="glass-card relative z-10 -mt-10 mx-auto w-full max-w-md p-5 font-mono text-[13px] lg:mr-0 lg:ml-0 lg:w-[85%] lg:max-w-none"
