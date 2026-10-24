@@ -188,7 +188,7 @@ export const content: Content = {
       education: { mn: 'Боловсрол', en: 'Education' },
       work: { mn: 'Ажил', en: 'Work' },
       service: { mn: 'Алба', en: 'Service' },
-      training: { mn: 'Сургалт', en: 'Training' },
+      training: { mn: 'Цахим сургалт', en: 'Online Training' },
     },
   },
   interestsSection: {
@@ -438,7 +438,7 @@ export const timeline: TimelineItem[] = [
   },
   {
     role: { mn: 'Бакалаврын зэрэг (мэдээллийн технологи)', en: "Bachelor's Degree in IT" },
-    org: { mn: 'Монгол Улсын Их Сургууль, МТЭС', en: 'National University of Mongolia (NUM-MTES)' },
+    org: { mn: 'Мэдээллийн технологи, электроникийн сургууль (МТЭС)', en: 'National University of Mongolia (NUM-MTES)' },
     period: '2024 — одоо / Present',
     description: {
       mn: 'Мэдээллийн технологийн чиглэлээр суралцаж байна. Системийн аюулгүй байдал, програмчлал, веб хөгжүүлэлтэнд төвлөрч байна.',
