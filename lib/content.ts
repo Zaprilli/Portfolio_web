@@ -414,6 +414,16 @@ export const projects: Project[] = [
 
 export const timeline: TimelineItem[] = [
   {
+    role: { mn: 'IT Дэмжлэгийн Мэргэжилтэн (Фриланс)', en: 'IT Support Specialist (Freelance)' },
+    org: 'Freelance',
+    period: '2023 — одоо / Present',
+    description: {
+      mn: 'Захиалгат PC угсралт, Windows/Linux систем тохиргоо, аюулгүй байдлын хатуужилт, AnyDesk ашиглан зайны дэмжлэг.',
+      en: 'Custom PC assembly, Windows/Linux system setup, security hardening, remote support via AnyDesk.',
+    },
+    type: 'work',
+  },
+  {
     role: { mn: 'Бакалаврын зэрэг (Мэдээллийн Технологи)', en: "Bachelor's Degree in IT" },
     org: 'National University of Mongolia (NUM-MTES)',
     period: '2024 — одоо / Present',
@@ -432,18 +442,7 @@ export const timeline: TimelineItem[] = [
       en: 'Gained fundamentals of Morse code and information privacy, plus signal unit operations experience.',
     },
     type: 'service',
-  },
-  {
-    role: { mn: 'IT Дэмжлэгийн Мэргэжилтэн (Фриланс)', en: 'IT Support Specialist (Freelance)' },
-    org: 'Freelance',
-    period: '2023 — одоо / Present',
-    description: {
-      mn: 'Захиалгат PC угсралт, Windows/Linux систем тохиргоо, аюулгүй байдлын хатуужилт, AnyDesk ашиглан зайны дэмжлэг.',
-      en: 'Custom PC assembly, Windows/Linux system setup, security hardening, remote support via AnyDesk.',
-    },
-    type: 'work',
-  },
-];
+  },];
 
 export function t(value: { mn: string; en: string }, lang: Lang): string {
   return value[lang];
