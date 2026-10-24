@@ -46,7 +46,7 @@ export default function Hero() {
   const typedTitle = typedFull.slice(0, titleText.length);
   const typedBio = typedFull.slice(titleText.length + 1);
   const titleDone = typedFull.length > titleText.length;
-  const cvHref = lang === 'mn' ? '/cv/CV_Mongolia.pdf' : '/cv/CV_English.pdf';
+  const cvHref = content.cv[lang];
 
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
@@ -209,7 +209,7 @@ export default function Hero() {
               <p>
                 <span className="text-brand-400">$</span> whoami
               </p>
-              <p className="text-accent-300">{lang === 'mn' ? 'Маргад-Эрдэнэ' : 'Margad-Erdene'}</p>
+              <p className="text-accent-300">{c.shortName[lang]}</p>
               <p>
                 <span className="text-brand-400">$</span> cat skills.txt
               </p>

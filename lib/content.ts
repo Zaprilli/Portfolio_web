@@ -59,11 +59,18 @@ export interface Content {
     ctaCv: { mn: string; en: string };
     status: { mn: string; en: string };
     ctfGoal: { mn: string; en: string };
+    shortName: { mn: string; en: string };
   };
   achievementsSection: {
     heading: { mn: string; en: string };
     subheading: { mn: string; en: string };
     trackLabel: { mn: string; en: string };
+    linkLabels: {
+      pdf: string;
+      profile: { mn: string; en: string };
+      news: { mn: string; en: string };
+      link: { mn: string; en: string };
+    };
   };
   skillsSection: {
     heading: { mn: string; en: string };
@@ -116,6 +123,8 @@ export interface Content {
     rights: { mn: string; en: string };
   };
   langToggle: { label: string };
+  sectionEyebrow: { mn: string; en: string };
+  cv: { mn: string; en: string };
 }
 
 export const content: Content = {
@@ -154,6 +163,7 @@ export const content: Content = {
       mn: 'Зорилго: Олон улсын CTF тэмцээнүүдэд оролцох',
       en: 'Goal: Compete in international CTFs',
     },
+    shortName: { mn: 'Маргад-Эрдэнэ', en: 'Margad-Erdene' },
   },
   achievementsSection: {
     heading: { mn: 'Амжилт ба шагнал', en: 'Achievements & Awards' },
@@ -162,6 +172,12 @@ export const content: Content = {
       en: 'Cybersecurity competitions and certifications.',
     },
     trackLabel: { mn: 'CTF дүн шинжилгээ', en: 'CTF track record' },
+    linkLabels: {
+      pdf: 'PDF',
+      profile: { mn: 'профайл', en: 'profile' },
+      news: { mn: 'мэдээ', en: 'news' },
+      link: { mn: 'линк', en: 'link' },
+    },
   },
   skillsSection: {
     heading: { mn: 'Ур чадвар', en: 'Skills' },
@@ -267,6 +283,8 @@ export const content: Content = {
     rights: { mn: 'Бүх эрх хуулиар хамгаалагдсан.', en: 'All rights reserved.' },
   },
   langToggle: { label: 'MN / EN' },
+  sectionEyebrow: { mn: 'ангилал', en: 'section' },
+  cv: { mn: '/cv/CV_Mongolia.pdf', en: '/cv/CV_English.pdf' },
 };
 
 export const achievements: Achievement[] = [

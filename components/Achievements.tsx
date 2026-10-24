@@ -71,12 +71,13 @@ export default function Achievements() {
                             {a.href && (
                               <span className="mt-2 inline-flex items-center gap-1 rounded-md border border-brand-400/25 bg-brand-400/10 px-2 py-1 font-mono text-[11px] text-brand-300 transition group-hover:border-brand-300/60 group-hover:shadow-glow">
                                 {(() => {
+                                  const labels = content.achievementsSection.linkLabels;
                                   const h = a.href!.toLowerCase();
-                                  if (h.endsWith('.pdf')) return 'PDF';
+                                  if (h.endsWith('.pdf')) return labels.pdf;
                                   if (/ctftime|ctf\.mn|hackthebox|hackerrank|cylab|tetr\.io/.test(h))
-                                    return lang === 'mn' ? 'профайл' : 'profile';
-                                  if (/news|site\.num/.test(h)) return lang === 'mn' ? 'мэдээ' : 'news';
-                                  return lang === 'mn' ? 'линк' : 'link';
+                                    return labels.profile[lang];
+                                  if (/news|site\.num/.test(h)) return labels.news[lang];
+                                  return labels.link[lang];
                                 })()}
                                 <ArrowUpRight className="h-3 w-3" />
                               </span>

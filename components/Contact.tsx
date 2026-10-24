@@ -15,7 +15,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 export default function Contact() {
   const { lang } = useLang();
   const cs = content.contactSection;
-  const cvHref = lang === 'mn' ? '/cv/CV_Mongolia.pdf' : '/cv/CV_English.pdf';
+  const cvHref = content.cv[lang];
 
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState<Errors>({});

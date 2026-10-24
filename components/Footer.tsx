@@ -36,7 +36,7 @@ export default function Footer() {
             </button>
             <button
               onClick={toggleLang}
-              aria-label="Toggle language MN / EN"
+              aria-label={`Toggle language ${content.langToggle.label}`}
               className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-xs font-semibold tracking-widest text-slate-200 transition hover:border-brand-400/50 hover:text-white hover:shadow-glow"
             >
               <Globe className="h-3.5 w-3.5" strokeWidth={1.8} />

@@ -64,7 +64,7 @@ export default function SectionHeading({ titleKey, subtitleKey }: SectionHeading
         className="mb-3 font-mono text-xs uppercase tracking-[0.35em] text-brand-400/70"
       >
         {'// '}
-        {lang === 'mn' ? 'ангилал' : 'section'}
+        {content.sectionEyebrow[lang]}
       </motion.p>
       <motion.h2
         variants={fadeUpVariants}
