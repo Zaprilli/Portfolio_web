@@ -29,7 +29,7 @@ export default function Footer() {
             <button
               onClick={toggleTheme}
               aria-label={`Theme: ${theme}`}
-              title={theme === 'green' ? 'Switch to purple' : 'Switch to green'}
+              title={theme === 'blue' ? 'Switch to purple' : 'Switch to blue'}
               className="grid h-9 w-9 place-items-center rounded-lg border border-white/10 bg-white/[0.04] text-slate-300 transition hover:border-brand-400/50 hover:text-brand-300 hover:shadow-glow"
             >
               <Palette className="h-4 w-4" strokeWidth={1.8} />

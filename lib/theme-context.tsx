@@ -2,7 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
-export type Theme = 'green' | 'purple';
+export type Theme = 'blue' | 'purple';
 
 interface ThemeContextValue {
   theme: Theme;
@@ -11,21 +11,23 @@ interface ThemeContextValue {
 }
 
 const ThemeContext = createContext<ThemeContextValue>({
-  theme: 'green',
+  theme: 'blue',
   setTheme: () => {},
   toggleTheme: () => {},
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('green');
+  const [theme, setThemeState] = useState<Theme>('blue');
 
   useEffect(() => {
     const stored = window.localStorage.getItem('portfolio-theme');
-    if (stored === 'green' || stored === 'purple') {
+    if (stored === 'blue' || stored === 'purple') {
       setThemeState(stored);
+    } else if (stored === 'green') {
+      setThemeState('blue');
       document.documentElement.dataset.theme = stored;
     } else {
-      document.documentElement.dataset.theme = 'green';
+      document.documentElement.dataset.theme = 'blue';
     }
   }, []);
 
@@ -37,7 +39,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const toggleTheme = useCallback(() => {
     setThemeState((prev) => {
-      const next: Theme = prev === 'green' ? 'purple' : 'green';
+      const next: Theme = prev === 'blue' ? 'purple' : 'blue';
       document.documentElement.dataset.theme = next;
       window.localStorage.setItem('portfolio-theme', next);
       return next;

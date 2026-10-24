@@ -3,18 +3,18 @@
 @tailwind utilities;
 
 :root,
-html[data-theme='green'] {
+html[data-theme='blue'] {
   color-scheme: dark;
-  --brand-200: 187 247 208;
-  --brand-300: 134 239 172;
-  --brand-400: 74 222 128;
-  --brand-500: 34 197 94;
-  --brand-600: 22 163 74;
-  --brand-rgb: 74 222 128;
-  --accent-200: 217 249 157;
-  --accent-300: 190 242 100;
-  --accent-400: 163 230 53;
-  --accent-500: 132 204 22;
+  --brand-200: 165 216 245;
+  --brand-300: 96 190 240;
+  --brand-400: 23 147 209;
+  --brand-500: 18 122 174;
+  --brand-600: 14 97 138;
+  --brand-rgb: 23 147 209;
+  --accent-200: 186 230 253;
+  --accent-300: 125 211 252;
+  --accent-400: 56 189 248;
+  --accent-500: 14 165 233;
 }
 
 html[data-theme='purple'] {
