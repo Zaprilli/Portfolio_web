@@ -206,8 +206,8 @@ export default function Hero() {
               <p>
                 <span className="text-brand-400">$</span> cat stack.txt
               </p>
-              <p className="text-slate-400">Arch Linux · C · Python · TypeScript</p>
-              <p className="text-slate-400">Next.js · React · Supabase · SQL</p>
+              <p className="text-slate-400">Linux distros · C · Python · TypeScript</p>
+              <p className="text-slate-400">Next.js · React · SQL</p>
               <p>
                 <span className="text-brand-400">$</span>{' '}
                 <span className="inline-block h-3.5 w-2 animate-pulse bg-brand-400 align-middle" />
