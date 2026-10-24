@@ -323,7 +323,7 @@ export const skillCategories: SkillCategory[] = [
   {
     icon: 'monitor',
     category: { mn: 'Үйлдлийн системүүд ба орчин', en: 'Operating Systems & Environments' },
-    items: ['Arch Linux', 'Hyprland', 'Wayland', 'Kitty', 'Zsh', 'Windows', 'macOS'],
+    items: ['Arch Linux', 'Kali Linux', 'Ubuntu', 'Linux Mint', 'Hyprland', 'Wayland', 'Kitty', 'Zsh', 'Windows', 'macOS'],
   },
   {
     icon: 'code',
