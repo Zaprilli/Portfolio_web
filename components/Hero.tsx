@@ -41,7 +41,8 @@ export default function Hero() {
   const c = content.hero;
 
   const titleText = c.title[lang];
-  const typedFull = useTypewriter(`${titleText}\n${c.bio[lang]}`, 22, 300);
+  const bioText = `> ${c.bio[lang]}`;
+  const typedFull = useTypewriter(`${titleText}\n${bioText}`, 22, 300);
   const typedTitle = typedFull.slice(0, titleText.length);
   const typedBio = typedFull.slice(titleText.length + 1);
   const titleDone = typedFull.length > titleText.length;
