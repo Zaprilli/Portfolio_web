@@ -115,12 +115,12 @@ export interface Content {
 export const content: Content = {
   meta: {
     title: {
-      mn: 'Маргад-Эрдэнэ Бямбабаасан | IT Сурагч & Кибер Аюулгүй Байдлын Мэргэжилтэн',
-      en: 'Margad-Erdene Byambabasan | IT Student & Cybersecurity Specialist',
+      mn: 'Маргад-Эрдэнэ Бямбабаасан | IT Сурагч, Кибер Аюулгүй Байдлын Мэргэжилтэн болохыг хүсэж буй',
+      en: 'Margad-Erdene Byambabasan | IT Student who wanna be a Cybersecurity Specialist',
     },
     description: {
-      mn: 'МУИС-ийн МТЭС-ийн Мэдээллийн технологийн 3-р суралцагч. Системийн аюулгүй байдал, Arch Linux орчин, C ба Python програмчлал, веб хөгжүүлэлтийн чиглэлээр суралцаж байна.',
-      en: 'Third-year IT student at the National University of Mongolia (NUM-MTES) specializing in system security, Arch Linux environments, C programming, Python, and full-stack development.',
+      mn: 'Олон төрлийн үйлдлийн системтэй (Arch Linux, Windows, Linux-ийн хувилбарууд) ажилладаг. C ба Python-аар програмчилдаг. Ихэнх цагаа кибер аюулгүй байдалд зориулдаг — CTF, системийн аюулгүй байдал, пентестингийн сургалтууд.',
+      en: 'I work with various operating systems (Arch Linux, Windows, other Linux distros) and write code in C and Python. Most of my time goes to cybersecurity — CTFs, system security and hands-on pentesting practice.',
     },
   },
   nav: {
@@ -145,12 +145,12 @@ export const content: Content = {
     ctaCv: { mn: 'CV татаж авах', en: 'Download CV' },
     status: { mn: 'Нээлттэй: Фриланс дэмжлэг', en: 'Open to: Freelance support' },
     ctfGoal: {
-      mn: 'Хүсэл: Олон улсын CTF тэмцээнүүдэд оролцох (picoCTF, Hack The Box, Cyber Apocalypse)',
+      mn: 'Зорилго: Олон улсын CTF тэмцээнүүдэд оролцох (picoCTF, Hack The Box, Cyber Apocalypse)',
       en: 'Goal: Compete in international CTFs (picoCTF, Hack The Box, Cyber Apocalypse)',
     },
   },
   achievementsSection: {
-    heading: { mn: 'Амжилт & Бага', en: 'Achievements & Awards' },
+    heading: { mn: 'Амжилт ба шагнал', en: 'Achievements & Awards' },
     subheading: {
       mn: 'Кибер аюулгүй байдлын тэмцээнүүд болон баталгаажуулалтууд.',
       en: 'Cybersecurity competitions and certifications.',
@@ -191,8 +191,9 @@ export const content: Content = {
       en: 'Time spent away from the keyboard.',
     },
     items: [
-      { mn: 'Техник угсаралт & дотфайл', en: 'Hardware Assembly & Dotfiles' },
+      { mn: 'Техник угсаралт ба дотфайл', en: 'Hardware Assembly & Dotfiles' },
       { mn: 'Оюун ухааны puzzle тоглоом (TETR.IO, Sudoku)', en: 'Puzzle & IQ Games (TETR.IO, Sudoku)', href: 'https://ch.tetr.io/u/mrgd06' },
+      { mn: 'Гейм хөгжүүлэлт (itch.io)', en: 'Game Dev (itch.io)', href: 'https://mrgd06.itch.io/' },
       { mn: 'Спорт — ууланд алхалт, сагс, волейбол, фитнес', en: 'Sport — Mountain Hiking, Basketball, Volleyball & Fitness' },
     ],
   },
@@ -226,11 +227,11 @@ export const content: Content = {
     errorEmail: { mn: 'Зөв имэйл хаяг оруулна уу.', en: 'Please enter a valid email address.' },
     copySuccess: { mn: 'Хуулагдлаа ✓', en: 'Copied ✓' },
     ctfInvite: {
-      mn: 'Монголын CTF баг / тэмцээн — багтаа авахыг хүсвэл бичээрэй.',
+      mn: 'Монголын CTF баг эсвэл тэмцээн — тоглогч хэрэгтэй бол бичээрэй.',
       en: 'Mongolian CTF team or event — reach out if you need a player.',
     },
     disclaimer: {
-      mn: 'Энэ нь хэвэнчлэл (frontend) хэлбэр бөгөөд API холболтод бэлэн байна.',
+      mn: 'Энэ бол зөвхөн фронтенд цонх — API холболтод бэлэн.',
       en: 'This is a frontend-only form, ready for future API integration.',
     },
     sideNote: {
@@ -265,21 +266,21 @@ export const achievements: Achievement[] = [
   },
   {
     event: 'HackerRank Profile',
-    detail: { mn: 'SQL, problem solving болон бусад баталгаажуулалтууд', en: 'SQL, problem solving and other certifications' },
+    detail: { mn: 'SQL, problem solving зэрэг гэрчилгээнүүд', en: 'SQL, problem solving and other certifications' },
     year: '2024',
     icon: 'award',
     href: 'https://www.hackerrank.com/profile/velectro0426',
   },
   {
     event: 'CyLab Academy',
-    detail: { mn: 'Кибер аюулгүй байдлын онлайн сургалт & CTF сорилтууд', en: 'Cybersecurity training and CTF challenges' },
+    detail: { mn: 'Кибер аюулгүй байдлын онлайн сургалт ба CTF сорилтууд', en: 'Cybersecurity training and CTF challenges' },
     year: '2025',
     icon: 'terminal',
     href: 'https://learn.cylabacademy.org/users/xinn06',
   },
   {
     event: 'Hack The Box Profile',
-    detail: { mn: 'Machines, сорилтууд болон cyber lab-ууд', en: 'Machines, challenges and cyber labs' },
+    detail: { mn: 'Machines, сорилтууд ба кибер лабораториуд', en: 'Machines, challenges and cyber labs' },
     year: '2025',
     icon: 'shield-check',
     href: 'https://profile.hackthebox.com/profile/019d6023-1bdb-7117-88c6-fcaafe00de4a',
@@ -409,7 +410,7 @@ export const projects: Project[] = [
   {
     name: 'Portfolio_web',
     description: {
-      mn: 'Энэ вэбсайт: хоёр хэлтэй (MN/EN), хоёр өнгөтэй (green/purple), чангатай security header-уудтай хувийн портфолио.',
+      mn: 'Энэ вэбсайт: хоёр хэлтэй (MN/EN), хоёр өнгөтэй (green/purple), хатуу аюулгүй байдлын толгой үсгүүдтэй хувийн портфолио.',
       en: 'This website: bilingual (MN/EN), switchable green/purple themes and strict security headers.',
     },
     tags: ['Next.js', 'TypeScript', 'TailwindCSS', 'Framer Motion'],
@@ -424,7 +425,7 @@ export const timeline: TimelineItem[] = [
     org: 'Freelance',
     period: '2023 — одоо / Present',
     description: {
-      mn: 'Захиалгат PC угсралт, Windows/Linux систем тохиргоо, аюулгүй байдлын хатуужилт, AnyDesk ашиглан зайны дэмжлэг.',
+      mn: 'Захиалгат PC угсралт, Windows/Linux системийн тохиргоо, аюулгүй байдлын хатуужилт, AnyDesk ашиглан алсын зайны дэмжлэг.',
       en: 'Custom PC assembly, Windows/Linux system setup, security hardening, remote support via AnyDesk.',
     },
     type: 'work',

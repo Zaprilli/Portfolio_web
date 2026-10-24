@@ -7,7 +7,7 @@ import { Icon } from './icons';
 import { useLang } from '@/lib/lang-context';
 import { content } from '@/lib/content';
 
-const interestIcons = ['cpu', 'puzzle', 'dumbbell'];
+const interestIcons = ['cpu', 'puzzle', 'gamepad', 'dumbbell'];
 
 export default function Interests() {
   const { lang } = useLang();
@@ -18,7 +18,7 @@ export default function Interests() {
       <div className="section-shell">
         <SectionHeading titleKey="interestsSection" subtitleKey="interestsSection" />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item, i) => {
             const card = (
               <motion.div
