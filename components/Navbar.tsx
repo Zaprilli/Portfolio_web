@@ -68,7 +68,19 @@ export default function Navbar() {
           aria-label={content.nav.home[lang]}
         >
           <span className="grid h-8 w-8 place-items-center rounded-lg border border-brand-400/30 bg-brand-400/10 text-brand-300 transition group-hover:shadow-glow-strong">
-            M
+            <svg
+              className="h-[18px] w-[18px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinejoin="round"
+              aria-label="Arch Linux"
+              role="img"
+            >
+              <path d="M12 2.5 3 21.5h4.6L12 11.2l4.4 10.3H21L12 2.5Z" />
+              <path d="M8.2 16.4h7.6" strokeLinecap="round" />
+            </svg>
           </span>
           <span className="hidden sm:inline">
             mrgd06
