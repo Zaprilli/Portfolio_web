@@ -25,7 +25,7 @@ export default function Skills() {
   const { lang } = useLang();
 
   return (
-    <section id="skills" className="relative py-24">
+    <section id="skills" className="relative py-16 sm:py-20 lg:py-24">
       <div className="section-shell">
         <SectionHeading titleKey="skillsSection" subtitleKey="skillsSection" />
 
@@ -34,21 +34,21 @@ export default function Skills() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid gap-6 md:grid-cols-2 xl:grid-cols-4"
+          className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-3 xl:gap-6"
           style={{ perspective: 1000 }}
         >
           {skillCategories.map((cat) => (
-            <motion.div key={cat.category.en} variants={card}>
+            <motion.div key={cat.category.en} variants={card} className="h-full">
               <motion.div
-                whileHover={{ y: -10, scale: 1.02 }}
+                whileHover={{ y: -6, scale: 1.01 }}
                 transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-                className="glass-card glass-card-hover group h-full p-6"
+                className="glass-card glass-card-hover group h-full p-5 sm:p-6"
               >
                 <div className="mb-4 flex items-center gap-3">
                   <span className="grid h-10 w-10 place-items-center rounded-xl border border-brand-400/25 bg-brand-400/10 text-brand-300 transition group-hover:shadow-glow">
                     <Icon name={cat.icon} className="h-5 w-5" />
                   </span>
-                  <h3 className="font-semibold text-white">{cat.category[lang]}</h3>
+                  <h3 className="min-w-0 flex-1 text-sm font-semibold leading-snug text-white sm:text-base">{cat.category[lang]}</h3>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
@@ -60,7 +60,7 @@ export default function Skills() {
                       viewport={{ once: true }}
                       transition={{ delay: 0.05 * j, duration: 0.35 }}
                       whileHover={{ y: -3, borderColor: 'rgba(var(--brand-rgb), 0.7)' }}
-                      className="cursor-default rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-xs text-slate-300 transition-colors"
+                      className="max-w-full cursor-default break-words rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1.5 font-mono text-[11px] leading-relaxed text-slate-300 transition-colors sm:px-3 sm:text-xs"
                     >
                       {item}
                     </motion.span>

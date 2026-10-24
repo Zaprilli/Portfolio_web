@@ -9,14 +9,14 @@ import { content, timeline } from '@/lib/content';
 
 const typeStyles: Record<string, string> = {
   education: 'border-accent-400/40 bg-accent-400/10 text-accent-300',
-  work: 'border-brand-400/40 bg-brand-400/10 text-brand-300',
+  freelance: 'border-brand-400/40 bg-brand-400/10 text-brand-300',
   service: 'border-amber-400/40 bg-amber-400/10 text-amber-300',
   training: 'border-violet-400/40 bg-violet-400/10 text-violet-300',
 };
 
 const typeIcons: Record<string, string> = {
   education: 'graduation-cap',
-  work: 'briefcase',
+  freelance: 'briefcase',
   service: 'shield-check',
   training: 'terminal',
 };
@@ -30,7 +30,7 @@ export default function Experience() {
   const labels = content.experienceSection.labels;
 
   return (
-    <section id="experience" ref={ref} className="relative py-24">
+    <section id="experience" ref={ref} className="relative py-16 sm:py-20 lg:py-24">
       <div className="section-shell">
         <SectionHeading titleKey="experienceSection" subtitleKey="experienceSection" />
 
@@ -46,7 +46,7 @@ export default function Experience() {
             {timeline.map((item, i) => {
               const isLeft = i % 2 === 0;
               return (
-                <Reveal key={`${item.org.en}-${item.period}`} delay={i * 0.1}>
+                <Reveal key={`${item.org.en}-${item.period.en}`} delay={i * 0.1}>
                   <div
                     className={`relative flex flex-col pl-12 sm:w-1/2 ${
                       isLeft ? 'sm:pl-0 sm:pr-10 sm:text-right' : 'sm:ml-auto sm:pl-10'
@@ -74,11 +74,11 @@ export default function Experience() {
                         >
                           {labels[item.type][lang]}
                         </span>
-                        <span className="font-mono text-[11px] text-slate-500">{item.period}</span>
+                        <span className="font-mono text-[11px] text-slate-500">{item.period[lang]}</span>
                       </div>
 
                       <h3 className="font-semibold text-white">
-                        {item.role[lang].startsWith(item.org[lang])
+                        {item.type === 'freelance' || item.role[lang].startsWith(item.org[lang])
                           ? item.role[lang]
                           : `${item.role[lang]} — ${item.org[lang]}`}
                       </h3>

@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Globe, Palette } from 'lucide-react';
 import { useLang } from '@/lib/lang-context';
-import { useTheme } from '@/lib/theme-context';
+import { getNextTheme, getThemeLabel, useTheme } from '@/lib/theme-context';
 import { content } from '@/lib/content';
+import { buttonHover, buttonTap } from '@/lib/motion';
 
 const links = [
   { id: 'home', key: 'home' as const },
@@ -18,6 +19,7 @@ const links = [
 export default function Navbar() {
   const { lang, toggleLang } = useLang();
   const { theme, toggleTheme } = useTheme();
+  const nextThemeLabel = getThemeLabel(getNextTheme(theme), lang);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState('home');
@@ -64,7 +66,7 @@ export default function Navbar() {
       <nav className="section-shell flex h-16 items-center justify-between">
         <button
           onClick={() => go('home')}
-          className="group flex items-center gap-2 font-mono text-sm font-semibold text-white"
+          className="group flex items-center gap-2 font-mono text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98]"
           aria-label={content.nav.home[lang]}
         >
           <span className="grid h-8 w-8 place-items-center rounded-lg border border-brand-400/30 bg-brand-400/10 text-brand-300 transition group-hover:shadow-glow-strong">
@@ -92,7 +94,7 @@ export default function Navbar() {
             <li key={id}>
               <button
                 onClick={() => go(id)}
-                className={`relative rounded-lg px-3 py-2 text-sm transition-colors ${
+                className={`relative rounded-lg px-3 py-2 text-sm transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] ${
                   active === id ? 'text-brand-300' : 'text-slate-400 hover:text-white'
                 }`}
               >
@@ -111,22 +113,22 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2">
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.94 }}
+            whileHover={buttonHover}
+            whileTap={buttonTap}
             onClick={toggleTheme}
-            aria-label={`Theme: ${theme}`}
-            title={theme === 'blue' ? 'Switch to purple' : theme === 'purple' ? 'Switch to green' : 'Switch to blue'}
-            className="grid h-9 w-9 place-items-center rounded-lg border border-brand-400/25 bg-brand-400/10 text-brand-300 transition hover:border-brand-300/60 hover:shadow-glow"
+            aria-label={`${lang === 'mn' ? 'Өнгөний загвар' : 'Theme'}: ${getThemeLabel(theme, lang)}`}
+            title={lang === 'mn' ? `${nextThemeLabel} өнгө рүү солих` : `Switch to ${nextThemeLabel}`}
+            className="grid h-11 w-11 place-items-center rounded-lg border border-brand-400/25 bg-brand-400/10 text-brand-300 transition hover:border-brand-300/60 hover:shadow-glow"
           >
             <Palette className="h-4 w-4" strokeWidth={1.8} />
           </motion.button>
 
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.94 }}
+            whileHover={buttonHover}
+            whileTap={buttonTap}
             onClick={toggleLang}
-            aria-label={`Toggle language ${content.langToggle.label}`}
-            className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-xs font-semibold tracking-widest text-slate-200 transition hover:border-brand-400/50 hover:text-white hover:shadow-glow"
+            aria-label={lang === 'mn' ? 'Хэл солих' : 'Toggle language'}
+            className="flex min-h-11 items-center gap-2 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 font-mono text-xs font-semibold tracking-widest text-slate-200 transition hover:border-brand-400/50 hover:text-white hover:shadow-glow"
           >
             <Globe className="h-3.5 w-3.5" strokeWidth={1.8} />
             {lang === 'mn' ? 'EN' : 'MN'}
@@ -134,9 +136,9 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen((v) => !v)}
-            aria-label="Toggle menu"
+            aria-label={lang === 'mn' ? (open ? 'Цэс хаах' : 'Цэс нээх') : open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
-            className="grid h-9 w-9 place-items-center rounded-lg border border-brand-400/20 text-brand-300 lg:hidden"
+            className="grid h-11 w-11 place-items-center rounded-lg border border-brand-400/20 text-brand-300 transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.98] lg:hidden"
           >
             <span className="relative block h-3.5 w-4">
               <span
@@ -172,7 +174,7 @@ export default function Navbar() {
                 >
                   <button
                     onClick={() => go(id)}
-                    className={`w-full rounded-lg px-3 py-2.5 text-left text-sm transition ${
+                    className={`w-full rounded-lg px-3 py-3 text-left text-sm transition-all duration-200 hover:-translate-y-0.5 active:scale-[0.99] ${
                       active === id ? 'bg-brand-400/10 text-brand-300' : 'text-slate-300 hover:bg-white/5'
                     }`}
                   >

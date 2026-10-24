@@ -15,7 +15,7 @@ export default function Achievements() {
   const lineScale = useTransform(scrollYProgress, [0.1, 0.9], [0, 1]);
 
   return (
-    <section id="achievements" ref={ref} className="relative py-24">
+    <section id="achievements" ref={ref} className="relative py-16 sm:py-20 lg:py-24">
       <div className="section-shell">
         <SectionHeading titleKey="achievementsSection" subtitleKey="achievementsSection" />
 
@@ -99,7 +99,7 @@ export default function Achievements() {
               {'// '}
               {content.achievementsSection.trackLabel[lang]}
             </p>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
               {ctfLinks.map((link) => (
                 <motion.a
                   key={link.href}

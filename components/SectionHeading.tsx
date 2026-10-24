@@ -53,7 +53,7 @@ export default function SectionHeading({ titleKey, subtitleKey }: SectionHeading
 
   return (
     <motion.header
-      className="mb-12 text-center"
+      className="mb-8 text-center sm:mb-12"
       variants={containerVariants}
       initial="hidden"
       whileInView="show"

@@ -6,6 +6,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Download, Mail, Target } from 'lucide-react';
 import { useLang } from '@/lib/lang-context';
 import { content, skillCategories } from '@/lib/content';
+import { buttonHover, buttonTap } from '@/lib/motion';
 
 function useTypewriter(text: string, speed = 45, startDelay = 400) {
   const [out, setOut] = useState('');
@@ -31,9 +32,9 @@ function useTypewriter(text: string, speed = 45, startDelay = 400) {
 }
 
 const floatingOrbs = [
-  { className: 'top-24 left-[8%] h-64 w-64', color: 'bg-brand-500/20', delay: 0 },
-  { className: 'top-40 right-[10%] h-72 w-72', color: 'bg-accent-500/15', delay: 1.2 },
-  { className: 'bottom-16 left-[35%] h-56 w-56', color: 'bg-accent-400/10', delay: 2.4 },
+  { className: 'top-24 left-[8%] h-64 w-64', color: 'bg-brand-400/20', delay: 0 },
+  { className: 'top-40 right-[10%] h-72 w-72', color: 'bg-brand-500/15', delay: 1.2 },
+  { className: 'bottom-16 left-[35%] h-56 w-56', color: 'bg-brand-300/10', delay: 2.4 },
 ];
 
 export default function Hero() {
@@ -43,14 +44,15 @@ export default function Hero() {
   const titleText = c.title[lang];
   const bioText = `> ${c.bio[lang]}`;
   const fullText = `${titleText}\n${bioText}`;
-  const typedFull = useTypewriter(fullText, 22, 300);
+  const typeSpeed = 42;
+  const typedFull = useTypewriter(fullText, typeSpeed, 300);
   const typedTitle = typedFull.slice(0, titleText.length);
   const typedBio = typedFull.slice(titleText.length + 1);
   const titleDone = typedFull.length > titleText.length;
 
   const cmdWhoami = 'cat whoami';
   const cmdSkills = 'cat skills.txt';
-  const bioDoneAt = fullText.length * 22 + 300;
+  const bioDoneAt = fullText.length * typeSpeed + 300;
   const cmdWhoamiStart = bioDoneAt + 500;
   const typedCmdWhoami = useTypewriter(cmdWhoami, 40, cmdWhoamiStart);
   const typedCmdSkills = useTypewriter(cmdSkills, 40, cmdWhoamiStart + 1100);
@@ -66,6 +68,7 @@ export default function Hero() {
   const rotateY = useTransform(springX, [-0.5, 0.5], ['-8deg', '8deg']);
 
   const onPointerMove = (e: React.PointerEvent<HTMLElement>) => {
+    if (e.pointerType === 'touch') return;
     const rect = e.currentTarget.getBoundingClientRect();
     mx.set((e.clientX - rect.left) / rect.width - 0.5);
     my.set((e.clientY - rect.top) / rect.height - 0.5);
@@ -78,20 +81,20 @@ export default function Hero() {
     <section
       id="home"
       onPointerMove={onPointerMove}
-      className="relative flex min-h-[100svh] items-center overflow-hidden pt-16"
+      className="relative flex min-h-[100svh] items-start overflow-hidden pt-16"
     >
       {floatingOrbs.map((orb) => (
         <motion.div
           key={orb.className}
           aria-hidden
-          className={`pointer-events-none absolute ${orb.className} ${orb.color} rounded-full blur-3xl`}
+          className={`pointer-events-none absolute ${orb.className} ${orb.color} rounded-full blur-3xl transition-colors duration-500`}
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.4, delay: orb.delay, repeat: Infinity, repeatType: 'reverse' }}
         />
       ))}
 
-      <div className="section-shell relative z-10 grid items-center gap-10 py-14 sm:gap-12 sm:py-20 lg:grid-cols-2">
+      <div className="section-shell relative z-10 grid -translate-y-2 items-start gap-8 py-10 sm:-translate-y-3 sm:gap-12 sm:py-14 lg:grid-cols-2 lg:py-16">
         <div>
           <motion.p
             initial={{ opacity: 0, x: -24 }}
@@ -106,9 +109,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: -32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="text-4xl font-extrabold leading-tight tracking-tight text-slate-50 sm:text-5xl lg:text-6xl"
           >
-            <span className="neon-text">{c.name[lang]}</span>
+            <span>{c.name[lang]}</span>
           </motion.h1>
 
           <motion.p
@@ -127,7 +130,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className={`mt-4 max-w-xl leading-relaxed text-green-400 ${titleDone ? 'typed-caret' : ''}`}
+            className={`mt-4 min-h-36 max-w-xl leading-relaxed text-white ${titleDone ? 'typed-caret' : ''}`}
           >
             {typedBio}
           </motion.p>
@@ -139,8 +142,8 @@ export default function Hero() {
             className="mt-8 flex flex-wrap items-center gap-3"
           >
             <motion.button
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.96 }}
+              whileHover={buttonHover}
+              whileTap={buttonTap}
               onClick={() => go('contact')}
               className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-accent-500 px-6 py-3 text-sm font-semibold text-abyss shadow-glow-strong transition"
             >
@@ -151,8 +154,8 @@ export default function Hero() {
               href={cvHref}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.96 }}
+              whileHover={buttonHover}
+              whileTap={buttonTap}
               className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.05] px-6 py-3 text-sm font-semibold text-slate-200 backdrop-blur transition hover:border-brand-400/50 hover:text-white hover:shadow-glow"
             >
               <Download className="h-4 w-4" strokeWidth={2} />
@@ -194,6 +197,7 @@ export default function Hero() {
                 alt="Margad-Erdene Byambabasan"
                 width={640}
                 height={830}
+                priority
                 sizes="(min-width: 1024px) 36vw, 640px"
                 className="h-[300px] w-full object-cover object-top sm:h-[360px] lg:h-[400px]"
               />
@@ -208,7 +212,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.55 }}
-            className="glass-card relative z-10 -mt-10 mx-auto w-full max-w-md p-5 font-mono text-[13px] lg:mr-0 lg:ml-0 lg:w-[85%] lg:max-w-none"
+            className="glass-card relative z-10 -mt-10 mx-auto min-h-[26rem] w-full max-w-md p-5 font-mono text-[13px] lg:mr-0 lg:ml-0 lg:w-[85%] lg:max-w-none"
           >
             <div className="mb-3 flex items-center gap-2 border-b border-white/10 pb-2.5">
               <span className="h-2.5 w-2.5 rounded-full bg-brand-400/70" />
@@ -249,7 +253,9 @@ export default function Hero() {
 
       <motion.button
         onClick={() => go('achievements')}
-        aria-label="Scroll down"
+        aria-label={lang === 'mn' ? 'Доош гүйлгэх' : 'Scroll down'}
+        whileHover={buttonHover}
+        whileTap={buttonTap}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 8, 0] }}
         transition={{ opacity: { delay: 1.2 }, y: { duration: 1.8, repeat: Infinity } }}

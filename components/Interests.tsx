@@ -14,15 +14,15 @@ export default function Interests() {
   const items = content.interestsSection.items;
 
   return (
-    <section className="relative py-24">
+    <section className="relative py-16 sm:py-20 lg:py-24">
       <div className="section-shell">
         <SectionHeading titleKey="interestsSection" subtitleKey="interestsSection" />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {items.map((item, i) => {
             const card = (
               <motion.div
-                whileHover={{ y: -8, rotate: i % 2 === 0 ? -1.5 : 1.5 }}
+                whileHover={{ y: -4, scale: 1.01 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 18 }}
                 className="glass-card glass-card-hover group flex h-full flex-col items-center gap-3 p-6 text-center"
               >
@@ -40,7 +40,19 @@ export default function Interests() {
                         className="flex items-start gap-1.5 text-xs leading-relaxed text-slate-500 transition group-hover:text-slate-400"
                       >
                         <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-400/70" />
-                        {sub[lang]}
+                        {sub.href ? (
+                          <a
+                            href={sub.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-brand-400 transition hover:text-brand-300 hover:underline"
+                          >
+                            {sub[lang]}
+                            <ExternalLink className="h-3 w-3 shrink-0" />
+                          </a>
+                        ) : (
+                          sub[lang]
+                        )}
                       </li>
                     ))}
                   </ul>

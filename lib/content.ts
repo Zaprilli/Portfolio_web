@@ -25,9 +25,9 @@ export interface Project {
 export interface TimelineItem {
   role: { mn: string; en: string };
   org: { mn: string; en: string };
-  period: string;
+  period: { mn: string; en: string };
   description?: { mn: string; en: string };
-  type: 'education' | 'work' | 'service' | 'training';
+  type: 'education' | 'freelance' | 'service' | 'training';
 }
 
 export interface ContactField {
@@ -86,7 +86,7 @@ export interface Content {
     subheading: { mn: string; en: string };
     labels: {
       education: { mn: string; en: string };
-      work: { mn: string; en: string };
+      freelance: { mn: string; en: string };
       service: { mn: string; en: string };
       training: { mn: string; en: string };
     };
@@ -94,7 +94,12 @@ export interface Content {
   interestsSection: {
     heading: { mn: string; en: string };
     subheading: { mn: string; en: string };
-    items: { mn: string; en: string; href?: string; subs?: { mn: string; en: string }[] }[];
+    items: {
+      mn: string;
+      en: string;
+      href?: string;
+      subs?: { mn: string; en: string; href?: string }[];
+    }[];
   };
   contactSection: {
     heading: { mn: string; en: string };
@@ -202,8 +207,8 @@ export const content: Content = {
     },
     labels: {
       education: { mn: 'Боловсрол', en: 'Education' },
-      work: { mn: 'Ажил', en: 'Work' },
-      service: { mn: 'Алба', en: 'Service' },
+      freelance: { mn: 'Фриланс', en: 'Freelance' },
+      service: { mn: 'Цэргийн алба', en: 'Military Service' },
       training: { mn: 'Цахим сургалт', en: 'Online Learning' },
     },
   },
@@ -222,9 +227,26 @@ export const content: Content = {
           { mn: 'Микроскоптой шинжилгээ, наалдуулалтын туршлага', en: 'Microscope inspection & soldering experience' },
         ],
       },
-      { mn: 'Оюун ухааны puzzle тоглоом (TETR.IO, Sudoku)', en: 'Puzzle & IQ Games (TETR.IO, Sudoku)', href: 'https://ch.tetr.io/u/mrgd06' },
-      { mn: 'Тоглоом хөгжүүлэлт (itch.io)', en: 'Game Dev (itch.io)', href: 'https://mrgd06.itch.io/' },
-      { mn: 'Спорт — ууланд алхалт, сагс, волейбол, фитнес', en: 'Sport — Mountain Hiking, Basketball, Volleyball & Fitness' },
+      {
+        mn: 'Оюун ухааны puzzle тоглоом',
+        en: 'Puzzle & IQ Games',
+        subs: [
+          { mn: 'Rubik Cube', en: 'Rubik Cube' },
+          { mn: 'Tetris', en: 'Tetris', href: 'https://ch.tetr.io/u/mrgd06' },
+          { mn: 'Sudoku', en: 'Sudoku' },
+        ],
+      },
+      {
+        mn: 'Спорт ба фитнес',
+        en: 'Sports & Fitness',
+        subs: [
+          { mn: 'Ууланд алхалт', en: 'Mountain Hiking' },
+          { mn: 'Сагсан бөмбөг', en: 'Basketball' },
+          { mn: 'Волейбол', en: 'Volleyball' },
+          { mn: 'Фитнес', en: 'Fitness' },
+          { mn: 'Гүйлт', en: 'Running' },
+        ],
+      },
     ],
   },
   contactSection: {
@@ -272,10 +294,10 @@ export const content: Content = {
     services: {
       heading: { mn: 'Фриланс үйлчилгээ', en: 'Freelance services' },
       items: [
-        { mn: 'Захиалгат PC угсралт, Windows/Linux тохиргоо', en: 'Custom PC build & Windows/Linux setup' },
+        { mn: 'Захиалгат компьютер угсрах, үйлдлийн систем тохируулах', en: 'Custom PC assembly & operating system setup' },
         { mn: 'Системийн аюулгүй байдлын хатуужилт', en: 'System security hardening' },
-        { mn: 'Веб хөгжүүлэлт (Next.js, React)', en: 'Web development (Next.js, React)' },
-        { mn: 'Алсын зайны техникийн дэмжлэг', en: 'Remote tech support (AnyDesk)' },
+        { mn: 'Веб сайт хөгжүүлэлт', en: 'Website development' },
+        { mn: 'Алсын зайны техникийн тусламж', en: 'Remote technical support' },
       ],
     },
   },
@@ -445,25 +467,25 @@ export const projects: Project[] = [
 
 export const timeline: TimelineItem[] = [
   {
-    role: { mn: 'IT дэмжлэгийн мэргэжилтэн (фриланс)', en: 'IT Support Specialist (Freelance)' },
+    role: { mn: 'IT дэмжлэгийн мэргэжилтэн', en: 'IT Support Specialist' },
     org: { mn: 'Фриланс', en: 'Freelance' },
-    period: '2023 — одоо / Present',
+    period: { mn: '2023 — одоо', en: '2023 — Present' },
     description: {
       mn: 'Захиалгат PC угсралт, Windows/Linux системийн тохиргоо, аюулгүй байдлын хатуужилт, AnyDesk ашиглан алсын зайны дэмжлэг.',
       en: 'Custom PC assembly, Windows/Linux system setup, security hardening, remote support via AnyDesk.',
     },
-    type: 'work',
+    type: 'freelance',
   },
   {
     role: { mn: 'Бакалаврын зэрэг | Монгол Улсын Их Сургууль', en: "Bachelor's Degree | National University of Mongolia" },
     org: { mn: 'Мэдээллийн технологи, электроникийн сургууль (МТЭС)', en: 'School of Information Technology and Electronics (MTES)' },
-    period: '2024 — одоо / Present',
+    period: { mn: '2024 — одоо', en: '2024 — Present' },
     type: 'education',
   },
   {
-    role: { mn: 'Цэргийн алба', en: 'Military Service' },
-    org: { mn: 'Зэвсэгт хүчний 013 Холбооны хороо', en: '013th Communications Unit, Mongolian Armed Forces' },
-    period: '2025',
+    role: { mn: 'Холбооны хороо 013', en: '013th Communications Unit' },
+    org: { mn: 'Зэвсэгт хүчин', en: 'Mongolian Armed Forces' },
+    period: { mn: '2025', en: '2025' },
     description: {
       mn: 'Морс код болон мэдээллийн нууцлалын үндэс, шугам сүлжээний үйл ажиллагааны туршлага хуримтлуулсан.',
       en: 'Gained fundamentals of Morse code and information privacy, plus signal unit operations experience.',
@@ -473,7 +495,7 @@ export const timeline: TimelineItem[] = [
   {
     role: { mn: 'HackerRank — Кибер аюулгүй байдал', en: 'HackerRank — Cybersecurity' },
     org: { mn: 'HackerRank', en: 'HackerRank' },
-    period: '2024 — одоо',
+    period: { mn: '2024 — одоо', en: '2024 — Present' },
     description: {
       mn: 'SQL, problem solving зэрэг гэрчилгээнүүд.',
       en: 'SQL, problem solving and other certifications.',
@@ -483,7 +505,7 @@ export const timeline: TimelineItem[] = [
   {
     role: { mn: 'CyLab Academy — Кибер аюулгүй байдал', en: 'CyLab Academy — Cybersecurity' },
     org: { mn: 'CyLab Academy', en: 'CyLab Academy' },
-    period: '2025 — одоо',
+    period: { mn: '2025 — одоо', en: '2025 — Present' },
     description: {
       mn: 'Кибер аюулгүй байдлын онлайн сургалт ба CTF сорилтууд.',
       en: 'Cybersecurity training and CTF challenges.',
@@ -493,7 +515,7 @@ export const timeline: TimelineItem[] = [
   {
     role: { mn: 'Hack The Box — Self-paced labs', en: 'Hack The Box — Self-paced labs' },
     org: { mn: 'Hack The Box', en: 'Hack The Box' },
-    period: '2025 — одоо',
+    period: { mn: '2025 — одоо', en: '2025 — Present' },
     description: {
       mn: 'Machines, сорилтууд ба кибер лабораториуд.',
       en: 'Machines, challenges and cyber labs.',

@@ -7,6 +7,7 @@ import SectionHeading, { Reveal } from './SectionHeading';
 import { SocialRow } from './Socials';
 import { useLang } from '@/lib/lang-context';
 import { content } from '@/lib/content';
+import { buttonHover, buttonTap } from '@/lib/motion';
 
 type Errors = { name?: string; email?: string; message?: string };
 
@@ -57,7 +58,7 @@ export default function Contact() {
     }`;
 
   return (
-    <section id="contact" className="relative py-24">
+    <section id="contact" className="relative py-16 sm:py-20 lg:py-24">
       <div className="section-shell">
         <SectionHeading titleKey="contactSection" subtitleKey="contactSection" />
 
@@ -68,7 +69,7 @@ export default function Contact() {
                 <span className="grid h-11 w-11 place-items-center rounded-xl border border-brand-400/25 bg-brand-400/10 text-brand-300">
                   <Send className="h-5 w-5" strokeWidth={1.7} />
                 </span>
-                <div>
+                <div className="min-w-0">
                   <p className="font-mono text-xs text-brand-400/80">{'// secure_channel'}</p>
                   <p className="text-sm text-slate-400">{cs.sideNote[lang]}</p>
                 </div>
@@ -90,7 +91,7 @@ export default function Contact() {
                   {cs.services.items.map((item) => (
                     <li
                       key={item.en}
-                      className="flex items-start gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-xs leading-relaxed text-slate-300"
+                      className="flex min-w-0 items-start gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-xs leading-relaxed text-slate-300 [overflow-wrap:break-word]"
                     >
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400" />
                       {item[lang]}
@@ -111,7 +112,7 @@ export default function Contact() {
                 href={cvHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-brand-400/50 hover:text-white hover:shadow-glow"
+                className="mt-auto inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.05] px-4 py-3 text-sm font-semibold text-slate-200 transition duration-200 hover:-translate-y-0.5 hover:border-brand-400/50 hover:text-white hover:shadow-glow active:scale-[0.98]"
               >
                 <Download className="h-4 w-4" />
                 {content.hero.ctaCv[lang]}
@@ -125,7 +126,7 @@ export default function Contact() {
 
           <Reveal delay={0.12} className="lg:col-span-3">
             <form onSubmit={onSubmit} noValidate className="glass-card p-6 sm:p-8">
-              <div className="grid gap-5 sm:grid-cols-2">
+              <div className="grid gap-5 md:grid-cols-2">
                 <div>
                   <label htmlFor="name" className="mb-1.5 block text-xs font-medium text-slate-400">
                     {cs.fields.name.label[lang]}
@@ -184,9 +185,9 @@ export default function Contact() {
                 <motion.button
                   type="submit"
                   disabled={status !== 'idle'}
-                  whileHover={status === 'idle' ? { scale: 1.03 } : undefined}
-                  whileTap={status === 'idle' ? { scale: 0.97 } : undefined}
-                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-accent-500 px-6 py-3 text-sm font-semibold text-abyss shadow-glow-strong transition disabled:cursor-not-allowed disabled:opacity-60"
+                  whileHover={status === 'idle' ? buttonHover : undefined}
+                  whileTap={status === 'idle' ? buttonTap : undefined}
+                  className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-gradient-to-r from-brand-500 to-accent-500 px-6 py-3 text-sm font-semibold text-abyss shadow-glow-strong transition disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {status === 'sending' ? cs.sending[lang] : cs.submit[lang]}
                   {status === 'idle' && <Send className="h-4 w-4" />}

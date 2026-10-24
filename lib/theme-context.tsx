@@ -4,6 +4,15 @@ import { createContext, useCallback, useContext, useEffect, useState } from 'rea
 
 export type Theme = 'blue' | 'purple' | 'green';
 
+export function getThemeLabel(theme: Theme, lang: 'mn' | 'en') {
+  if (lang === 'en') return theme;
+  return { blue: 'цэнхэр', purple: 'нил ягаан', green: 'ногоон' }[theme];
+}
+
+export function getNextTheme(theme: Theme): Theme {
+  return theme === 'blue' ? 'purple' : theme === 'purple' ? 'green' : 'blue';
+}
+
 interface ThemeContextValue {
   theme: Theme;
   setTheme: (theme: Theme) => void;
@@ -37,7 +46,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const toggleTheme = useCallback(() => {
     setThemeState((prev) => {
-      const next: Theme = prev === 'blue' ? 'purple' : prev === 'purple' ? 'green' : 'blue';
+      const next = getNextTheme(prev);
       document.documentElement.dataset.theme = next;
       window.localStorage.setItem('portfolio-theme', next);
       return next;

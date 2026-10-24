@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
+import { MotionConfig } from 'framer-motion';
 import { LangProvider } from '@/lib/lang-context';
 import { ThemeProvider } from '@/lib/theme-context';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -25,12 +26,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="mn" className="dark" data-theme="green" suppressHydrationWarning>
       <body className="min-h-screen font-sans">
         <Script src="/theme-init.js" strategy="beforeInteractive" />
-        <ThemeProvider>
-          <LangProvider>
-            <ScrollToTop />
-            {children}
-          </LangProvider>
-        </ThemeProvider>
+        <MotionConfig reducedMotion="user">
+          <ThemeProvider>
+            <LangProvider>
+              <ScrollToTop />
+              {children}
+            </LangProvider>
+          </ThemeProvider>
+        </MotionConfig>
       </body>
     </html>
   );

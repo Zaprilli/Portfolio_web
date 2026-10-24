@@ -48,12 +48,41 @@ html {
   scroll-behavior: smooth;
 }
 
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 240ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-old(root) {
+  animation-name: language-change-out;
+}
+
+::view-transition-new(root) {
+  animation-name: language-change-in;
+}
+
+@keyframes language-change-out {
+  to {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes language-change-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+}
+
 section[id] {
   scroll-margin-top: 5.5rem;
 }
 
 body {
   @apply bg-abyss text-slate-200 antialiased;
+  overflow-wrap: break-word;
   background-image:
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(var(--brand-rgb), 0.15), transparent),
     linear-gradient(rgba(var(--brand-rgb), 0.04) 1px, transparent 1px),
@@ -130,8 +159,20 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
-  .typed-caret::after {
+  .typed-caret::after,
+  .animate-ping,
+  .animate-pulse {
     animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.01ms;
   }
   html {
     scroll-behavior: auto;

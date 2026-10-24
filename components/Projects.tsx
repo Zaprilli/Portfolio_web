@@ -11,7 +11,7 @@ export default function Projects() {
   const { lang } = useLang();
 
   return (
-    <section id="projects" className="relative py-24">
+    <section id="projects" className="relative py-16 sm:py-20 lg:py-24">
       <div className="section-shell">
         <SectionHeading titleKey="projectsSection" subtitleKey="projectsSection" />
 
