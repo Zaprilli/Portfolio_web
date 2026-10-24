@@ -115,7 +115,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.94 }}
             onClick={toggleTheme}
             aria-label={`Theme: ${theme}`}
-            title={theme === 'blue' ? 'Switch to purple' : 'Switch to blue'}
+            title={theme === 'blue' ? 'Switch to purple' : theme === 'purple' ? 'Switch to green' : 'Switch to blue'}
             className="grid h-9 w-9 place-items-center rounded-lg border border-brand-400/25 bg-brand-400/10 text-brand-300 transition hover:border-brand-300/60 hover:shadow-glow"
           >
             <Palette className="h-4 w-4" strokeWidth={1.8} />

@@ -17,6 +17,20 @@ html[data-theme='blue'] {
   --accent-500: 20 184 166;
 }
 
+html[data-theme='green'] {
+  color-scheme: dark;
+  --brand-200: 151 252 208;
+  --brand-300: 74 245 155;
+  --brand-400: 0 234 100;
+  --brand-500: 0 200 83;
+  --brand-600: 0 163 68;
+  --brand-rgb: 0 234 100;
+  --accent-200: 217 249 157;
+  --accent-300: 190 242 100;
+  --accent-400: 163 230 53;
+  --accent-500: 132 204 22;
+}
+
 html[data-theme='purple'] {
   --brand-200: 233 213 255;
   --brand-300: 216 180 254;

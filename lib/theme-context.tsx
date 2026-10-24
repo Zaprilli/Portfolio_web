@@ -2,7 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
-export type Theme = 'blue' | 'purple';
+export type Theme = 'blue' | 'purple' | 'green';
 
 interface ThemeContextValue {
   theme: Theme;
@@ -21,10 +21,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const stored = window.localStorage.getItem('portfolio-theme');
-    if (stored === 'blue' || stored === 'purple') {
+    if (stored === 'blue' || stored === 'purple' || stored === 'green') {
       setThemeState(stored);
-    } else if (stored === 'green') {
-      setThemeState('blue');
       document.documentElement.dataset.theme = stored;
     } else {
       document.documentElement.dataset.theme = 'blue';
@@ -39,7 +37,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const toggleTheme = useCallback(() => {
     setThemeState((prev) => {
-      const next: Theme = prev === 'blue' ? 'purple' : 'blue';
+      const next: Theme = prev === 'blue' ? 'purple' : prev === 'purple' ? 'green' : 'blue';
       document.documentElement.dataset.theme = next;
       window.localStorage.setItem('portfolio-theme', next);
       return next;
