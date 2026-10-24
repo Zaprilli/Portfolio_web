@@ -187,15 +187,12 @@ export default function Hero() {
                 width={640}
                 height={830}
                 priority
-                className="h-[420px] w-full object-cover object-top"
+                className="h-[400px] w-full object-cover object-top"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-abyss via-abyss/80 to-transparent p-4 pt-12">
-                <p className="font-mono text-xs text-brand-400">~/whoami</p>
-                <p className="mt-0.5 text-sm font-semibold text-white">
-                  {lang === 'mn' ? 'Б. Маргад-Эрдэнэ' : 'M. Margad-Erdene'}
-                </p>
-                <p className="text-[11px] text-slate-400">{c.status[lang]}</p>
-              </div>
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-abyss/70 via-transparent to-transparent"
+              />
             </div>
           </motion.div>
 
@@ -204,7 +201,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.55 }}
-            className="glass-card absolute -bottom-14 -left-2 w-[80%] p-5 font-mono text-xs"
+            className="glass-card relative z-10 -mt-10 ml-0 w-[85%] p-5 font-mono text-xs"
           >
             <div className="mb-3 flex items-center gap-2 border-b border-white/10 pb-2.5">
               <span className="h-2.5 w-2.5 rounded-full bg-brand-400/70" />
