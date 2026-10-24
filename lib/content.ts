@@ -120,8 +120,8 @@ export const content: Content = {
       en: 'Margad-Erdene Byambabasan | IT Student who wanna be a Cybersecurity Specialist',
     },
     description: {
-      mn: 'Олон төрлийн үйлдлийн системтэй (Arch Linux, Windows, Linux-ийн хувилбарууд) ажилладаг. C ба Python-аар програмчилдаг. Ихэнх цагаа кибер аюулгүй байдалд зориулдаг — CTF, системийн аюулгүй байдал, пентестингийн сургалтууд.',
-      en: 'I work with various operating systems (Arch Linux, Windows, other Linux distros) and write code in C and Python. Most of my time goes to cybersecurity — CTFs, system security and hands-on pentesting practice.',
+      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдалд ихээр сонирхдог — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Arch Linux, Windows) ажилладаг.',
+      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Arch Linux, Windows).',
     },
   },
   nav: {
@@ -138,8 +138,8 @@ export const content: Content = {
     name: { mn: 'Маргад-Эрдэнэ Бямбабаасан', en: 'Margad-Erdene Byambabasan' },
     title: { mn: 'IT Сурагч — Кибер Аюулгүй Байдлын Мэргэжилтэн болохыг хүсэж буй', en: 'IT Student who wanna be a Cybersecurity Specialist' },
     bio: {
-      mn: 'Олон төрлийн үйлдлийн системтэй (Arch Linux, Windows, Linux-ийн хувилбарууд) ажилладаг. C ба Python-аар програмчилдаг. Ихэнх цагаа cybersecurity-д зориулдаг — CTF, системийн аюулгүй байдал, пентестингийн сургалтууд.',
-      en: 'I work with various operating systems (Arch Linux, Windows, other Linux distros) and write code in C and Python. Most of my time goes to cybersecurity — CTFs, system security and hands-on pentesting practice.',
+      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдалд ихээр сонирхдог — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Arch Linux, Windows) ажилладаг.',
+      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Arch Linux, Windows).',
     },
     ctaContact: { mn: 'Холбоо барих', en: 'Get in touch' },
     ctaProjects: { mn: 'Төслүүд үзэх', en: 'View projects' },
