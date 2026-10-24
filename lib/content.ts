@@ -116,11 +116,11 @@ export interface Content {
 export const content: Content = {
   meta: {
     title: {
-      mn: 'Маргад-Эрдэнэ Бямбабаасан | IT Сурагч, Кибер Аюулгүй Байдлын Мэргэжилтэн болохыг хүсэж буй',
-      en: 'Margad-Erdene Byambabasan | IT Student who wanna be a Cybersecurity Specialist',
+      mn: 'Маргад-Эрдэнэ Бямбабаасан | Мэдээллийн технологийн оюутан ->  Кибер аюулгүй байдлын мэргэжилтэн болох хүсэлтэй ',
+      en: 'Margad-Erdene Byambabasan | Information technology Student -> who wanna be a Cybersecurity Specialist',
     },
     description: {
-      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдалд ихээр сонирхдог — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Arch Linux, Windows) ажилладаг.',
+      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Мэдээллийн аюулгүй байдал чиглэлээр сонирхолтой — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Arch Linux, Windows) ажилладаг.',
       en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Arch Linux, Windows).',
     },
   },
@@ -134,20 +134,20 @@ export const content: Content = {
     contact: { mn: 'Холбоо барих', en: 'Contact' },
   },
   hero: {
-    greeting: { mn: '// Сайн байна уу, би', en: '// Hello world, I am' },
-    name: { mn: 'Маргад-Эрдэнэ Бямбабаасан', en: 'Margad-Erdene Byambabasan' },
-    title: { mn: 'IT Сурагч — Кибер Аюулгүй Байдлын Мэргэжилтэн болохыг хүсэж буй', en: 'IT Student who wanna be a Cybersecurity Specialist' },
+    greeting: { mn: '// Сайн байна уу, намайг', en: '// Hello World!, my name is' },
+    name: { mn: 'Маргад-Эрдэнэ Бямбабасан', en: 'Margad-Erdene Byambabasan' },
+    title: { mn: 'IT Сурагч — Кибер Аюулгүй Байдлын Мэргэжилтэн болохыг хүсэж буй', en: 'IT Student & who wanna be a Cybersecurity Specialist' },
     bio: {
-      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдалд ихээр сонирхдог — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Arch Linux, Windows) ажилладаг.',
-      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Arch Linux, Windows).',
+      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдалг ихээр сонирхдог — CTF, системийн аюулгүй байдал, пентестинг. Олон төрлийн үйлдлийн системтэй (Linux, Windows) ажилладаг.',
+      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs, system security and pentesting. I work with various operating systems (Arch Linux, Windows, macOS).',
     },
     ctaContact: { mn: 'Холбоо барих', en: 'Get in touch' },
     ctaProjects: { mn: 'Төслүүд үзэх', en: 'View projects' },
     ctaCv: { mn: 'CV татаж авах', en: 'Download CV' },
     status: { mn: 'Нээлттэй: Фриланс дэмжлэг', en: 'Open to: Freelance support' },
     ctfGoal: {
-      mn: 'Зорилго: Олон улсын CTF тэмцээнүүдэд оролцох (picoCTF, Hack The Box, Cyber Apocalypse)',
-      en: 'Goal: Compete in international CTFs (picoCTF, Hack The Box, Cyber Apocalypse)',
+      mn: 'Зорилго: Олон улсын CTF тэмцээнүүдэд оролцох',
+      en: 'Goal: Compete in international CTFs',
     },
   },
   achievementsSection: {
@@ -257,9 +257,10 @@ export const achievements: Achievement[] = [
   },
   {
     event: 'Haruulzangi CTF 2026',
-    detail: { mn: 'Үндэсний кибер аюулгүй байдал — Топ 50 (enVoia! баг)', en: 'National Cybersecurity — Top 50 (Team enVoia!)' },
+    detail: { mn: 'Монгол улсын кибер аюулгүй байдал — Топ 50 (enVoia! баг)', en: 'The biggest Capture The Flag (CTF) competition in Mongolia, Semi—Final Global #50 (Team enVoia!)' },
     year: '2026',
     icon: 'flag',
+    href: 'https://ctftime.org/team/447293'
   },
   {
     event: 'OpenwaveWanderlab Science CTF',
@@ -270,7 +271,7 @@ export const achievements: Achievement[] = [
   {
     event: 'English B2',
     detail: { mn: 'Гадаад хэлний B2 түвшний гэрчилгээ', en: 'English B2 level certification' },
-    year: '2025',
+    year: '2022',
     icon: 'languages',
     href: '/certificates/english-b2.pdf',
   },
