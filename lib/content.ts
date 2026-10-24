@@ -134,7 +134,7 @@ export const content: Content = {
     contact: { mn: 'Холбоо барих', en: 'Contact' },
   },
   hero: {
-    greeting: { mn: '// Сайн байна уу, намайг', en: '// Hello World!, my name is' },
+    greeting: { mn: '// Сайн байна уу, миний нэр бол', en: '// Hello World!, my name is' },
     name: { mn: 'Маргад-Эрдэнэ Бямбабасан', en: 'Margad-Erdene Byambabasan' },
     title: { mn: 'Кибер аюулгүй байдлын мэргэжилтэн болох хүсэлтэй мэдээллийн технологийн оюутан', en: 'IT Student & who wanna be a Cybersecurity Specialist' },
     bio: {
