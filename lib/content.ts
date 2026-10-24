@@ -137,8 +137,8 @@ export const content: Content = {
     name: { mn: 'Маргад-Эрдэнэ Бямбабаасан', en: 'Margad-Erdene Byambabasan' },
     title: { mn: 'IT Сурагч — Кибер Аюулгүй Байдлын Мэргэжилтэн болохыг хүсэж буй', en: 'IT Student who wanna be a Cybersecurity Specialist' },
     bio: {
-      mn: 'МУИС-ийн МТЭС-ийн Мэдээллийн технологийн 3-р суралцагч. Системийн аюулгүй байдал, Arch Linux орчин, C ба Python програмчлал, веб хөгжүүлэлтийн чиглэлээр суралцаж байна.',
-      en: 'Third-year IT student at the National University of Mongolia (NUM-MTES) specializing in system security, Arch Linux environments, C programming, Python, and full-stack development.',
+      mn: 'Олон төрлийн үйлдлийн системтэй (Arch Linux, Windows, Linux-ийн хувилбарууд) ажилладаг. C ба Python-аар програмчилдаг. Ихэнх цагаа cybersecurity-д зориулдаг — CTF, системийн аюулгүй байдал, пентестингийн сургалтууд.',
+      en: 'I work with various operating systems (Arch Linux, Windows, other Linux distros) and write code in C and Python. Most of my time goes to cybersecurity — CTFs, system security and hands-on pentesting practice.',
     },
     ctaContact: { mn: 'Холбоо барих', en: 'Get in touch' },
     ctaProjects: { mn: 'Төслүүд үзэх', en: 'View projects' },
