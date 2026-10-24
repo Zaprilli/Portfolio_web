@@ -328,7 +328,7 @@ export const skillCategories: SkillCategory[] = [
   {
     icon: 'code',
     category: { mn: 'Хэл ба веб', en: 'Languages & Web' },
-    items: ['C', 'Python', 'JavaScript', 'TypeScript', 'Next.js', 'React', 'TailwindCSS', 'Supabase', 'SQL'],
+    items: ['C', 'Python', 'JavaScript', 'TypeScript', 'Next.js', 'React', 'TailwindCSS', 'Supabase', 'SQL', 'PowerShell', 'Bash'],
   },
   {
     icon: 'shield-check',
@@ -341,7 +341,7 @@ export const skillCategories: SkillCategory[] = [
       'Hardware Diagnostics',
       'Hack The Box',
       'PicoCTF',
-      'OverTheWire',
+      'OverTheWire: Bandit',
     ],
   },
 ];
