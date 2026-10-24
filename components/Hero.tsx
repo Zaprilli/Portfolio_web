@@ -41,6 +41,7 @@ export default function Hero() {
   const c = content.hero;
 
   const typedTitle = useTypewriter(c.title[lang], 32, 300);
+  const typedBio = useTypewriter(c.bio[lang], 16, 3000);
   const cvHref = lang === 'mn' ? '/cv/CV_Mongolia.pdf' : '/cv/CV_English.pdf';
 
   const mx = useMotionValue(0);
@@ -110,9 +111,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="mt-4 max-w-xl leading-relaxed text-slate-400"
+            className={`mt-4 max-w-xl leading-relaxed text-green-400 ${
+              typedBio.length < c.bio[lang].length ? 'typed-caret' : ''
+            }`}
           >
-            {c.bio[lang]}
+            {typedBio}
           </motion.p>
 
           <motion.div
