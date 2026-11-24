@@ -192,7 +192,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.35 }}
             className="relative mx-auto w-full max-w-md overflow-hidden rounded-3xl border border-brand-400/25 bg-white/[0.04] p-1.5 shadow-glow-strong backdrop-blur-xl lg:mr-0 lg:ml-auto lg:w-[85%] lg:max-w-none"
           >
-            <div className="relative overflow-hidden rounded-[1.15rem]">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-[1.15rem]">
               <Image
                 src={publicPath('/images/profile.jpg')}
                 alt="Margad-Erdene Byambabasan"
@@ -200,7 +200,7 @@ export default function Hero() {
                 height={830}
                 priority
                 sizes="(min-width: 1024px) 36vw, 640px"
-                className="h-[300px] w-full object-cover object-top sm:h-[360px] lg:h-[400px]"
+                className="absolute inset-0 h-full w-full object-cover object-top"
               />
               <div
                 aria-hidden
