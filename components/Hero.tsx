@@ -184,7 +184,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="relative">
+        <div className="relative lg:col-start-2 lg:row-start-1">
           <motion.div
             style={{ rotateX, rotateY, transformPerspective: 1200 }}
             initial={{ opacity: 0, scale: 0.85, y: -24 }}
@@ -208,48 +208,48 @@ export default function Hero() {
               />
             </div>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: -40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.55 }}
-            className="glass-card relative z-10 -mt-10 mx-auto min-h-[26rem] w-full max-w-md p-5 font-mono text-[13px] lg:mr-0 lg:ml-0 lg:w-[85%] lg:max-w-none"
-          >
-            <div className="mb-3 flex items-center gap-2 border-b border-white/10 pb-2.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-brand-400/70" />
-              <span className="text-[11px] text-slate-500">mrgd06@portfolio:~</span>
-            </div>
-            <div className="space-y-1.5 text-slate-300">
-              <p className={typedCmdWhoami.length < cmdWhoami.length ? 'typed-caret' : ''}>
-                <span className="text-brand-400">$</span> {typedCmdWhoami}
-              </p>
-              {whoamiDone && <p className="text-accent-300">{c.shortName[lang]}</p>}
-              {whoamiDone && (
-                <p className={`pt-1 ${typedCmdSkills.length < cmdSkills.length ? 'typed-caret' : ''}`}>
-                  <span className="text-brand-400">$</span> {typedCmdSkills}
-                </p>
-              )}
-              {skillsCmdDone && (
-                <div className="space-y-1.5 pt-1">
-                  {skillCategories.map((cat) => (
-                    <div key={cat.category.en}>
-                      <p className="text-brand-300"># {cat.category[lang]}</p>
-                      <p className="break-words leading-relaxed text-slate-300">
-                        {cat.items.join(' · ')}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              )}
-              {skillsCmdDone && (
-                <p className="pt-1">
-                  <span className="text-brand-400">$</span>{' '}
-                  <span className="inline-block h-3.5 w-2 animate-pulse bg-brand-400 align-middle" />
-                </p>
-              )}
-            </div>
-          </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="glass-card relative z-10 mx-auto min-h-[26rem] w-full max-w-xl p-5 font-mono text-[13px] lg:col-start-1 lg:row-start-2 lg:mx-0"
+        >
+          <div className="mb-3 flex items-center gap-2 border-b border-white/10 pb-2.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-brand-400/70" />
+            <span className="text-[11px] text-slate-500">mrgd06@portfolio:~</span>
+          </div>
+          <div className="space-y-1.5 text-slate-300">
+            <p className={typedCmdWhoami.length < cmdWhoami.length ? 'typed-caret' : ''}>
+              <span className="text-brand-400">$</span> {typedCmdWhoami}
+            </p>
+            {whoamiDone && <p className="text-accent-300">{c.shortName[lang]}</p>}
+            {whoamiDone && (
+              <p className={`pt-1 ${typedCmdSkills.length < cmdSkills.length ? 'typed-caret' : ''}`}>
+                <span className="text-brand-400">$</span> {typedCmdSkills}
+              </p>
+            )}
+            {skillsCmdDone && (
+              <div className="space-y-1.5 pt-1">
+                {skillCategories.map((cat) => (
+                  <div key={cat.category.en}>
+                    <p className="text-brand-300"># {cat.category[lang]}</p>
+                    <p className="break-words leading-relaxed text-slate-300">
+                      {cat.items.join(' · ')}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+            {skillsCmdDone && (
+              <p className="pt-1">
+                <span className="text-brand-400">$</span>{' '}
+                <span className="inline-block h-3.5 w-2 animate-pulse bg-brand-400 align-middle" />
+              </p>
+            )}
+          </div>
+        </motion.div>
       </div>
 
       <motion.button
