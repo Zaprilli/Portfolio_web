@@ -1,0 +1,12 @@
+{
+	"recommendations": [
+		"bradlc.vscode-tailwindcss",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"christian-kohler.path-intellisense",
+		"formulahendry.auto-rename-tag",
+		"streetsidesoftware.code-spell-checker",
+		"usernamehw.errorlens"
+	],
+	"unwantedRecommendations": []
+}

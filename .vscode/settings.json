@@ -1,0 +1,70 @@
+{
+	// ---- Explorer: бүх файлыг харуулах ----
+	"explorer.autoReveal": true,
+	"explorer.compactFolders": false,
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false,
+
+	// Зөвхөн үнэхээр шаардлагагүй зүйлийг нууна (файлууд бүтээгдэхүүний кодууд харагдана)
+	"files.exclude": {
+		"**/.git": true,
+		"**/.DS_Store": true,
+		"**/node_modules": true,
+		"**/.next": true,
+		"**/*.tsbuildinfo": true
+	},
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/.next": true,
+		"**/out": true,
+		"**/package-lock.json": true,
+		"**/*.tsbuildinfo": true
+	},
+	// Watcher-ийг хөнгөвчлөх (их файлтай үед VS Code удаадаг)
+	"files.watcherExclude": {
+		"**/.next/**": true,
+		"**/node_modules/**": true,
+		"**/out/**": true
+	},
+
+	// ---- TypeScript ----
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"typescript.preferences.importModuleSpecifier": "non-relative",
+	"javascript.preferences.importModuleSpecifier": "non-relative",
+
+	// ---- Editor ----
+	"editor.renderWhitespace": "boundary",
+	"editor.rulers": [100],
+	"editor.tabSize": 2,
+	"editor.insertSpaces": true,
+	"editor.wordWrap": "off",
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": true,
+	"editor.minimap.enabled": true,
+	"editor.formatOnSave": false,
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "never"
+	},
+
+	// "/* */" болон JSX тэмдэгтүүд дээр хаалт автоматаар
+	"html.autoClosingTags": true,
+	"javascript.autoClosingTags": true,
+	"typescript.autoClosingTags": true,
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact",
+		"typescript": "typescriptreact"
+	},
+
+	// ---- Files ----
+	"files.eol": "\n",
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+
+	// ---- Terminal ----
+	"terminal.integrated.cwd": "${workspaceFolder}",
+
+	// ---- Search ----
+	"search.smartCase": true,
+	"search.useIgnoreFiles": true
+}

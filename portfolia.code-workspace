@@ -1,0 +1,27 @@
+{
+	"folders": [
+		{
+			"name": "Portfolio_web",
+			"path": "."
+		}
+		// Хэрэв сургалтын материал хамт хэрэгтэй бол доорх мөрийг идэвхжүүлээрэй:
+		// ,
+		// {
+		// 	"name": "5_Semester",
+		// 	"path": "../../2University/5_Semester"
+		// }
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/.DS_Store": true,
+			"**/node_modules": true,
+			"**/.next": true
+		},
+		"search.exclude": {
+			"**/node_modules": true,
+			"**/.next": true,
+			"**/package-lock.json": true
+		}
+	}
+}
