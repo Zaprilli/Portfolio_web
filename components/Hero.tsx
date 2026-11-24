@@ -184,7 +184,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="relative lg:col-start-2 lg:row-start-1">
+        <div className="relative lg:col-start-2 lg:row-start-1 lg:row-span-2">
           <motion.div
             style={{ rotateX, rotateY, transformPerspective: 1200 }}
             initial={{ opacity: 0, scale: 0.85, y: -24 }}
