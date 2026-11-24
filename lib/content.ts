@@ -159,8 +159,8 @@ export const content: Content = {
     name: { mn: 'Маргад-Эрдэнэ Бямбабасан', en: 'Margad-Erdene Byambabasan' },
     title: { mn: 'Кибер аюулгүй байдлын мэргэжилтэн болох хүсэлтэй мэдээллийн технологийн оюутан', en: 'IT Student & who wanna be a Cybersecurity Specialist' },
     bio: {
-      mn: 'Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдлын чиглэлээр гүнзгий сонирхдог бөгөөд CTF тэмцээнүүд, пентестинд чиглэн ажилладаг. Системийн аюулгүй байдалд сонирхолтой, Linux, Windows зэрэг олон үйлдлийн систем дээр ажиллах чадвартай.',
-      en: 'Third-year Information Technology student. Passionate about cybersecurity — CTFs and pentesting. Interested in system security and skilled at working with various operating systems (Linux, Windows, macOS).',
+      mn: 'Монгол Улсын их Сургуульд сурдаг Мэдээллийн технологийн 3-р курсийн оюутан. Кибер аюулгүй байдлын чиглэлээр гүнзгий сонирхдог бөгөөд CTF тэмцээнүүд, пентестинд чиглэн ажилладаг. Системийн аюулгүй байдалд сонирхолтой, Linux, Windows зэрэг олон үйлдлийн систем дээр ажиллах чадвартай.',
+      en: 'Third-year Information Technology student at National University of Mongolia. Passionate about cybersecurity — CTFs and pentesting. Interested in system security and skilled at working with various operating systems (Linux, Windows, macOS).',
     },
     ctaContact: { mn: 'Холбоо барих', en: 'Get in touch' },
     ctaProjects: { mn: 'Төслүүд үзэх', en: 'View projects' },
